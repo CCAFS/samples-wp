@@ -1,0 +1,72 @@
+/* ==============================
+mixins.scss
+================================= */
+
+
+// for media queries
+
+$tablet-width: 768px;
+$desktop-width: 992px;
+$cinema-width: 1170px;
+
+@mixin mobile  {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin cinema {
+  @media (min-width: #{$cinema-width}) {
+    @content;
+  }
+}
+
+@mixin link-trans {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease
+}
+
+@mixin sidebar-hover {
+    &:hover,
+    &:focus {
+      background-color: darken($red, 5%);
+      color: $white;
+  }
+}
+
+
+/* example usage:
+
+p {
+  font-size: 16px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+  }
+}
+
+end example */ 

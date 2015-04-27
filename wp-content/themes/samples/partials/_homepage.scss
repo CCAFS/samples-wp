@@ -1,0 +1,108 @@
+// homepage.scss
+
+#box-overlay {
+	position: relative;
+	padding: 20px 20px 0px;
+	
+	background-color: $navy;
+	margin: 0px auto 0px;
+	z-index: 1000;
+
+	.aq-block {margin-bottom: 0;}
+
+	@include desktop {
+
+		width: 70%;
+		max-width: 540px;
+		background-color: rgba(0, 0 , 0, 0.8);
+		margin: -200px auto 0px;
+		padding: 0px;
+		border: 3px double rgba(255,255,255,.5);
+	}
+
+	.container {
+		width: 100%;
+		padding: 0;
+	}
+
+	h1 {
+		color: $white;
+		text-align: center;
+		width: 100%;
+		font-size: 22px;
+		line-height: 1;
+		font-weight: 400;
+		margin-bottom: 12px;
+
+		@include tablet {
+			font-size: 28px;
+		}
+
+		@include desktop {
+			font-size: 36px;
+		}
+
+	}
+
+	.divider-pattern {
+		display: none;
+		@include desktop {
+			display: block;
+		}
+	}
+
+	a {
+		display: block;
+		text-align: center;
+		color: $lavender;
+		text-transform: uppercase;
+		font-size: 14px;
+
+		&:hover {
+			color: $orange;
+		}
+
+		@include tablet {
+			font-size: 16px;
+		}
+
+		@include desktop {
+			font-size: 18px;
+			color: $white;
+		}
+	}
+
+}
+
+#since-1972 {
+	
+	.lead.text-center {
+		margin: 12px auto 24px;
+		max-width: 480px;
+		background: url(/wp-content/themes/sheppard/images/divider-pattern-dark.png) center 10px repeat-x;
+	}
+
+	.since-when {
+		display: inline-block;
+		padding: 0 12px;
+		background-color: $white;
+		font-family: Georgia, serif;
+		font-style: italic;
+		color: $navy;
+	}
+
+	.col-sm-4 {
+		padding-left: 35px;
+		padding-right: 35px;
+		h3 {
+			font-family: $body-copy;
+			font-weight: 700;
+			text-align: center;
+			font-size: 16px;
+			text-transform: uppercase;
+		}
+		p {
+			text-align: center;
+		}
+	}
+}
