@@ -1,0 +1,91 @@
+/* ==============================
+mixins.scss
+================================= */
+
+
+// for media queries
+$foureighty-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 992px;
+$cinema-width: 1170px;
+
+@mixin mobile  {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin foureighty  {
+  @media (min-width: #{$foureighty-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-only {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin cinema {
+  @media (min-width: #{$cinema-width}) {
+    @content;
+  }
+}
+
+@mixin link-trans {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease
+}
+
+@mixin sidebar-hover {
+    &:hover,
+    &:focus {
+      background-color: darken($red, 5%);
+      color: $white;
+  }
+}
+
+@mixin center-position {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+/* example usage:
+
+p {
+  font-size: 16px;
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include desktop {
+    font-size: 20px;
+  }
+}
+
+end example */ 

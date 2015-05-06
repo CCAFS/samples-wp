@@ -1,0 +1,1 @@
+jQuery(document).ready(function($){$(".samples-cta").backstretch([BackStretchImg.src],{duration:3e3,fade:750})});

@@ -15,6 +15,17 @@ function genesis_sample_google_fonts() {
 
 }
 
+
+/** Load jQuery and bootstrap.js script  just before closing Body tag */
+add_action('genesis_after_footer', 'samples_script_add_body');
+function samples_script_add_body() {
+      
+      wp_register_script ('bootstrap', '/wp-content/themes/samples/js/vendor/bootstrap.min.js' ); 
+      
+      wp_enqueue_script( 'bootstrap', '/wp-content/themes/samples/js/vendor/bootstrap.min.js', '3.3', false );
+      
+}
+
 //* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
 
@@ -26,3 +37,22 @@ add_theme_support( 'custom-background' );
 
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
+
+
+//* Register widget areas
+genesis_register_sidebar( array(
+	'id'          	=> 'samples-cta-overlay',
+	'name'       	  => __( 'Samples Hero Image CTA', 'samples' ),
+	'description'	  => __( 'Widgets placed here will appear on top of hero page template background image.', 'samples' ),
+) );
+
+
+/** Customize Genesis Footer */
+/** This snippet will help to modify the complete genesis footer area */
+remove_action( 'genesis_footer', 'genesis_do_footer' );
+add_action( 'genesis_footer', 'samples_footer' );
+function samples_footer() {
+    ?>
+    <p>&copy; Copyright 2015 <a href="http://mysite.com">MySite</a> &middot; All Rights Reserved &middot; And Our <a href="http://mysite.com/sitemap.xml" target="_blank">Sitemap</a> &middot; All Logos &amp; Trademark Belongs To Their Respective Owners&middot; </p>
+    <?php
+}

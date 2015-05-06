@@ -1,0 +1,174 @@
+/* ===========================
+links-n-nav.scss
+============================== */
+
+a, a:visited {
+	color: $blue;
+	text-decoration: none;
+	@include link-trans;
+}
+
+a:hover,
+a:focus  {
+	color: $dark-blue;
+	text-decoration: none;
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition:    all 0.1s ease-in-out;
+	-ms-transition:     all 0.1s ease-in-out;
+	-o-transition:      all 0.1s ease-in-out;
+	transition:         all 0.1s ease-in-out;
+}
+
+
+/* navigation ================== */
+
+
+.main-navigation {
+	display: none;
+	@include tablet {
+  		display: none;
+  	}
+
+  	@include desktop {
+  		display: block;
+  	}
+}
+
+#site-navigation {
+	position: relative;
+	background-color: $black;
+}
+
+#site-navigation #primary-menu  li  {
+	padding: 14px 15px 14px 15px;
+	font-size: 16px;
+
+
+	&:focus,
+	&:hover {
+		background-color: $orange;
+	}
+
+	a {
+		font-weight: 700;
+		color: $white;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		&:hover,
+		&:focus {
+			color: $white;
+		}
+	}
+	
+	&.menu-item-has-children {
+		padding-right: 20px;
+	}
+	&.menu-item-has-children:after {
+		@include desktop {
+			content: ' ';
+		  	height: 0;
+		  	position: absolute;
+		  	top: 21px; 
+		  	right: 6px;
+		  	width: 0;
+		  	border: 5px solid transparent;
+		  	border-top-color: #fff;
+		}
+	}
+	
+}
+
+
+#site-navigation #primary-menu  ul {
+	top: 50px;
+
+	li {
+		background-color: $orange;
+		font-size: 15px;
+		padding: 12px 14px;
+	}
+}
+
+.main-navigation ul li:hover > ul, 
+.main-navigation ul li.focus > ul {
+  left: 0;
+
+  li:hover,
+  li:focus {
+  	background-color: darken($orange, 10%) !important;
+  }
+}
+
+.main-navigation ul ul a {
+  width: 230px;
+}
+
+/* search ================== */
+
+.nav-trigger {
+	color: $gray;
+	font-size: 16px;
+	padding: 14px 4px 0;
+	cursor: pointer;
+	@include link-trans;
+
+	&:hover,
+	&:focus {
+		color: $orange;
+	}
+}
+
+#nav-search {
+	position: absolute;
+	top: 48px;
+	left: 30%;
+	display: none;
+	overflow: hidden;
+	padding: 8px 0 4px;
+	background-color: darken($black, 5%);
+	width: 40%;
+	color: $white;
+	font-size: 16px;
+	z-index: 100;
+	text-align: center;
+	@include link-trans;
+
+	input[type="search"] {
+		border-radius: 4px;
+		border: none;
+		padding: 6px 12px;
+		color: $gray;
+		width: 300px;
+		font-weight: $regular;
+	}
+	input[type="submit"] {
+		background-color: transparent;
+		border: none;
+		display: inline-block;	
+		color: $orange;
+		width: auto;
+		@include link-trans;
+
+		&:hover,
+		&:focus {
+			color: darken($orange, 10%);
+		}
+	}
+
+	// &.active {
+	// 	height: auto;
+	// }
+
+}

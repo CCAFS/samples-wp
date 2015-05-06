@@ -1,0 +1,205 @@
+// homepage.scss
+.home.banner .row {
+	height: 100%;
+	max-height: 600px;
+	overflow: hidden;
+    position: relative;
+}
+
+.home-banner-img {
+	position: relative;
+	background: url(images/home-bkgr-green-shirt-sm.jpg) no-repeat right top;
+	padding-top: 50%;  
+	min-height: 300px;
+	background-size: cover;
+	-moz-background-size: cover;  /* Firefox 3.6 */
+	
+
+	@include tablet {
+		background: url(images/home-bkgr-green-shirt.jpg) no-repeat right top;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		padding-top: 45%; 
+		max-height: 600px;
+		
+	}
+
+	@include desktop {
+		
+		padding-top: 40%; 
+		
+		
+	}
+
+	.overlay {
+		position: absolute;
+		bottom: 5%;
+		left: 5%;
+		width: 45%;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, .6);
+
+		@include tablet {
+		
+			
+			padding: 20px;
+			width: 80%;
+		}
+
+		@include desktop {
+			
+			width: 70%;
+			max-width: 640px;
+			left: auto;
+			right: 10%;
+			bottom: auto;
+			top: 50%;
+		}
+		@include cinema {
+			
+			width: 68%;
+		
+			left: auto;
+			right: 10%;
+			bottom: auto;
+			top: 50%;
+		}
+
+		p {
+			color: $white;
+			font-weight: $regular;
+			font-size: 16px;
+			padding: 0;
+			margin: 0;
+			@include tablet {
+				font-size: 18px;
+			}
+
+			@include desktop {
+				font-size: 20px;
+			}
+
+			@include cinema {
+				font-size: 23px;
+			}
+		}
+	}
+}
+
+.home-panels {
+	position: relative;
+    right: 0;
+    top: 0;
+	height: 100%;
+	padding: 0 !important;
+
+	@include tablet {
+		position: absolute;
+	}
+
+
+	.panel {
+		width: 100%;
+		height: 50%;
+		float: left;
+		border-radius: 0;
+		padding: 10px;
+		margin: 0;
+		color: $white;
+
+		@include foureighty {
+			width: 50%;
+			height: 150px;
+			padding: 12px;
+			float: left;
+			h4 {font-size: 18px;}
+		}
+
+		@include tablet {
+			width: 100%;
+			height: 50%;
+			padding: 12px;
+			h4 {font-size: 18px;}
+		}
+
+		@include desktop {
+			padding: 15px 30px;
+			h4 {font-size: 22px;}
+		}
+
+		.col-xs-9 {
+			padding-left: 0;
+		}
+	}
+
+	.panel-top {
+		background: url(images/home-callout-light.gif) repeat;
+		&:hover, 
+		&:focus {
+			background: url(images/home-callout-darker.gif) repeat;
+		}
+	}
+
+	.panel-bottom {
+		background: url(images/home-callout-dark.gif) repeat;
+		&:hover, 
+		&:focus {
+			background: url(images/home-callout-darker.gif) repeat;
+		}
+	}
+
+	.panel-wrap {
+		padding: 4% 0 0;
+		
+		@include cinema {
+			padding: 10% 0 0;
+		}
+
+		p {
+			font-size: 12px;
+			margin-bottom: 10px;
+			@include tablet {
+				font-size: 15px;
+			}
+			@include desktop {
+				font-size: 16px;
+			}
+			@include cinema {
+				font-size: 18px;
+			}
+		}
+
+	
+
+		a, 
+		a:visited {
+			display: inline-block;
+			font-size: 14px;
+			font-weight: $bold;
+			text-transform: uppercase;
+			color: $white;
+
+			@include desktop {
+				font-size: 18px;
+			}
+
+
+			img {
+				display: inline-block;
+				padding-left: 20px;
+			}
+		}
+
+		
+	}
+}
+
+.view-link {
+	@include link-trans;
+
+	&:hover,
+	&:focus {
+		color: $orange;
+		opacity: .7;	
+	}
+}

@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){jQuery(".nav-trigger").click(function(){jQuery("#nav-search").fadeToggle(100,"linear")})});

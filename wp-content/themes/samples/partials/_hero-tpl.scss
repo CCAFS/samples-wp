@@ -1,0 +1,197 @@
+/*
+hero page template
+-------------------------------------- */
+ 
+.samples-hero-image {
+	background: #f7f7f7;
+}
+ 
+.samples-hero-image .head-wrap {
+	margin: 0;
+}
+ 
+.samples-hero-image .site-inner {
+	max-width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+ 
+.samples-hero-image .entry {
+	border: none;
+}
+ 
+.samples-hero-image h1,
+.samples-hero-image h2,
+.samples-hero-image h3,
+.samples-hero-image h4,
+.samples-hero-image h5,
+.samples-hero-image h6 {
+	text-align: center;
+}
+ 
+.samples-hero-image h1 {
+	color: #1895DC;
+	margin-bottom: 2.4rem;
+}
+ 
+.samples-hero-image h2 {
+	color: #000;
+}
+ 
+.samples-hero-image .entry-content ul {
+	margin-left: 2rem;
+}
+ 
+.samples-hero-image .entry-content ul li {
+	list-style: none;
+	background: url('images/checkmark-blue.png') no-repeat left 4px;
+	padding-left: 3rem;
+	margin-bottom: 2rem;
+}
+ 
+.samples-hero-image .entry-content a {
+	color: #305891;
+	border-bottom: 1px dotted #ddd;
+}
+ 
+.samples-hero-image .entry-content a:hover {
+	border-bottom: 1px solid #ddd;
+}
+ 
+@media only screen and (max-width: 1023px) {
+ 
+	.samples-hero-image .entry {
+		padding: 40px 40px 24px;
+		padding: 4rem 4rem 2.4rem;
+	}
+ 
+}
+ 
+@media only screen and (max-width: 768px) {
+ 
+	.samples-hero-image .site-inner {
+		max-width: 768px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+ 
+}
+ 
+@media only screen and (max-width: 480px) {
+ 
+	.samples-hero-image .site-inner {
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+ 
+}
+ 
+/* 
+Sales page call to action widget area
+------------------------------------------ */
+ 
+.sales-cta {
+	background-color: #fff;
+	width: 100%;
+	display: block;
+	height: 500px;
+}
+ 
+.sales-cta .wrap {
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+	width: 1140px;
+   	padding-top: 100px;
+   	padding-left: 20px;
+}
+ 
+.sales-cta h1 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
+	margin-bottom: 18px;
+	padding: 0;
+}
+ 
+.sales-cta h1.white {
+	font-size: 20px;
+	color: #fff;
+}
+ 
+.sales-cta h1.black {
+	font-size: 20px;
+	color: #000;
+}
+ 
+.tagline {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	margin-bottom: 60px;
+	margin-bottom: 3.75rem;
+}
+ 
+.tagline.large {
+	font-size: 60px;
+	font-size: 3.75rem;
+	line-height: 1.3;
+	padding: 0;
+}
+ 
+.tagline.small {
+	font-size: 30px;
+	font-size: 1.875rem;
+	line-height: 1;
+	padding: 0;
+}
+ 
+.tagline.black {
+	color: #000 !important;
+}
+ 
+.tagline.white {
+	color: #fff !important;
+}
+ 
+.tagline.blue {
+	color: #60b1ea !important;
+}
+ 
+@media only screen and (max-width: 768px) {
+	
+	.sales-cta .wrap {
+		width: 100%;
+		text-align: center;
+		padding-top: 100px;
+	}
+ 
+}
+ 
+@media only screen and (max-width: 480px) {
+	
+	.sales-cta {
+		height: 350px;
+	}
+	
+	.sales-cta .wrap {
+		width: 100%;
+		text-align: center;
+		padding-top: 40px;
+		padding-left: 0;
+	}
+	
+	.tagline.large {
+		font-size: 35px;
+		line-height: 1.5;
+		padding: 0;
+	}
+ 
+	.tagline.small {
+		font-size: 25px;
+		line-height: 1;
+		padding: 0;
+	}
+ 
+}

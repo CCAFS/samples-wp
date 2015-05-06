@@ -1,0 +1,23 @@
+/* ------------------------------
+layout.scss
+---------------------------------*/
+
+/* header ================================ */ 
+
+.site-branding {
+	position: relative;
+	padding: 15px 10px;
+
+	.partners img {
+		display: none;
+		@include desktop {
+			display: block;
+			max-width: 280px;
+		}
+	}
+
+}
+
+
+
+
