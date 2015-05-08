@@ -288,6 +288,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/file.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 351,
+		"inputAbbreviatedPath": "\/images\/file.png",
+		"outputAbbreviatedPath": "\/images\/file.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/Gund.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -295,6 +306,39 @@
 		"initialSize": 59473,
 		"inputAbbreviatedPath": "\/images\/Gund.png",
 		"outputAbbreviatedPath": "\/images\/Gund.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/measurements-25.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11505,
+		"inputAbbreviatedPath": "\/images\/heroes\/measurements-25.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/measurements-25.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/measurements-50.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 35131,
+		"inputAbbreviatedPath": "\/images\/heroes\/measurements-50.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/measurements-50.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/measurements.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 99090,
+		"inputAbbreviatedPath": "\/images\/heroes\/measurements.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/measurements.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -668,6 +712,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/page-tpl-full-width.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/page-tpl-full-width.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/page-tpl-general.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/page-tpl-general.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/page.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -718,6 +780,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/partials\/_global.scss",
 		"outputAbbreviatedPath": "\/css\/_global.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/partials\/_heroes.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 1,
+		"decimalPrecision": 2,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/partials\/_heroes.scss",
+		"outputAbbreviatedPath": "\/css\/_heroes.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -814,6 +892,22 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/partials\/_plugins.scss",
 		"outputAbbreviatedPath": "\/css\/_plugins.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/partials\/_sidebar.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 1,
+		"decimalPrecision": 2,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/partials\/_sidebar.scss",
+		"outputAbbreviatedPath": "\/css\/_sidebar.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -951,6 +1045,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/template-parts\/content-none.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/template-parts\/content-original.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/template-parts\/content-original.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

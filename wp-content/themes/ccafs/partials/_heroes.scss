@@ -1,0 +1,73 @@
+/* hero images ============================*/
+
+/* ===========================
+responsive hero images based on body classes
+============================== */
+.page-id-529 .banner.general {
+	
+	height: 150px;
+	padding-top: 50px;
+	@include tablet {
+		height: 260px;
+		padding-top: 80px;
+	}
+	@include desktop {
+		height: 300px;
+		padding-top: 100px;
+	}
+	@include cinema {
+		height: 360px;
+		padding-top: 120px;
+	}
+
+}
+
+
+
+
+@media (max-width: 499px) {
+	.page-id-529 .banner.general {
+		background: url(images/heroes/measurements-25.jpg) no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;  /* Internet Explorer 7/8 */
+		background-repeat: no-repeat;
+	}
+
+	
+}
+
+@media (min-width: 500px) and (max-width: 999px) {
+
+	.page-id-529 .banner.general {
+		background: url(images/heroes/measurements-50.jpg) no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;  /* Internet Explorer 7/8 */
+		background-repeat: no-repeat;
+	}
+	
+}
+
+@media (min-width: 1000px) {
+	.page-id-529 .banner.general {
+		background: url(images/heroes/measurements.jpg) no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;  /* Internet Explorer 7/8 */
+		background-repeat: no-repeat;
+	}
+	
+}
+
+
+/* positioning and color the header text ==================*/
+
+.page-id-529 {
+	h1.entry-title {
+		color: $orange;
+	}
+	h4.subheader {
+		color: $white;
+	}
+}

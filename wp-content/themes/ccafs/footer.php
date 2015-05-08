@@ -8,55 +8,59 @@
  */
 ?>
 
-	</div><!-- #content -->
+		 	</div><!-- #content -->
+		 </div><!-- #page -->
+	</div><!-- /.main-wrap --> 
+	<div class="footer-wrap">
+		<div class="pre-footer partner-logos ">
+			<div class="container">
+			 	<ul>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CIFOR_logo_small.png" class="img-responsive" alt="CIFOR" /></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CIAT.png" class="img-responsive" alt="CIAT"/></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ICRISAT.png" class="img-responsive" alt="ICRISAT"/></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/IITA.png" class="img-responsive" alt="IITA"/></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ILRI.png" class="img-responsive" alt="ILRI"/></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CimmyT.png" class="img-responsive" alt="CIMMYT"/></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/IRRI-logo-sm.png" class="img-responsive" alt="IRRI"/></a></li>
+			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ICRAF_logo-sm.png" class="img-responsive" alt="WAC"/></a></li>
+			 	</ul>
+			</div><!-- /container -->
+		</div><!-- /partner-logos -->
 
-	<div class="pre-footer partner-logos container">
-	 	<ul>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CIFOR_logo_small.png" class="img-responsive" alt="CIFOR" /></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CIAT.png" class="img-responsive" alt="CIAT"/></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ICRISAT.png" class="img-responsive" alt="ICRISAT"/></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/IITA.png" class="img-responsive" alt="IITA"/></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ILRI.png" class="img-responsive" alt="ILRI"/></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CimmyT.png" class="img-responsive" alt="CIMMYT"/></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/IRRI-logo-sm.png" class="img-responsive" alt="IRRI"/></a></li>
-	 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ICRAF_logo-sm.png" class="img-responsive" alt="WAC"/></a></li>
-	 	</ul>
-	</div><!-- /partner-logos -->
-
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="container">
-			<div class="row clearfix">
-				<div class="col-sm-4 footer-logos">
-					<div class="footer-col-wrap">
-						<a href="http://ccafs.cgiar.org/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/CCAFS_White.png" class="img-responsive" alt="CIFOR" /></a></a>
+		<footer id="colophon" class="site-footer" role="contentinfo">
+			<div class="container">
+				<div class="row clearfix">
+					<div class="col-sm-4 footer-logos">
+						<div class="footer-col-wrap">
+							<a href="http://ccafs.cgiar.org/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/CCAFS_White.png" class="img-responsive" alt="CIFOR" /></a></a>
+						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-4 footer-address">
-					<div class="footer-col-wrap">	
-					<p>
-						CCAFS Low Emissions Agriculture<br />
-						Gund Institute for Ecological Economics<br />
-						University of Vermont<br />
-						617 Main Street<br />
-						Burlington, Vermont 05405 USA</p>
+					<div class="col-sm-4 footer-address">
+						<div class="footer-col-wrap">	
+						<p>
+							CCAFS Low Emissions Agriculture<br />
+							Gund Institute for Ecological Economics<br />
+							University of Vermont<br />
+							617 Main Street<br />
+							Burlington, Vermont 05405 USA</p>
+						</div>
 					</div>
-				</div>
 
-				<div class="col-sm-4 footer-contact-info">
-					<div class="footer-col-wrap last">
-					    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Envelope.png" class="pull-left footer-icon" alt="email"/><a href="mailto:julianna.m.white@uvm.edu" class="footer-email pull-left">julianna.m.white@uvm.edu</a></div>
+					<div class="col-sm-4 footer-contact-info">
+						<div class="footer-col-wrap last">
+						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Envelope.png" class="pull-left footer-icon" alt="email"/><a href="mailto:julianna.m.white@uvm.edu" class="footer-email pull-left">julianna.m.white@uvm.edu</a></div>
 
-					    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Phone.png" class="pull-left footer-icon phone" alt="phone"/><span class="footer-phone pull-left">+1-802-656-0836</span></div>
-				    </div>
-				</div>
+						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Phone.png" class="pull-left footer-icon phone" alt="phone"/><span class="footer-phone pull-left">+1-802-656-0836</span></div>
+					    </div>
+					</div>
 
-			</div><!-- /row -->
-		</div><!-- /container -->
-		
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+				</div><!-- /row -->
+			</div><!-- /container -->
+			
+		</footer><!-- #colophon -->
 
+	</div><!-- /footer-wrap -->
 <?php wp_footer(); ?>
 
 </body>

@@ -2,6 +2,29 @@
 layout.scss
 ---------------------------------*/
 
+/* keep the footer at the bottom of the browser window */
+@media (min-width: 768px) {
+	html, body {
+	  height: 100%;
+	}
+
+	.main-wrap {
+	  min-height: 100%;
+	}
+
+	#content {
+	  // padding-bottom:340px; /* this needs to be bigger than footer height*/
+	}
+
+	.footer {
+	  position: relative;
+	  margin-top: -340px; /* negative value of footer height */
+	  height: 340px;
+	  clear:both;
+	}
+}
+
+
 /* header ================================ */ 
 
 .site-branding {
@@ -19,12 +42,39 @@ layout.scss
 }
 
 
+#primary {
+	padding: 30px 15px;
+
+	@include tablet {
+		padding: 50px 15px;
+	}
+}
+
+.sidebar {
+	padding: 30px 0;
+	@include tablet {
+		padding: 50px 0;
+	}
+}
+
+.banner.general {
+	padding: 30px 0;
+	background: url(images/page-title-bkgr.gif) repeat;
+
+	@include desktop {
+		padding: 70px 0;
+	}
+}
+
 /* footer ================================ */ 
 
 .partner-logos {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid #eee;
+
 	ul {
 		width: 100%;
-		padding-bottom: 40px;
 		overflow: hidden;
 	}
 
@@ -40,7 +90,7 @@ layout.scss
 
 		&:hover,
 		&:focus {
-			opacity: 0.7;
+			opacity: 0.5;
 		}
 
 		&:nth-child(5) {

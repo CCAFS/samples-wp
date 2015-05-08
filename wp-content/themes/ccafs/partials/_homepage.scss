@@ -194,12 +194,34 @@
 	}
 }
 
-.view-link {
-	@include link-trans;
+.home-intro-block {
+	p {font-size: 19px;}
 
-	&:hover,
-	&:focus {
-		color: $orange;
-		opacity: .7;	
+	.more-plus-arrow a {
+		color: $black;
+	}
+
+	.more-plus-arrow.map a {
+		color: $white;
+	}
+}
+
+.map-block {
+	background: url(images/map-bkgr.gif) no-repeat center top;
+	background-size: cover;
+	padding: 20px 15px 0;
+
+	h5 {text-transform: none;}
+
+	@include desktop {
+		padding: 40px 30px 0;
+	}
+}
+
+.news-column {
+	padding-top: 30px;
+
+	@include tablet {
+		padding-top: 0;
 	}
 }

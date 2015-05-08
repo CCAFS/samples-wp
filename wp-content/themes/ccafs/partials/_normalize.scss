@@ -9,6 +9,7 @@ html {
 
 body {
 	margin: 0;
+	background-color: #fff;
 }
 
 article,
@@ -482,6 +483,7 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
+	margin-bottom: 0;
 }
 
 .main-navigation a {

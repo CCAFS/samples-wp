@@ -30,6 +30,13 @@ textarea:focus,
 	transition:         all 0.1s ease-in-out;
 }
 
+a.footer-email:link,
+a.footer-email:visited {
+	color: $white;
+
+	&:hover,
+	&:focus {color: $blue;}
+}
 
 /* navigation ================== */
 

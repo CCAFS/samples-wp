@@ -28,31 +28,32 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ccafs' ); ?></a>
+<div class="main-wrap">
+	<div id="page" class="hfeed site">
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ccafs' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding container">
+		<header id="masthead" class="site-header" role="banner">
+			<div class="site-branding container">
+				
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<div class="partners pull-right">
+					<a href="http://ccafs.cgiar.org/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/ccafs_new_logo_transp_rgb.png" alt="CCAFS logo" /></a></div>
+				</div><!-- /partners -->
+				
+			</div><!-- .site-branding -->
+
+			<nav id="site-navigation" class="main-navigation" role="navigation">
+				<div class="container">
+				<span class="nav-trigger glyphicon glyphicon-search pull-right" aria-hidden="true"></span>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				</div>
+				<?php dynamic_sidebar( 'header-search' ); ?>
+
+			</nav><!-- #site-navigation -->
+
 			
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<div class="partners pull-right">
-				<a href="http://ccafs.cgiar.org/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/ccafs_new_logo_transp_rgb.png" alt="CCAFS logo" /></a></div>
-			</div><!-- /partners -->
-			
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="container">
-			<span class="nav-trigger glyphicon glyphicon-search pull-right" aria-hidden="true"></span>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</div>
-			<?php dynamic_sidebar( 'header-search' ); ?>
+		</header><!-- #masthead -->
 
-		</nav><!-- #site-navigation -->
-
-		
-
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content">
+		<div id="content" class="site-content">

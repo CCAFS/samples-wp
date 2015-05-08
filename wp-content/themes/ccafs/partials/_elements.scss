@@ -2,6 +2,43 @@
 Elements 
 =============================================*/
 
+/* arrow and their links 
+----------------------------------------------*/
+.more-plus-arrow {
+	margin-bottom: 30px;
+	@include link-trans;
+
+	&:hover,
+	&:focus {
+
+		opacity: .7;	
+	}
+
+	a {
+		font-weight: $bold;
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+
+	img {
+		padding-left: 8px;
+		margin-top: -2px;
+	}
+}
+
+
+.view-link {
+	@include link-trans;
+
+	&:hover,
+	&:focus {
+	
+		opacity: .7;	
+	}
+}
+
+
+
 /* ## Widget Area
 --------------------------------------------- */
 
