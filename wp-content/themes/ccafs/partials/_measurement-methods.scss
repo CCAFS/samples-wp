@@ -1,0 +1,30 @@
+/* measurement method styles ===================== */
+
+/* caret to show more */
+.mm-chapter-list > li .mm-caret {
+	display: inline-block;
+  	height: 0;
+  	width: 0;
+  	margin: 6px 0 0 12px;
+  	border: 5px solid transparent;
+  	border-top-color: $black;
+  	cursor: pointer;
+  	-webkit-transition: all linear 0.2s;
+	transition: all linear 0.2s;
+
+	&.open {
+		transform: rotate(0.5turn); 
+	}
+
+}
+
+
+.mm-subnav {
+	/* reveal with jquery */
+	display: none;
+	padding-top: 8px;
+
+	a {
+		cursor: pointer;
+	}
+}

@@ -37,6 +37,16 @@ Elements
 	}
 }
 
+.show-hide-trigger {
+	display: block; 
+	cursor: pointer;
+}
+
+.show-hide-wrapper {
+	/* reveal w/ jquery */
+	display: none;
+}
+
 
 
 /* ## Widget Area

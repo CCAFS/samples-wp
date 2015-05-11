@@ -24,7 +24,7 @@ get_header(); ?>
 				<div class="panel panel-top ">
 					<div class="row panel-wrap">
 						<div class="icon emissions-data col-xs-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/EmissionsData.png" class="responsive" alt="Emissions Data" />
+							<img src="<?php echo get_template_directory_uri(); ?>/images/EmissionsData.png" class="panel-icon" alt="Emissions Data" />
 						</div>
 						<div class="col-xs-9">
 							<h4>Emissions Data</h4>
@@ -39,7 +39,7 @@ get_header(); ?>
 				<div class="panel panel-bottom">
 					<div class="row panel-wrap">
 						<div class="icon emissions-data col-xs-3">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/MeasurementMethods.png" class="responsive" alt="Measurement Methods" />
+							<img src="<?php echo get_template_directory_uri(); ?>/images/MeasurementMethods.png" class="panel-icon" alt="Measurement Methods" />
 						</div>
 						<div class="col-xs-9">
 							<h4>Measurement methods</h4>

@@ -32,4 +32,35 @@
 
 		img {padding-right: 10px;}
 	}
+
+	.sb-text-input {
+		@include desktop {
+			min-width: 90%;
+			height: 40px;
+			margin-top: 1px;
+		}
+	}
+	.sb-search-submit-input {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 40px;
+		width: 40px;
+		opacity: 0; /* hide to allow icon to cover */
+	}
+
+	.sb-search-submit {
+		position: relative;
+		width: 10%;
+		height: 40px;
+		padding: 2px 8px;
+		line-height: 2;
+		overflow: hidden;
+		background-color: $gray;
+		color: $white;
+		z-index: 100;
+		cursor: pointer;
+
+
+	}
 }

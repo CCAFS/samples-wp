@@ -124,11 +124,21 @@
 
 		@include desktop {
 			padding: 15px 30px;
-			h4 {font-size: 22px;}
+			h4 {font-size: 24px;}
+		}
+
+		@include cinema {
+			h4 {font-size: 28px;}
 		}
 
 		.col-xs-9 {
 			padding-left: 0;
+		}
+		.panel-icon {
+			display: block;
+			width: 85%;
+			max-width: 80px;
+			margin: 0 auto;
 		}
 	}
 

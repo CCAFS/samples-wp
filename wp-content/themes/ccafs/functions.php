@@ -78,6 +78,21 @@ function ccafs_setup() {
 endif; // ccafs_setup
 add_action( 'after_setup_theme', 'ccafs_setup' );
 
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+  register_post_type( 'mm_chapter',
+    array(
+      'labels' => array(
+        'name' => __( 'MM Chapters' ),
+        'singular_name' => __( 'MM Chapter' )
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'rewrite' => array('slug' => 'measurement-methods'),
+    )
+  );
+}
+
 /**
  * Register widget area.
  *
@@ -156,3 +171,16 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/* Creating custom search function for Measurement Methods */
+ function template_chooser($template)   
+{    
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'mm_chapter' )   
+  {
+    return locate_template('mm-chapter-search.php');  
+  }   
+  return $template;   
+}
+add_filter('template_include', 'template_chooser'); 
