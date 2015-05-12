@@ -11,25 +11,42 @@
  */
 
 get_header(); ?>
+	
+	<div class="banner general">
+			<div class="container header-wrapper">
+				<header class="entry-header">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+					<h4 class="subheader"><?php echo CFS()->get('subheader'); ?></h4>
+				</header><!-- .entry-header -->
+			</div><!-- /header-wrapper -->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	</div><!-- /banner -->
+	<div  class="content-area container">
+		<div class="row">
+			<div class="col-sm-7" id="primary">
+				<main id="main" class="site-main" role="main">
+					
+					
+					
 
-			<?php while ( have_posts() ) : the_post(); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+							<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+						<?php endwhile; // end of the loop. ?> 
 
-			<?php endwhile; // end of the loop. ?>
+				</main><!-- #main -->
+			</div><!-- #primary -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+			<div class="col-sm-4 col-sm-offset-1 sidebar">
+				
+				<?php get_sidebar(); ?>
+				
+			</div><!-- /sidebar -->
 
-<?php get_sidebar(); ?>
+		</div><!-- /row -->
+
+		
+	</div><!-- /content-area -->
+
 <?php get_footer(); ?>

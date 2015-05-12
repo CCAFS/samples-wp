@@ -310,6 +310,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/heroes\/about-25.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23454,
+		"inputAbbreviatedPath": "\/images\/heroes\/about-25.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/about-25.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/about-50.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 40436,
+		"inputAbbreviatedPath": "\/images\/heroes\/about-50.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/about-50.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/about.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 116642,
+		"inputAbbreviatedPath": "\/images\/heroes\/about.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/about.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/heroes\/measurements-25.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -339,6 +372,39 @@
 		"initialSize": 99090,
 		"inputAbbreviatedPath": "\/images\/heroes\/measurements.jpg",
 		"outputAbbreviatedPath": "\/images\/heroes\/measurements.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/tools-25.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13158,
+		"inputAbbreviatedPath": "\/images\/heroes\/tools-25.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/tools-25.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/tools-50.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16695,
+		"inputAbbreviatedPath": "\/images\/heroes\/tools-50.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/tools-50.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/heroes\/tools.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 41256,
+		"inputAbbreviatedPath": "\/images\/heroes\/tools.jpg",
+		"outputAbbreviatedPath": "\/images\/heroes\/tools.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -721,20 +787,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/page-tpl-full-width.php": {
+	"\/page-mm-overview.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/page-tpl-full-width.php",
+		"inputAbbreviatedPath": "\/page-mm-overview.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/page-tpl-general.php": {
+	"\/page-tpl-tools-full-width.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/page-tpl-general.php",
+		"inputAbbreviatedPath": "\/page-tpl-tools-full-width.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -940,6 +1006,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/partials\/_tools.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 1,
+		"decimalPrecision": 2,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/partials\/_tools.scss",
+		"outputAbbreviatedPath": "\/css\/_tools.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/partials\/_type.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 1,
@@ -1124,6 +1206,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/template-parts\/content.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/xxxpage-tpl-full-width.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/xxxpage-tpl-full-width.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

@@ -46,8 +46,13 @@ layout.scss
 	padding: 30px 15px;
 
 	@include tablet {
-		padding: 50px 15px;
+		padding: 70px 15px;
 	}
+}
+
+/* neutralize this so that pages have same opening padding and margin */
+.entry-content {
+	margin-top: 0;
 }
 
 .sidebar {

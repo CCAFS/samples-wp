@@ -45,7 +45,7 @@ get_header(); ?>
 							<span class="glyphicon glyphicon-search sb-search-submit pull-right">
 								<input class="sb-search-submit-input" alt="Search" type="submit" />
 							</span>
-							<input name="s" type="text" class="sb-text-input pull-right" placeholder="" />
+							<input name="s" type="text" class="sb-text-input pull-right" placeholder="Enter term" />
 
 							<input name="post_type" type="hidden" value="mm_chapter" /> <!-- // hidden 'mm_chapter' value -->
 							

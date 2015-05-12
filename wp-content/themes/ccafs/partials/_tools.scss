@@ -1,0 +1,36 @@
+/* tools ==================== */
+
+h2.tool-category {
+	border-bottom: 1px solid $border;
+	@include tablet {
+		margin-bottom: 20px;
+		font-size: 32px;
+	}
+	
+}
+
+
+.tool-category-outer {
+	margin-bottom: 30px;
+}
+
+.category-tool-wrap {
+	@include tablet {
+		width: 33%;
+		padding-right: 3%;
+		float: left;
+
+		&:last-child {
+			padding-right: 0;
+		}
+
+		h3 {font-size: 24px;}
+
+		p {color: $gray;}
+	}
+
+
+
+
+
+}
