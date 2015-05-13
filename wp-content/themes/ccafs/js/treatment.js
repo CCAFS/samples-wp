@@ -279,7 +279,7 @@ $(document).ready(function($) {
 
   $('#country').select2({
     placeholder: "Search for a country",
-//    minimumInputLength: 3,
+    allowClear: true,
     ajax: {
       url: templatePath + "/dataSelectFilter.php",
       dataType: 'json',

@@ -63,8 +63,14 @@ a.footer-email:visited {
 
 
 	&:focus,
-	&:hover {
+	&:hover,
+	&.current-menu-item  {
 		background-color: $orange;
+	}
+
+	
+	&.current-menu-parent {
+		background-color: darken($orange, 7%) !important;
 	}
 
 	a {

@@ -1,11 +1,6 @@
 <?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+
+/* 
  *
  * @package ccafs
  */
@@ -23,7 +18,7 @@ get_header(); ?>
 	</div><!-- /banner -->
 	<div  class="content-area container">
 		<div class="row">
-			<div class="col-sm-7" id="primary">
+			<div class="col-sm-12" id="primary">
 				<main id="main" class="site-main" role="main">
 					
 					
@@ -36,17 +31,11 @@ get_header(); ?>
 						<?php endwhile; // end of the loop. ?> 
 
 				</main><!-- #main -->
-			</div><!-- #primary -->
 
-			<div class="col-sm-4 col-sm-offset-1 sidebar">
-				
-				<?php get_sidebar(); ?>
-				
-			</div><!-- /sidebar -->
+			</div><!-- #primary -->
 
 		</div><!-- /row -->
 
-		
 	</div><!-- /content-area -->
 
 <?php get_footer(); ?>

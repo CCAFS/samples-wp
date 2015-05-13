@@ -1,6 +1,6 @@
 <?php
 
-/* The template for displaying all Measurement Methods Chapters.
+/* Template Name: MM Overview Template 
  *
  * @package ccafs
  */
@@ -10,7 +10,6 @@ get_header(); ?>
 	<div class="banner general">
 			<div class="container header-wrapper">
 				<header class="entry-header">
-					<div class="uppercase">Measurement Methods</div>
 					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 					<h4 class="subheader"><?php echo CFS()->get('subheader'); ?></h4>
 				</header><!-- .entry-header -->
