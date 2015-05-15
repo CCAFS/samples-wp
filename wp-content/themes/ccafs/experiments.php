@@ -7,11 +7,11 @@
 get_header();
 $version = '1.0';
 ?>
-<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/select2/4.0.0/select2.css?<?php echo $version; ?>">
-<script src="<?php echo get_template_directory_uri(); ?>/js/select2/4.0.0/select2.min.js?<?php echo $version; ?>"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/js/select2/3.5.2/select2.css?<?php echo $version; ?>">
+<script src="<?php echo get_template_directory_uri(); ?>/js/select2/3.5.2/select2.js?<?php echo $version; ?>"></script>
 <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/3cfcc339e89/integration/jqueryui/dataTables.jqueryui.css">
 <link rel="stylesheet" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">
 <script type="text/javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
@@ -196,24 +196,24 @@ $ipcc2006 = array(
   <div id="form-content">
     <form id="filtersh" class="pure-form pure-form-stacked" style="background: #e2e2e2; padding: 20px;">
       <label for="region">Region</label>
-
-      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="region" id="region" onchange="onchangeSubmit()">
+      <input type="hidden" id="region" name="region" onchange="onchangeSubmit()" class="js-data-ajax">
+<!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="region" id="region" onchange="onchangeSubmit()">
         <?php
         if (isset($_GET['region'])) {
           echo "<option value='" . $_GET['region'] . "' selected='selected'>" . $_GET['region'] . "</option>";
         }
         ?>
-      </select>
+      </select>-->
 
       <label for="country">Country</label>
-
-      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="country" id="country" onchange="onchangeSubmit()">
+      <input type="hidden" id="country" name="country" onchange="onchangeSubmit()" class="js-data-ajax">
+<!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="country1" id="country" onchange="onchangeSubmit()">
         <?php
         if (isset($_GET['country'])) {
           echo "<option value='" . $_GET['country'] . "' selected='selected'>" . $_GET['country'] . "</option>";
         }
         ?>
-      </select>
+      </select>-->
 
       <label for="ipcc1996">1996 IPCC sink/source category</label>
 
@@ -254,7 +254,7 @@ $ipcc2006 = array(
         ?>
       </select>
       <br><br>
-      <button class="pure-button pure-button-primary" type="submit" >Search</button>
+      <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
       <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
     </form>
   </div>
