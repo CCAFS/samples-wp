@@ -10,6 +10,7 @@
 	
 
 	<div class="entry-content">
+		<?php the_post_thumbnail( 'featured-blog-image' ); ?>
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

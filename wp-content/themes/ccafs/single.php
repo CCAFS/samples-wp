@@ -5,28 +5,58 @@
  * @package ccafs
  */
 
+
 get_header(); ?>
+	
+	<div class="banner general">
+			<div class="container header-wrapper">
+				
+			</div><!-- /header-wrapper -->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	</div><!-- /banner -->
+	<div  class="content-area container">
+		<div class="row">
+			<div class="col-sm-7" id="primary">
+				<main id="main" class="site-main" role="main">
+					
+					
+					
 
-		<?php while ( have_posts() ) : the_post(); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+							<header class="entry-header">
+								<?php the_date(); ?>
+								<?php the_title( '<h1 class="pub-media-title">', '</h1>' ); ?>
+								
+								<div class="post-meta">
+									<span class="post-label">Posted By: </span><span class="post-meta-element"><?php the_author(); ?></span>
+									<span class="post-label">Continent: </span><span class="post-meta-element"><?php the_category(' '); ?></span>
+									<span class="post-label">Topic(s): </span><span class="post-meta-element"><?php the_category(' '); ?></span>
+									<span class="post-label">Category: </span><span class="post-meta-element"><?php the_category(' '); ?></span>
 
-			<?php the_post_navigation(); ?>
+								</div>
+								
+							</header><!-- .entry-header -->
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+							<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+							<?php the_post_navigation(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+						<?php endwhile; // end of the loop. ?> 
 
-<?php get_sidebar(); ?>
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<div class="col-sm-4 col-sm-offset-1 sidebar">
+				
+				<?php get_sidebar(); ?>
+				
+			</div><!-- /sidebar -->
+
+		</div><!-- /row -->
+
+		
+	</div><!-- /content-area -->
+
 <?php get_footer(); ?>
+

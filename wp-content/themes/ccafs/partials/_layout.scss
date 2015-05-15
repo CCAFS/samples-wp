@@ -63,11 +63,11 @@ layout.scss
 }
 
 .banner.general {
-	padding: 30px 0;
+	padding: 20px 0;
 	background: url(images/page-title-bkgr.gif) repeat;
 
 	@include desktop {
-		padding: 70px 0;
+		padding: 40px 0;
 	}
 }
 

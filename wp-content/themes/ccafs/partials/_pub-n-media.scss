@@ -1,0 +1,21 @@
+/* publications & media ===================*/
+
+.pub-media-list {
+	article {
+		margin-bottom: 40px;
+	}
+
+	p {
+		color: $gray;
+	}
+}
+
+.post-label {
+	color: $black;
+	font-weight: $bold;
+	padding-right: 6px;
+}
+
+.post-meta-element {
+	padding-right: 12px;
+}

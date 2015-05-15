@@ -14,6 +14,7 @@ get_header(); ?>
 			<div class="container header-wrapper">
 			
 				<header class="page-header">
+
 					<?php
 						the_archive_title( '<h1 class="entry-title">', '</h1>' );
 						the_archive_description( '<h4 class="subheader">', '</div>' );
@@ -54,6 +55,7 @@ get_header(); ?>
 			<div class="col-sm-4 col-sm-offset-1 sidebar">
 				
 				<?php get_sidebar(); ?>
+				category template
 				
 			</div><!-- /sidebar -->
 

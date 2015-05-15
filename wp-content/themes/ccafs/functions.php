@@ -46,7 +46,11 @@ function ccafs_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
+
+	// Add featured image sizes
+	add_image_size( 'featured-thumb', 250, 160, true );
+	add_image_size( 'featured-blog-image', 700, 450, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -184,3 +188,17 @@ require get_template_directory() . '/inc/jetpack.php';
   return $template;   
 }
 add_filter('template_include', 'template_chooser'); 
+
+
+// limit the excerpt 
+function custom_excerpt_length( $length ) {
+	return 40;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+
+// custom taxonomies 
+
+
+
+
