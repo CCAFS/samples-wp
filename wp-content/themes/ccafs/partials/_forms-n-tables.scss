@@ -5,7 +5,39 @@ forms and tables
 /* ## Forms
 --------------------------------------------- */
 
+input[type="text"],
+textarea,
+input[type="email"] {
+	padding: 8px;
+	border: 1px solid $border;
+	@include link-trans;
 
+	&:focus {
+		border-color: $blue;
+	}
+}
+
+input[type="submit"] {
+	background-color: $blue;
+	border: 3px solid $blue;
+	font-size: 14px;
+	line-height: 1;
+	padding: 5px 20px 3px;
+	text-transform: uppercase;
+	color: $white;
+	@include link-trans;
+
+	@include desktop {
+		padding: 10px 40px 7px;
+		font-size: 16px;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: $white;
+		color: $blue;
+	}
+}
 
 
 /* ## Search Form

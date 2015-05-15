@@ -3,6 +3,7 @@
 /* ===========================
 responsive hero images based on body classes
 ============================== */
+.page-id-87 .banner.general, 
 .page-id-529 .banner.general, 
 .page-id-562 .banner.general,
 .page-id-569 .banner.general {
@@ -28,6 +29,14 @@ responsive hero images based on body classes
 
 
 @media (max-width: 499px) {
+	.page-id-87 .banner.general {
+		background: url(images/heroes/contact-25.jpg) no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;  /* Internet Explorer 7/8 */
+		background-repeat: no-repeat;
+	}
+
 	.page-id-529 .banner.general {
 		background: url(images/heroes/measurements-25.jpg) no-repeat;
 		background-size: cover;
@@ -57,6 +66,14 @@ responsive hero images based on body classes
 
 @media (min-width: 500px) and (max-width: 999px) {
 
+	.page-id-87 .banner.general {
+		background: url(images/heroes/contact-50.jpg) no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;  /* Internet Explorer 7/8 */
+		background-repeat: no-repeat;
+	}
+
 	.page-id-529 .banner.general {
 		background: url(images/heroes/measurements-50.jpg) no-repeat;
 		background-size: cover;
@@ -84,6 +101,14 @@ responsive hero images based on body classes
 }
 
 @media (min-width: 1000px) {
+	.page-id-87 .banner.general {
+		background: url(images/heroes/contact.jpg) no-repeat;
+		background-size: cover;
+		-moz-background-size: cover;  /* Firefox 3.6 */
+		background-position: center;  /* Internet Explorer 7/8 */
+		background-repeat: no-repeat;
+	}
+
 	.page-id-529 .banner.general {
 		background: url(images/heroes/measurements.jpg) no-repeat;
 		background-size: cover;
@@ -113,6 +138,7 @@ responsive hero images based on body classes
 
 /* positioning and color the header text ==================*/
 
+.page-id-87,
 .page-id-529, 
 .page-id-562,
 .page-id-569 {
