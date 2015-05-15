@@ -258,6 +258,8 @@ $ipcc2006 = array(
       <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
     </form>
   </div>
+  <div id="infos-detail" style="display: none">
+  </div>
 </section>
 <?php
 get_footer();

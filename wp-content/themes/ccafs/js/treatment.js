@@ -9,6 +9,7 @@ var markerArray = [];
 //var marker=[];
 var infowindows = [];
 var myLatlng = new google.maps.LatLng(12.968888, 10.138147);
+var infowindow;
 
 function onchangeSubmit() {
 //  jQuery("#filtersh").submit();
@@ -50,11 +51,25 @@ function markerBack(id) {
   jQuery('#markers_content').show();
 }
 
+function emissionMoreInfo(id) {
+  infowindow.close();
+  jQuery( "#contm"+id ).dialog({
+      height: 400,
+      width: 1024,
+//      modal: true,
+      buttons: {
+        Cancel: function() {
+          jQuery( this ).dialog( "close" );
+        }
+      }
+    });
+}
+
 function HomeControl(controlDiv, map) {
   controlDiv.style.padding = '5px';
   var controlUI = document.createElement('div');
-  controlUI.style.backgroundColor = '#fff';
-  controlUI.style.border = '2px solid #fff';
+  controlUI.style.backgroundColor = '#0078e7';
+  controlUI.style.border = '2px solid #0078e7';
   controlUI.style.borderRadius = '3px';
   controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
   controlUI.style.cursor = 'pointer';
@@ -63,7 +78,7 @@ function HomeControl(controlDiv, map) {
   controlUI.title = 'Set map to initial view';
   controlDiv.appendChild(controlUI);
   var controlText = document.createElement('div');
-  controlText.style.color = 'rgb(25,25,25)';
+  controlText.style.color = 'rgb(255,255,255)';
   controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
   controlText.style.fontSize = '16px';
   controlText.style.lineHeight = '38px';
@@ -77,6 +92,74 @@ function HomeControl(controlDiv, map) {
     map.setCenter(myLatlng);
     map.setZoom(2);
   });
+}
+
+function mapCallBack() {
+  window.eqfeed_callback = function(results) {
+
+    infowindow = new google.maps.InfoWindow();
+
+    for (var i = 0; i < results.features.length; i++) {
+      var coords = results.features[i].geometry.coordinates;
+      var latLng = new google.maps.LatLng(coords[0], coords[1]);
+      var marker = new google.maps.Marker({
+        position: latLng,
+        title: results.features[i].properties.type + '-' + i
+      });
+      infowindows[i] = {};
+      infowindows[i]['info'] = "<div id='contm" + i + "'><b>" + results.features[i].properties.type + "</b><br>Gas:" + results.features[i].properties.gas + '<br> \n\
+                        ' + results.features[i].properties.type + ' emissions:\n\
+                          <ul class="info-samples">\n\
+                            <li>' + results.features[i].properties.value1 + '</li>\n\
+                            <li>' + results.features[i].properties.ef_value + '</li>\n\
+                            <li>' + results.features[i].properties.ef_units + '</li>\n\
+                          </ul>\n\
+                        <a href="javascript:emissionMoreInfo('+ i +')">more info</a>\n\
+                  </div>';
+      infowindows[i]['detail'] = "<div id='contm" + i + "'>"+results.features[i].properties.detail+"</div>";
+      jQuery('#infos-detail').append(infowindows[i]['detail']);
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.close();
+        infowindow.setContent(infowindows[i]['info']);
+        infowindow.open(map, this);
+      });
+      markerArray.push(marker);
+    }
+    markerCluster = new MarkerClusterer(map, markerArray);
+    google.maps.event.addListener(markerCluster, "mouseover", function(c) {
+//        log("mouseover: ");
+//        log("&mdash;Center of cluster: " + c.getCenter());
+      // Convert lat/long from cluster object to a usable MVCObject
+      var info = new google.maps.MVCObject;
+      info.set('position', c.getCenter());
+      clusters = c.getMarkers();
+      content = "<div id='markers_content'>";
+      for (var i = 0; i < clusters.length; i++) {
+        content += "<div id='marker_" + i + "' class='markerOver' onclick='markerClick(" + i + ")'><img src='" + templatePath + "/img/soil_icon.png' height='20' width='20' onclick='markerBack(" + i + ")' align='left' style='cursor:pointer'>" + clusters[i].getTitle().split('-')[0] + (parseInt(clusters[i].getTitle().split('-')[1]) + 1) + '</div>';
+      }
+      content += "</div>";
+
+      for (var i = 0; i < clusters.length; i++) {
+        contentid = clusters[i].getTitle().split('-')[1];
+        content += "<div id='markers_detail_" + i + "' style='display:none'>";
+        content += "<div><img src='" + templatePath + "/img/back_row.png' height='20' width='20' onclick='markerBack(" + i + ")' style='cursor:pointer'></div>";
+        content += infowindows[contentid]['info'];
+        content += "</div>";
+      }
+      infowindow.close();
+      infowindow.setContent(content);
+//      infowindow.setZIndex(9999);
+      infowindow.open(map, info);
+    });
+
+    google.maps.event.addListener(markerCluster, "click", function(c) {
+      infowindow.close();
+    });
+    google.maps.event.addListener(map, "click", function() {
+      infowindow.close();
+//        markeri.setMap(null);
+    });
+  }
 }
 
 function initialize() {
@@ -94,140 +177,20 @@ function initialize() {
   var script = document.createElement('script');
   script.src = templatePath + "/dataMapFilter.php?" + jQuery('#filtersh').serialize();
   document.getElementsByTagName('head')[0].appendChild(script);
-
-  window.eqfeed_callback = function(results) {
-
-    var infowindow = new google.maps.InfoWindow();
-
-    for (var i = 0; i < results.features.length; i++) {
-      var coords = results.features[i].geometry.coordinates;
-      var latLng = new google.maps.LatLng(coords[0], coords[1]);
-      var marker = new google.maps.Marker({
-        position: latLng,
-        title: results.features[i].properties.type + '-' + i
-      });
-      infowindows[i] = "<div id='contm" + i + "'><b>" + results.features[i].properties.type + "</b><br>Gas:" + results.features[i].properties.gas + '<br> \n\
-                        ' + results.features[i].properties.type + ' emissions:\n\
-                          <ul>\n\
-                            <li>' + results.features[i].properties.value1 + '</li>\n\
-                            <li>' + results.features[i].properties.ef_value + '</li>\n\
-                            <li>' + results.features[i].properties.ef_units + '</li>\n\
-                          </ul>\n\
-                        </div>';
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.close();
-        infowindow.setContent(infowindows[i]);
-        infowindow.open(map, this);
-      });
-      markerArray.push(marker);
-    }
-    markerCluster = new MarkerClusterer(map, markerArray);
-    google.maps.event.addListener(markerCluster, "mouseover", function(c) {
-//        log("mouseover: ");
-//        log("&mdash;Center of cluster: " + c.getCenter());
-      // Convert lat/long from cluster object to a usable MVCObject
-      var info = new google.maps.MVCObject;
-      info.set('position', c.getCenter());
-      clusters = c.getMarkers();
-      content = "<div id='markers_content'>";
-      for (var i = 0; i < clusters.length; i++) {
-        content += "<div id='marker_" + i + "' class='markerOver' onclick='markerClick(" + i + ")'><img src='" + templatePath + "/img/soil_icon.png' height='20' width='20' onclick='markerBack(" + i + ")' align='left' style='cursor:pointer'>" + clusters[i].getTitle().split('-')[0] + (parseInt(clusters[i].getTitle().split('-')[1]) + 1) + '</div>';
-      }
-      content += "</div>";
-
-      for (var i = 0; i < clusters.length; i++) {
-        contentid = clusters[i].getTitle().split('-')[1];
-        content += "<div id='markers_detail_" + i + "' style='display:none'>";
-        content += "<div><img src='" + templatePath + "/img/back_row.png' height='20' width='20' onclick='markerBack(" + i + ")' style='cursor:pointer'></div>";
-        content += infowindows[contentid];
-        content += "</div>";
-      }
-      infowindow.close();
-      infowindow.setContent(content);
-      infowindow.setZIndex(9999);
-      infowindow.open(map, info);
-    });
-
-    google.maps.event.addListener(markerCluster, "click", function(c) {
-      infowindow.close();
-    });
-    google.maps.event.addListener(map, "click", function() {
-      infowindow.close();
-//        markeri.setMap(null);
-    });
-  }
-
+  mapCallBack();
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function reloadMap() {
   markerCluster.removeMarkers(markerArray);
   markerArray = [];
+  jQuery('#infos-detail').empty();
+  infowindows = [];
   var script = document.createElement('script');
   script.src = templatePath + "/dataMapFilter.php?" + jQuery('#filtersh').serialize();
   document.getElementsByTagName('head')[0].appendChild(script);
 
-  window.eqfeed_callback = function(results) {
-
-    var infowindow = new google.maps.InfoWindow();
-
-    for (var i = 0; i < results.features.length; i++) {
-      var coords = results.features[i].geometry.coordinates;
-      var latLng = new google.maps.LatLng(coords[0], coords[1]);
-      var marker = new google.maps.Marker({
-        position: latLng,
-        title: results.features[i].properties.type + '-' + i
-      });
-      infowindows[i] = "<div id='contm" + i + "'><b>" + results.features[i].properties.type + "</b><br>Gas:" + results.features[i].properties.gas + '<br> \n\
-                        ' + results.features[i].properties.type + ' emissions:\n\
-                          <ul>\n\
-                            <li>' + results.features[i].properties.value1 + '</li>\n\
-                            <li>' + results.features[i].properties.ef_value + '</li>\n\
-                            <li>' + results.features[i].properties.ef_units + '</li>\n\
-                          </ul>\n\
-                        </div>';
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.close();
-        infowindow.setContent(infowindows[i]);
-        infowindow.open(map, this);
-      });
-      markerArray.push(marker);
-    }
-    markerCluster = new MarkerClusterer(map, markerArray);
-    google.maps.event.addListener(markerCluster, "mouseover", function(c) {
-//        log("mouseover: ");
-//        log("&mdash;Center of cluster: " + c.getCenter());
-      // Convert lat/long from cluster object to a usable MVCObject
-      var info = new google.maps.MVCObject;
-      info.set('position', c.getCenter());
-      clusters = c.getMarkers();
-      content = "<div id='markers_content'>";
-      for (var i = 0; i < clusters.length; i++) {
-        content += "<div id='marker_" + i + "' class='markerOver' onclick='markerClick(" + i + ")'><img src='" + templatePath + "/img/soil_icon.png' height='20' width='20' onclick='markerBack(" + i + ")' align='left' style='cursor:pointer'>" + clusters[i].getTitle().split('-')[0] + (parseInt(clusters[i].getTitle().split('-')[1]) + 1) + '</div>';
-      }
-      content += "</div>";
-
-      for (var i = 0; i < clusters.length; i++) {
-        contentid = clusters[i].getTitle().split('-')[1];
-        content += "<div id='markers_detail_" + i + "' style='display:none'>";
-        content += "<div><img src='" + templatePath + "/img/back_row.png' height='20' width='20' onclick='markerBack(" + i + ")' style='cursor:pointer'></div>";
-        content += infowindows[contentid];
-        content += "</div>";
-      }
-      infowindow.close();
-      infowindow.setContent(content);
-      infowindow.setZIndex(9999);
-      infowindow.open(map, info);
-    });
-
-    google.maps.event.addListener(markerCluster, "click", function(c) {
-      infowindow.close();
-    });
-    google.maps.event.addListener(map, "click", function() {
-      infowindow.close();
-//        markeri.setMap(null);
-    });
-  }
+  mapCallBack();
 }
 
 $(document).ready(function($) {

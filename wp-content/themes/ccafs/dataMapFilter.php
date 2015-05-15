@@ -20,7 +20,7 @@ $where4 = "";
 $where5 = "";
 $where6 = "";
 
-if ($region != "" && $region != 'null'&& $region != 'all') {
+if ($region != "" && $region != 'null' && $region != 'all') {
   $where .= " AND exp.exp_country IN (SELECT a.cny_name FROM wp_country a INNER JOIN wp_continent b ON (a.wp_continent_id_continent = b.id_continent AND b.cnt_name like '" . $region . "')) ";
 }
 if ($country != 'null' && $country != '' && $country != 'all') {
@@ -89,40 +89,41 @@ for ($i = 0; $i < count($result); $i++) {
                  ';
     if ($emission['idef_soils']) {
       echo '"gas":"' . $result[$i]['soi_gas'] . '", '
-        . '"value1":"' . $result[$i]['soi_crop'] . '", '
-        . '"ef_value":"' . $result[$i]['soi_ef_value'] . '", '
-        . '"ef_units":"' . $result[$i]['soi_ef_units'] . '", '
-        . '"type":"soil"';
+      . '"value1":"' . $result[$i]['soi_crop'] . '", '
+      . '"ef_value":"' . $result[$i]['soi_ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['soi_ef_units'] . '", '
+      . '"detail":"' . getGasEmissionDetail($result[$i]) . '", '
+      . '"type":"soil"';
     } elseif ($emission['idef_enteric']) {
-      echo '"gas":"' . $result[$i]['ent_gas'] . '", ' 
-        . '"value1":"' . $result[$i]['ent_type_livestock_manag_sys'] . '", '
-        . '"ef_value":"' . $result[$i]['ent_ef_value'] . '", '
-        . '"ef_units":"' . $result[$i]['ent_ef_units'] . '", '      
-        . '"type":"enteric"';
+      echo '"gas":"' . $result[$i]['ent_gas'] . '", '
+      . '"value1":"' . $result[$i]['ent_type_livestock_manag_sys'] . '", '
+      . '"ef_value":"' . $result[$i]['ent_ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ent_ef_units'] . '", '
+      . '"type":"enteric"';
     } elseif ($emission['idef_manure']) {
-      echo '"gas":"' . $result[$i]['man_gas'] . '", ' 
-        . '"value1":"' . $result[$i]['man_type_manure_manag_sys'] . '", '
-        . '"ef_value":"' . $result[$i]['man_ef_value'] . '", '
-        . '"ef_units":"' . $result[$i]['man_ef_units'] . '", '
-        . '"type":"manure"';
+      echo '"gas":"' . $result[$i]['man_gas'] . '", '
+      . '"value1":"' . $result[$i]['man_type_manure_manag_sys'] . '", '
+      . '"ef_value":"' . $result[$i]['man_ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['man_ef_units'] . '", '
+      . '"type":"manure"';
     } elseif ($emission['idef_grassland_burning']) {
       echo '"gas":"' . $result[$i]['gra_gas'] . '", '
-        . '"value1":"' . $result[$i]['gra_ecosyst_desc'] . '", '
-        . '"ef_value":"' . $result[$i]['gra_ef_value'] . '", '
-        . '"ef_units":"' . $result[$i]['gra_ef_units'] . '", '
-        . '"type":"grassland"';
+      . '"value1":"' . $result[$i]['gra_ecosyst_desc'] . '", '
+      . '"ef_value":"' . $result[$i]['gra_ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['gra_ef_units'] . '", '
+      . '"type":"grassland"';
     } elseif ($emission['idef_residue_burning']) {
-      echo '"gas":"' . $result[$i]['res_gas'] . '", ' 
-        . '"value1":"' . $result[$i]['res_type_crop'] . '", '
-        . '"ef_value":"' . $result[$i]['res_ef_value'] . '", '
-        . '"ef_units":"' . $result[$i]['res_ef_units'] . '", '
-        . '"type":"residue"';
+      echo '"gas":"' . $result[$i]['res_gas'] . '", '
+      . '"value1":"' . $result[$i]['res_type_crop'] . '", '
+      . '"ef_value":"' . $result[$i]['res_ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['res_ef_units'] . '", '
+      . '"type":"residue"';
     } elseif ($emission['idef_biomass']) {
-      echo '"gas":"' . $result[$i]['bio_gas'] . '", ' 
-        . '"value1":"' . $result[$i]['bio_type_forest'] . '", '
-        . '"ef_value":"' . $result[$i]['bio_ef_value'] . '", '
-        . '"ef_units":"' . $result[$i]['bio_ef_units'] . '", '
-        . '"type":"biomass"';
+      echo '"gas":"' . $result[$i]['bio_gas'] . '", '
+      . '"value1":"' . $result[$i]['bio_type_forest'] . '", '
+      . '"ef_value":"' . $result[$i]['bio_ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['bio_ef_units'] . '", '
+      . '"type":"biomass"';
     }
 
     echo '}
@@ -133,6 +134,41 @@ for ($i = 0; $i < count($result); $i++) {
 echo ']
      });';
 
-function getGasEmission($row) {
-  
+function getGasEmissionDetail($emission) {
+  $result = "<table class='display compact cell-border statistic-ag dataTable no-footer samples-table'><tr><th>Experiment ID</th>"
+          . "<th>Exp. Name</th>"
+          . "<th>Exp brief desc</th>"
+          . "<th>Treatment ID</th>"
+          . "<th>Treat desc</th>"
+          . "<th>Crop</th>"
+          . "<th>Type emission</th>"
+          . "<th>Ef value</th>"
+          . "<th>Ef units</th>"
+          . "<th>IPCC 1996</th>"
+          . "<th>IPCC 2006</th></tr><tr>";
+  if ($emission['idef_soils']) {
+    $result .= "<td>" . $emission['idexperiment'] . "</td>"
+            . "<td>" . $emission['exp_name'] . "</td>"
+            . "<td>" . $emission['exp_brief_desc'] . "</td>"
+            . "<td>" . $emission['id_treatment'] . "</td>"
+            . "<td>" . $emission['treat_desc'] . "</td>"
+            . "<td>" . $emission['soi_crop'] . "</td>"
+            . "<td>" . $emission['soi_type_emission'] . "</td>"
+            . "<td>" . $emission['soi_ef_value'] . "</td>"
+            . "<td>" . $emission['soi_ef_units'] . "</td>"
+            . "<td>" . $emission['soi_ipcc_1996'] . "</td>"
+            . "<td>" . $emission['soi_ipcc_2006'] . "</td></tr>";
+  } elseif ($emission['idef_enteric']) {
+    
+  } elseif ($emission['idef_manure']) {
+    
+  } elseif ($emission['idef_grassland_burning']) {
+    
+  } elseif ($emission['idef_residue_burning']) {
+    
+  } elseif ($emission['idef_biomass']) {
+    
+  }
+  $result .= "</table>";
+  return $result;
 }
