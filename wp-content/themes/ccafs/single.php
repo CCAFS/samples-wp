@@ -25,13 +25,14 @@ get_header(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<header class="entry-header">
-								<?php the_date(); ?>
+								<div class="post-date"><?php the_date(); ?></div>
 								<?php the_title( '<h1 class="pub-media-title">', '</h1>' ); ?>
+
 								
 								<div class="post-meta">
 									<span class="post-label">Posted By: </span><span class="post-meta-element"><?php the_author(); ?></span>
-									<span class="post-label">Continent: </span><span class="post-meta-element"><?php the_category(' '); ?></span>
-									<span class="post-label">Topic(s): </span><span class="post-meta-element"><?php the_category(' '); ?></span>
+									<span class="post-label">Continent: </span><span class="post-meta-element"><?php the_terms( $post->ID, 'continent', '', ', ', ' ' ); ?></span>
+									<span class="post-label">Topic(s): </span><span class="post-meta-element"><?php the_terms( $post->ID, 'topic', '', ', ', ' ' ); ?></span>
 									<span class="post-label">Category: </span><span class="post-meta-element"><?php the_category(' '); ?></span>
 
 								</div>
@@ -50,6 +51,16 @@ get_header(); ?>
 			<div class="col-sm-4 col-sm-offset-1 sidebar">
 				
 				<?php get_sidebar(); ?>
+				<div class="sidebar-box">
+					<div class="sb-header"><a href="/publications-media/">Publications and Media</a></div>
+					<div class="sb-main full">
+						<ul class="sidebar-box-list">
+							<li><a href="/publications-media/peer-reviewed-publications/">Peer-Reviewed Publications</a></li>
+							<li><a href="/publications-media/reports-news/">Reports & News</a></li>
+							<li><a href="/publications-media/presentation-graphics/">Presentation Graphics</a></li>
+						</ul>
+					</div><!-- /sb-main -->
+				</div><!-- /sidebar-box -->
 				
 			</div><!-- /sidebar -->
 

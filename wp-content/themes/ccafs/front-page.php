@@ -30,7 +30,7 @@ get_header(); ?>
 							<h4>Emissions Data</h4>
 							<p>Emissions factors for specific agricultural practices</p>
 							<div class="view-link">
-								<a href="">VIEW <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
+								<a href="/emissions-data/">VIEW <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 							</div><!-- /view-link -->
 						</div>
 					</div><!-- /panel-wrap -->
@@ -45,7 +45,7 @@ get_header(); ?>
 							<h4>Measurement methods</h4>
 							<p>Guidelines for conducting field measurements</p>
 							<div class="view-link">
-								<a href="">VIEW <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
+								<a href="/measurement-methods-overview/">VIEW <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 							</div><!-- /view-link -->
 						</div>
 					</div><!-- /panel-wrap -->
@@ -70,17 +70,11 @@ get_header(); ?>
 						<h2 class="white">Our network of research sites stretch across the globe.</h2>
 						<h5 class="white">Aliquet elit ac nisl. Phasellus consectetuer vestibulum elit. Praesent adipiscing. Phasellus tempus.</h5>
 						<div class="more-plus-arrow map pull-right">
-							<a href="/map">VIEW MAP <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
+							<a href="/about-samples/research-sites/">VIEW MAP <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 						</div>
 
 					</div><!-- /map-block -->
 					
-
-						<?php //while ( have_posts() ) : the_post(); ?>
-
-							<?php //get_template_part( 'template-parts/content', 'page' ); ?>
-
-						<?php //endwhile; // end of the loop. ?> 
 
 				</main><!-- #main -->
 			</div><!-- col-sm-7 -->
@@ -88,15 +82,30 @@ get_header(); ?>
 			<div class="col-sm-4 col-sm-offset-1 news-column">
 				
 				<h6>News</h6>
-				<h4><a href="">SAMPLES quantification guidelines drafts available</a></h4>
-				<p>Vivamus aliquet elit ac nisl. Phasellus consectetuer vestibulum elit. Praesent adipiscing. Phasellus tempus.</p>
-				<h4><a href="">SAMPLES quantification guidelines drafts available</a></h4>
-				<p>Vivamus aliquet elit ac nisl. Phasellus consectetuer vestibulum elit. Praesent adipiscing. Phasellus tempus.</p>
-				<h4><a href="">SAMPLES quantification guidelines drafts available</a></h4>
-				<p>Vivamus aliquet elit ac nisl. Phasellus consectetuer vestibulum elit. Praesent adipiscing. Phasellus tempus.</p>
+				
+			
+				<?php $args = array(
+				    'posts_per_page' => 3,
+				    'order' => 'DESC'
+				);
+
+				$rp = new WP_Query( $args );
+
+				if($rp->have_posts()) :
+				    while($rp->have_posts()) : $rp->the_post(); ?>
+
+				       <h4 class="homepage-post-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4> 
+				        
+				       <?php the_excerpt();
+
+				    endwhile;
+				    wp_reset_postdata(); // always always remember to reset postdata when using a custom query, very important
+				endif; ?>
+
+				
 
 				<div class="more-plus-arrow">
-					<a href="#">VIEW ALL <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
+					<a href="/publications-media/">VIEW ALL <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 				</div>
 				
 			</div><!-- /col-sm-4 -->

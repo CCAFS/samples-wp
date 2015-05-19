@@ -11,6 +11,20 @@
 
 	<div class="entry-content">
 		<?php the_post_thumbnail( 'featured-blog-image' ); ?>
+
+		<?php 
+		$pub = CFS()->get('publication');
+		if (!empty($pub)) {
+		?>
+		    <div class="post-meta">
+		    	<div class="post-meta-entry">Author: <?php echo CFS()->get('authors'); ?></div>
+		    	<div class="post-meta-entry">Publication: <?php echo CFS()->get('publication'); ?></div>
+		    	<div class="post-meta-entry">Year: <?php echo CFS()->get('year'); ?></div>
+		    	<div class="post-meta-entry"><?php echo CFS()->get('publication_link'); ?></div>
+
+		    </div><!-- post-meta -->
+		<?php  }  ?>
+			
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(

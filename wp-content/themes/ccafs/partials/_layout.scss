@@ -46,8 +46,12 @@ layout.scss
 	padding: 30px 15px;
 
 	@include tablet {
-		padding: 70px 15px;
+		padding: 50px 15px;
 	}
+}
+
+.page-header {
+	border-bottom: none;
 }
 
 /* neutralize this so that pages have same opening padding and margin */
@@ -55,8 +59,13 @@ layout.scss
 	margin-top: 0;
 }
 
+/* ie fix */
+.site-content {
+	clear: both;
+}
+
 .sidebar {
-	padding: 30px 0;
+	padding: 30px 15px;
 	@include tablet {
 		padding: 50px 0;
 	}
@@ -69,6 +78,10 @@ layout.scss
 	@include desktop {
 		padding: 40px 0;
 	}
+}
+
+.single-post .banner.general {
+	display: none;
 }
 
 /* footer ================================ */ 
@@ -211,5 +224,20 @@ layout.scss
 				margin-right: 20px;
 			}
 		}
+	}
+}
+
+.post-meta {
+	font-size: 16px; 
+	font-weight: $bold;
+	margin-bottom: 24px;
+	color: $gray;
+}
+
+/* hide featured image on these post categories */
+article.category-peer-reviewed-publications,
+article.category-presentation-graphics {
+	img.attachment-featured-blog-image {
+		display: none;
 	}
 }

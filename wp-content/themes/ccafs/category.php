@@ -36,7 +36,7 @@ get_header(); ?>
 								 * If you want to override this in a child theme, then include a file
 								 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 								 */
-								get_template_part( 'template-parts/content', get_post_format() );
+								get_template_part( 'template-parts/content-single', get_post_format() );
 							?>
 
 						<?php endwhile; ?>
@@ -55,7 +55,16 @@ get_header(); ?>
 			<div class="col-sm-4 col-sm-offset-1 sidebar">
 				
 				<?php get_sidebar(); ?>
-				category template
+				<div class="sidebar-box">
+					<div class="sb-header"><a href="/publications-media/">Publications and Media</a></div>
+					<div class="sb-main full">
+						<ul class="sidebar-box-list">
+							<li><a href="/publications-media/peer-reviewed-publications/">Peer-Reviewed Publications</a></li>
+							<li><a href="/publications-media/reports-news/">Reports & News</a></li>
+							<li><a href="/publications-media/presentation-graphics/">Presentation Graphics</a></li>
+						</ul>
+					</div><!-- /sb-main -->
+				</div><!-- /sidebar-box -->
 				
 			</div><!-- /sidebar -->
 

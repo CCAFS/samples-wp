@@ -15,14 +15,14 @@
 		<div class="pre-footer partner-logos ">
 			<div class="container">
 			 	<ul>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CIFOR_logo_small.png" class="img-responsive" alt="CIFOR" /></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CIAT.png" class="img-responsive" alt="CIAT"/></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ICRISAT.png" class="img-responsive" alt="ICRISAT"/></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/IITA.png" class="img-responsive" alt="IITA"/></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ILRI.png" class="img-responsive" alt="ILRI"/></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/CimmyT.png" class="img-responsive" alt="CIMMYT"/></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/IRRI-logo-sm.png" class="img-responsive" alt="IRRI"/></a></li>
-			 		<li><a href=""><img src="<?php echo get_template_directory_uri(); ?>/images/ICRAF_logo-sm.png" class="img-responsive" alt="WAC"/></a></li>
+			 		<li><a href="http://cifor.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/CIFOR_logo_small.png" class="img-responsive" alt="CIFOR" /></a></li>
+			 		<li><a href="http://ciat.cgiar.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/CIAT.png" class="img-responsive" alt="CIAT"/></a></li>
+			 		<li><a href="http://www.icrisat.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/ICRISAT.png" class="img-responsive" alt="ICRISAT"/></a></li>
+			 		<li><a href="http://iita.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/IITA.png" class="img-responsive" alt="IITA"/></a></li>
+			 		<li><a href="http://ilri.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/ILRI.png" class="img-responsive" alt="ILRI"/></a></li>
+			 		<li><a href="http://cimmyt.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/CimmyT.png" class="img-responsive" alt="CIMMYT"/></a></li>
+			 		<li><a href="http://irri.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/IRRI-logo-sm.png" class="img-responsive" alt="IRRI"/></a></li>
+			 		<li><a href="http://www.icraf.org/"><img src="<?php echo get_template_directory_uri(); ?>/images/ICRAF_logo-sm.png" class="img-responsive" alt="WAC"/></a></li>
 			 	</ul>
 			</div><!-- /container -->
 		</div><!-- /partner-logos -->

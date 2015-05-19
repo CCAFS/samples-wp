@@ -160,105 +160,121 @@ $ipcc2006 = array(
   array('name' => '3D Other', 'level' => '1')
 );
 ?>
-<section id="content" class="row">
-  <div id="main-content">
-    <!--</div>-->
-    <!--<br>-->
-    <!--<h3 id="map_title" name="map_title">Map view</h3>-->
-    <div style="width:100%;height:400px;z-index: 1;" id="map-canvas"></div>
-    <br>
-    <div id="results_soils" style="z-index: 1" class="samples-table">
-      <!--<h3>Soils</h3>-->
-      <table id='resulttable_soils' name='resulttable_soils' class="display compact cell-border statistic-ag" style="font: 90%/1em "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;">
-             <thead>
-          <tr>
-            <th>Country</th>
-            <th>System</th>
-            <th>Type of EF</th>
-            <th>Value</th>
-            <th>Units</th>
-            <th style="min-width: 133px">1996 IPCC source/sink code</th>
-            <th style="min-width: 138px">P2006 IPCC source/sink code</th>
-          </tr>
-        </thead>
-      </table>
-      <a href="" style="  color: #4929DD;text-decoration: underline;">View all fields</a>
-    </div>
-    <div id='downloadFile'>
-      <h3>Download Data</h3>
-      <a href='#' onClick='' title='Download Data for Excel'><img style='heigth:60px;width:60px;' src='<?php echo get_template_directory_uri() ?>/img/excel.png'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a href='#' onClick=''title='Download Data for CSV'><img style='heigth:60px;width:60px;' src='<?php echo get_template_directory_uri() ?>/img/csv.png'></a>
-      <!--<button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFields()'>View all fields</button>-->
-      <!--<button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFieldsh()'>View all fields</button>-->
-    </div>
-    <br>
-  </div>
-  <div id="form-content">
-    <form id="filtersh" class="pure-form pure-form-stacked" style="background: #e2e2e2; padding: 20px;">
-      <label for="region">Region</label>
-      <input type="hidden" id="region" name="region" onchange="onchangeSubmit()" class="js-data-ajax">
-<!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="region" id="region" onchange="onchangeSubmit()">
-        <?php
-        if (isset($_GET['region'])) {
-          echo "<option value='" . $_GET['region'] . "' selected='selected'>" . $_GET['region'] . "</option>";
-        }
-        ?>
-      </select>-->
+<div class="banner general">
+    <div class="container header-wrapper">
+      <header class="entry-header">
+        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+      </header><!-- .entry-header -->
+    </div><!-- /header-wrapper -->
 
-      <label for="country">Country</label>
-      <input type="hidden" id="country" name="country" onchange="onchangeSubmit()" class="js-data-ajax">
-<!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="country1" id="country" onchange="onchangeSubmit()">
-        <?php
-        if (isset($_GET['country'])) {
-          echo "<option value='" . $_GET['country'] . "' selected='selected'>" . $_GET['country'] . "</option>";
-        }
-        ?>
-      </select>-->
+</div><!-- /banner -->
 
-      <label for="ipcc1996">1996 IPCC sink/source category</label>
+<div class="container">
+  <section id="content" class="row">
+    <div class="col-sm-8" id="primary">
+      
+        <div id="main-content">
+      <!--</div>-->
+      <!--<br>-->
+      <!--<h3 id="map_title" name="map_title">Map view</h3>-->
+          <div id="map-canvas"></div>
+      
+          <div id="results_soils" style="z-index: 1" class="samples-table">
+        <!--<h3>Soils</h3>-->
+            <table id='resulttable_soils' name='resulttable_soils' class="display compact cell-border statistic-ag">
+                  <thead>
+                <tr>
+                  <th>Country</th>
+                  <th>System</th>
+                  <th>Type of EF</th>
+                  <th>Value</th>
+                  <th>Units</th>
+                  <th>1996 IPCC source/sink code</th>
+                  <th>P2006 IPCC source/sink code</th>
+                </tr>
+              </thead>
+            </table>
+            <a href="">View all fields</a>
+          </div><!-- /#resulttable_soils -->
+          <div id='downloadFile'>
+            <h3>Download Data</h3>
+            <a href='#' onClick='' title='Download Data for Excel'><img src='<?php echo get_template_directory_uri() ?>/img/excel.png'></a>
+            <a href='#' onClick=''title='Download Data for CSV'><img src='<?php echo get_template_directory_uri() ?>/img/csv.png'></a>
+            <!--<button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFields()'>View all fields</button>-->
+            <!--<button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFieldsh()'>View all fields</button>-->
+          </div><!-- /#downloadFile -->
+      
+        </div><!-- #main-content -->
+    </div><!-- /#primary -->
+    <div class="col-sm-4 sidebar">
+        <div id="form-content">
+          <form id="filtersh" class="pure-form pure-form-stacked">
+            <label for="region">Region</label>
+            <input type="hidden" id="region" name="region" onchange="onchangeSubmit()" class="js-data-ajax">
+      <!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="region" id="region" onchange="onchangeSubmit()">
+              <?php
+              if (isset($_GET['region'])) {
+                echo "<option value='" . $_GET['region'] . "' selected='selected'>" . $_GET['region'] . "</option>";
+              }
+              ?>
+            </select>-->
 
-      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc1996" id="ipcc1996" onchange="onchangeSubmit()">
-        <?php
-        if (isset($_GET['ipcc1996'])) {
-          echo "<option value'" . $_GET['ipcc1996'] . "' selected='selected'>" . $_GET['ipcc1996'] . "</option>";
-        }
-        foreach ($ipcc1996 as $val) {
-          echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
-        }
-        ?>
-      </select>
+            <label for="country">Country</label>
+            <input type="hidden" id="country" name="country" onchange="onchangeSubmit()" class="js-data-ajax">
+      <!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="country1" id="country" onchange="onchangeSubmit()">
+              <?php
+              if (isset($_GET['country'])) {
+                echo "<option value='" . $_GET['country'] . "' selected='selected'>" . $_GET['country'] . "</option>";
+              }
+              ?>
+            </select>-->
 
-      <label for="ipcc2006">2006 IPCC sink/source category</label>
+            <label for="ipcc1996">1996 IPCC sink/source category</label>
 
-      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc2006" id="ipcc2006" onchange="onchangeSubmit()">
-        <?php
-        if (isset($_GET['ipcc2006'])) {
-          echo "<option value='" . $_GET['ipcc2006'] . "' selected='selected'>" . $_GET['ipcc2006'] . "</option>";
-        }
-        foreach ($ipcc2006 as $val) {
-          echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
-        }
-        ?>
-      </select>
+            <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc1996" id="ipcc1996" onchange="onchangeSubmit()">
+              <?php
+              if (isset($_GET['ipcc1996'])) {
+                echo "<option value'" . $_GET['ipcc1996'] . "' selected='selected'>" . $_GET['ipcc1996'] . "</option>";
+              }
+              foreach ($ipcc1996 as $val) {
+                echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
+              }
+              ?>
+            </select>
 
-      <label for="source">Emission source/sink</label>
+            <label for="ipcc2006">2006 IPCC sink/source category</label>
 
-      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="source" id="source" onchange="onchangeSubmit()">
-        <?php
-        if (isset($_GET['source'])) {
-          echo "<option value='" . $_GET['source'] . "' selected='selected'>" . $_GET['source'] . "</option>";
-        }
-        foreach ($source as $val) {
-          echo "<option value='" . $val . "' >" . $val . "</option>";
-        }
-        ?>
-      </select>
-      <br><br>
-      <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
-      <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
-    </form>
-  </div>
-</section>
-<?php
-get_footer();
-?>
+            <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc2006" id="ipcc2006" onchange="onchangeSubmit()">
+              <?php
+              if (isset($_GET['ipcc2006'])) {
+                echo "<option value='" . $_GET['ipcc2006'] . "' selected='selected'>" . $_GET['ipcc2006'] . "</option>";
+              }
+              foreach ($ipcc2006 as $val) {
+                echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
+              }
+              ?>
+            </select>
+
+            <label for="source">Emission source/sink</label>
+
+            <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="source" id="source" onchange="onchangeSubmit()">
+              <?php
+              if (isset($_GET['source'])) {
+                echo "<option value='" . $_GET['source'] . "' selected='selected'>" . $_GET['source'] . "</option>";
+              }
+              foreach ($source as $val) {
+                echo "<option value='" . $val . "' >" . $val . "</option>";
+              }
+              ?>
+            </select>
+            <br><br>
+            <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
+            <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
+          </form>
+        </div>
+    </div><!-- /sidebar -->
+  </section>
+
+</div><!-- /container -->
+
+<?php get_footer(); ?>

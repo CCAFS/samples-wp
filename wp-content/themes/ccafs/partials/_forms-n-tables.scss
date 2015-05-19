@@ -17,7 +17,8 @@ input[type="email"] {
 	}
 }
 
-input[type="submit"] {
+input[type="submit"],
+button.pure-button-primary {
 	background-color: $blue;
 	border: 3px solid $blue;
 	font-size: 14px;
@@ -38,6 +39,7 @@ input[type="submit"] {
 		color: $blue;
 	}
 }
+
 
 
 /* ## Search Form

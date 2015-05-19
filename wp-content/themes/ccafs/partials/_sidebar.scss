@@ -1,66 +1,144 @@
 /* sidebar ======================= */
 
-.sidebar-box {
+.sidebar-box,
+.searchandfilter ul,
+#form-content {
 	border-radius: 4px; 
 	border: 1px solid $border;
+	background: url(images/page-title-bkgr.gif) repeat;
+	max-width: 360px;
+}
 
-	.sb-header {
-		padding: 20px;
-		background-color: $orange;
-		color: $white;
-		text-transform: uppercase;
-		font-size: 17px;
-		font-weight: $bold;
-		border-radius: 4px 4px 0px 0px;
+
+
+.searchandfilter ul li {
+	padding: 0;
+}
+
+
+.searchandfilter li h4 {
+	padding: 10px 20px 0;
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: $bold;
+
+}
+
+.sb-header, 
+.searchandfilter li.sf-field-category h4 {
+	padding: 20px;
+	background-color: $orange;
+	color: $white;
+	text-transform: uppercase;
+	font-size: 17px;
+	font-weight: $bold;
+	border-radius: 4px 4px 0px 0px;
+}
+
+.sb-header a {
+	color: $white;
+
+	&:hover,
+	&:focus {
+		color: #ddd;
 	}
+}
 
-	.sb-main {
-		padding: 30px 20px;
-		background: url(images/page-title-bkgr.gif) repeat;
+.sb-main   {
+	display: block; 
+	padding: 30px 20px;
+	background: url(images/page-title-bkgr.gif) repeat;
+	color: $black;
+	a:link,
+	a:visited {
 		color: $black;
-		a:link,
-		a:visited {
-			color: $black;
-			opacity: 1;
-			@include link-trans;
+		opacity: 1;
+		@include link-trans;
 
-			&:hover,
-			&:focus {
-				opacity: .7;
-			}
-		}
-
-		img {padding-right: 10px;}
-	}
-
-	.sb-text-input {
-		@include desktop {
-			min-width: 90%;
-			height: 40px;
-			margin-top: 1px;
+		&:hover,
+		&:focus {
+			opacity: .7;
 		}
 	}
-	.sb-search-submit-input {
-		position: absolute;
-		top: 0;
-		right: 0;
-		height: 40px;
-		width: 40px;
-		opacity: 0; /* hide to allow icon to cover */
+
+	&.full {
+		padding: 0;
 	}
 
-	.sb-search-submit {
-		position: relative;
-		width: 10%;
-		height: 40px;
-		padding: 2px 8px;
-		line-height: 2;
-		overflow: hidden;
-		background-color: $gray;
-		color: $white;
-		z-index: 100;
-		cursor: pointer;
+	img {padding-right: 10px;}
+}
 
+ul.sidebar-box-list {
+	margin: 0;
 
+	li {
+		padding: 15px 20px 12px;
+		
+		border-bottom: 1px solid $border;
+		margin-bottom: 0;
+
+		&:last-child {
+			border: none;
+		}
+
+		a {
+			font-weight: $bold;
+			font-size: 17px;
+			text-transform: uppercase;
+		}
 	}
+}
+
+.searchandfilter li select.postform {
+	margin: 10px 20px;
+}
+
+.searchandfilter li.sf-field-category select.postform {
+	margin: 20px 20px 10px 20px;
+}
+
+.searchandfilter li input.search-filter-reset {
+	margin: 20px;
+	background-color: $orange;
+	border: 3px solid $orange;
+	@include link-trans;
+
+	&:hover,
+	&:focus {
+		background-color: $white;
+		color: $orange;
+	}
+}
+
+
+
+.sb-text-input {
+	@include desktop {
+		min-width: 87%;
+		height: 40px;
+		margin-top: 1px;
+	}
+}
+.sb-search-submit-input {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 40px;
+	width: 40px;
+	opacity: 0; /* hide to allow icon to cover */
+}
+
+.sb-search-submit {
+	position: relative;
+	width: 13%;
+	height: 40px;
+	padding: 2px 8px;
+	line-height: 2;
+	overflow: hidden;
+	background-color: $gray;
+	color: $white;
+	z-index: 100;
+	cursor: pointer;
+
+
 }
