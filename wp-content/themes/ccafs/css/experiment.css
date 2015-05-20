@@ -410,3 +410,13 @@ table.dataTable thead th, table.dataTable tfoot th {
   font-weight: 400;
 }
 
+
+.samples-table {
+  font-size: 0.9em;
+}
+
+.info-samples li {
+  list-style-type: disc; 
+  margin-bottom: 0px; 
+}
+

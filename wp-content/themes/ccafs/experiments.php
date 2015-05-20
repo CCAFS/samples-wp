@@ -244,37 +244,27 @@ $ipcc2006 = array(
 
             <label for="ipcc2006">2006 IPCC sink/source category</label>
 
-            <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc2006" id="ipcc2006" onchange="onchangeSubmit()">
-              <?php
-              if (isset($_GET['ipcc2006'])) {
-                echo "<option value='" . $_GET['ipcc2006'] . "' selected='selected'>" . $_GET['ipcc2006'] . "</option>";
-              }
-              foreach ($ipcc2006 as $val) {
-                echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
-              }
-              ?>
-            </select>
 
-            <label for="source">Emission source/sink</label>
 
-            <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="source" id="source" onchange="onchangeSubmit()">
-              <?php
-              if (isset($_GET['source'])) {
-                echo "<option value='" . $_GET['source'] . "' selected='selected'>" . $_GET['source'] . "</option>";
-              }
-              foreach ($source as $val) {
-                echo "<option value='" . $val . "' >" . $val . "</option>";
-              }
-              ?>
-            </select>
-            <br><br>
-            <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
-            <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
-          </form>
-        </div>
-    </div><!-- /sidebar -->
-  </section>
+      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="source" id="source" onchange="onchangeSubmit()">
+        <?php
+        if (isset($_GET['source'])) {
+          echo "<option value='" . $_GET['source'] . "' selected='selected'>" . $_GET['source'] . "</option>";
+        }
+        foreach ($source as $val) {
+          echo "<option value='" . $val . "' >" . $val . "</option>";
+        }
+        ?>
+      </select>
+      <br><br>
+      <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
+      <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
+    </form>
+  </div>
+  <div id="infos-detail" style="display: none">
+  </div>
+</section>
+<?php
+get_footer();
+?>
 
-</div><!-- /container -->
-
-<?php get_footer(); ?>
