@@ -153,7 +153,7 @@ svg:not(:root) {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_normalize\.scss}line{font-family:\00003108}}
 figure {
-  margin: 1em 40px; }
+  margin: 1em 0; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_normalize\.scss}line{font-family:\00003112}}
 hr {
@@ -738,7 +738,7 @@ object {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_normalize\.scss}line{font-family:\00003781}}
 .wp-caption-text {
-  text-align: center; }
+  text-align: left; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_normalize\.scss}line{font-family:\00003785}}
 .wp-caption .wp-caption-text {
@@ -1031,9 +1031,9 @@ img.alignright,
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_elements\.scss}line{font-family:\00003222}}
 .wp-caption-text {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
-  text-align: center; }
+  color: #7F7F7F; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_elements\.scss}line{font-family:\00003228}}
 .entry-content p.wp-caption-text {
@@ -1065,54 +1065,63 @@ type
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\000034}}
 body {
   font-family: "Alegreya Sans", Verdana, sans-serif, verdana, sans-serif;
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 400;
   line-height: 1.4;
   color: #2a3032; }
+  @media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\000034}}
+    body {
+      font-size: 19px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000315}}
 p {
   margin: 0 0 14px;
-  padding: 0; }
+  padding: 0;
+  font-size: 17px; }
+  @media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000315}}
+    p {
+      font-size: 19px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000325}}
 .single-post p,
 .single-post li {
   color: #7F7F7F; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000322}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000330}}
 ol,
 ul {
   margin: 0 0 28px;
   padding: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000336}}
 ul.disc li {
   list-style-type: disc;
   margin-left: 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000341}}
 li {
   list-style-type: none;
   margin-bottom: 12px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000346}}
 b,
 strong {
   font-weight: 700; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000351}}
 blockquote,
 cite,
 em,
 i {
   font-style: italic; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000358}}
 blockquote {
   margin: 40px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000354}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000362}}
 blockquote::before {
   content: "\201C";
   display: block;
@@ -1122,21 +1131,21 @@ blockquote::before {
   position: relative;
   top: -10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000364}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000372}}
 .white {
   color: #F5F5F5; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000373}}
 .gray {
   color: #7F7F7F; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000374}}
 .uppercase {
   text-transform: uppercase; }
 
 /* ## Headings
 --------------------------------------------- */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000380}}
 h1,
 h2,
 h3,
@@ -1148,62 +1157,62 @@ h6 {
   line-height: 1.2;
   margin: 0 0 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000394}}
 h1 {
   font-size: 28px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000394}}
     h1 {
       font-size: 36px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000398}}
 h2 {
   font-size: 24px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000390}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000398}}
     h2 {
       font-size: 32px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003103}}
 h3 {
   font-size: 22px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\0000395}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003103}}
     h3 {
       font-size: 28px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003109}}
 h4 {
   font-size: 18px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003109}}
     h4 {
       font-size: 24px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003115}}
 h5 {
   font-size: 16px;
   text-transform: uppercase; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003115}}
     h5 {
       font-size: 20px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003121}}
 h6 {
   font-size: 16px;
   font-weight: 800;
   text-transform: uppercase; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003121}}
     h6 {
       font-size: 18px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003128}}
 h1.site-title {
   display: inline-block;
   padding-right: 12px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003133}}
   h1.site-title a {
     font-size: 24px;
     font-weight: 700;
@@ -1216,80 +1225,87 @@ h1.site-title {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003143}}
     h1.site-title a:hover, h1.site-title a:focus {
       color: #2a3032;
       text-decoration: none; }
     @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003133}}
       h1.site-title a {
         font-size: 36px; } }
     @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003133}}
       h1.site-title a {
         font-size: 48px; } }
   @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003128}}
     h1.site-title {
-      margin-top: 20px; } }
+      margin-top: 20px;
+      margin-bottom: 10px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003164}}
 h2.site-description {
   font-size: 15px;
   color: #7F7F7F;
   text-transform: uppercase;
   display: none; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003155}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003164}}
     h2.site-description {
       display: inline-block;
       max-width: 400px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003177}}
 h1.entry-title {
   text-transform: uppercase;
   font-size: 24px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003177}}
     h1.entry-title {
       font-size: 30px; } }
   @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003168}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003177}}
     h1.entry-title {
       font-size: 36px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003189}}
 h4.homepage-post-title {
   font-size: 20px;
   font-weight: 400; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003189}}
     h4.homepage-post-title {
       font-size: 24px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003197}}
 h4.subheader {
   font-size: 16px;
   font-weight: 400; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003197}}
     h4.subheader {
       font-size: 18px; } }
   @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003188}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003197}}
     h4.subheader {
       font-size: 21px;
       max-width: 500px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003209}}
 h4.contact-headline {
   font-size: 19px;
   margin-bottom: 0; }
 
 /* post page styles */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003215}}
 .post-date {
   font-size: 16px; }
+
+/* contact page text resize */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_type\.scss}line{font-family:\00003220}}
+.page-id-87 #primary p {
+  font-size: 17px;
+  color: #7F7F7F; }
 
 /* ==============================
 forms and tables 
@@ -1445,7 +1461,7 @@ a.footer-email:visited {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003111}}
 #site-navigation #primary-menu ul {
-  top: 50px; }
+  top: 49px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003114}}
   #site-navigation #primary-menu ul li {
     background-color: #f6812a;
@@ -1486,12 +1502,11 @@ a.footer-email:visited {
 #nav-search {
   position: absolute;
   top: 48px;
-  left: 30%;
+  left: 60%;
   display: none;
   overflow: hidden;
-  padding: 8px 0 4px;
+  padding: 8px 20px 4px;
   background-color: #1e2324;
-  width: 40%;
   color: #F5F5F5;
   font-size: 16px;
   z-index: 100;
@@ -1500,15 +1515,15 @@ a.footer-email:visited {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003165}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003164}}
   #nav-search input[type="search"] {
     border-radius: 4px;
     border: none;
     padding: 6px 12px;
     color: #7F7F7F;
-    width: 300px;
+    width: 200px;
     font-weight: 400; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003173}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003172}}
   #nav-search input[type="submit"] {
     background-color: transparent;
     border: none;
@@ -1519,7 +1534,7 @@ a.footer-email:visited {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003180}}
     #nav-search input[type="submit"]:hover, #nav-search input[type="submit"]:focus {
       color: #e3660a; }
 
@@ -1543,74 +1558,79 @@ layout.scss
     /* negative value of footer height */
     height: 340px;
     clear: both; } }
+/* override bootstrap contraint of 750px */
+@media (min-width: 768px) and (max-width: 991px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000329}}
+  .container {
+    width: 100%; } }
 /* header ================================ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000336}}
 .site-branding {
   position: relative;
   padding: 15px 10px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000340}}
   .site-branding .partners img {
     display: none; }
     @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000340}}
       .site-branding .partners img {
         display: block;
         max-width: 280px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000351}}
 #primary {
   padding: 30px 15px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000345}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000351}}
     #primary {
       padding: 50px 15px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000353}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000359}}
 .page-header {
   border-bottom: none; }
 
 /* neutralize this so that pages have same opening padding and margin */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000364}}
 .entry-content {
   margin-top: 0; }
 
 /* ie fix */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000369}}
 .site-content {
   clear: both; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000373}}
 .sidebar {
   padding: 30px 15px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000367}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000373}}
     .sidebar {
       padding: 50px 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000380}}
 .banner.general {
   padding: 20px 0;
   background: url(images/page-title-bkgr.gif) repeat; }
   @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000380}}
     .banner.general {
       padding: 40px 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000383}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000389}}
 .single-post .banner.general {
   display: none; }
 
 /* footer ================================ */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000389}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000395}}
 .partner-logos {
   padding-top: 20px;
   padding-bottom: 20px;
   border-top: 1px solid #eee; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000394}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003100}}
   .partner-logos ul {
     width: 100%;
     overflow: hidden; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003105}}
   .partner-logos li {
     width: 25%;
     padding-right: 4%;
@@ -1623,105 +1643,105 @@ layout.scss
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003115}}
     .partner-logos li:hover, .partner-logos li:focus {
       opacity: 0.5; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003120}}
     .partner-logos li:nth-child(5) {
       clear: left; }
     @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\0000399}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003105}}
       .partner-logos li {
         width: 12.5%;
         display: table-cell;
         float: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003128}}
         .partner-logos li:nth-child(5) {
           clear: none; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003127}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003133}}
     .partner-logos li img {
       width: 100%; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003140}}
 .site-footer {
   padding: 30px 0;
   background-color: #2a3032;
   color: #F5F5F5; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003145}}
   .site-footer .row {
     position: relative;
     height: 100%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003150}}
   .site-footer .col-sm-4 {
     min-height: 110px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003150}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003156}}
   .site-footer p {
     color: #F5F5F5;
     margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003162}}
 .footer-col-wrap {
   display: table;
   padding-bottom: 30px;
   border-bottom: 1px solid #7F7F7F;
   margin: 0 auto 30px; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003156}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003162}}
     .footer-col-wrap {
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 0; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003171}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003177}}
 .footer-col-wrap.last {
   border-bottom: none;
   margin-bottom: 0; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003176}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003182}}
 .footer-logos,
 .footer-address {
   border-right: 1px solid #7F7F7F; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003182}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003188}}
 .footer-logos img {
   margin: 0 auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003193}}
 .footer-address {
   padding: 0 4%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003189}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003195}}
   .footer-address p {
     display: inline-block;
     margin: 0 auto; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003196}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003202}}
 .footer-contact-info .clearfix {
   padding-bottom: 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003200}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003206}}
 .footer-contact-info .footer-phone,
 .footer-contact-info .footer-email {
   margin-top: 2px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003212}}
 .footer-contact-info img {
   max-width: 30px;
   margin-right: 10px; }
   @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003206}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003212}}
     .footer-contact-info img {
       max-width: 40px;
       margin-right: 15px; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003222}}
   .footer-contact-info img.footer-icon.phone {
     max-width: 20px;
     margin-left: 5px;
     margin-right: 15px; }
     @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003216}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003222}}
       .footer-contact-info img.footer-icon.phone {
         max-width: 30px;
         margin-right: 20px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003230}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003236}}
 .post-meta {
   font-size: 16px;
   font-weight: 700;
@@ -1729,7 +1749,7 @@ layout.scss
   color: #7F7F7F; }
 
 /* hide featured image on these post categories */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003240}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_layout\.scss}line{font-family:\00003246}}
 article.category-peer-reviewed-publications img.attachment-featured-blog-image,
 article.category-presentation-graphics img.attachment-featured-blog-image {
   display: none; }
@@ -1789,43 +1809,44 @@ article.category-presentation-graphics img.attachment-featured-blog-image {
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000358}}
-    .sb-main a:link:hover, .sb-main a:link:focus,
+    .sb-main a:link:hover, .sb-main a:link:focus, .sb-main a:link.active,
     .sb-main a:visited:hover,
-    .sb-main a:visited:focus {
-      opacity: .7; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000364}}
+    .sb-main a:visited:focus,
+    .sb-main a:visited.active {
+      color: #f6812a; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000365}}
   .sb-main.full {
     padding: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000369}}
   .sb-main img {
     padding-right: 10px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000372}}
 ul.sidebar-box-list {
   margin: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000375}}
   ul.sidebar-box-list li {
     padding: 15px 20px 12px;
     border-bottom: 1px solid #dfdfdf;
     margin-bottom: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000381}}
     ul.sidebar-box-list li:last-child {
       border: none; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000385}}
     ul.sidebar-box-list li a {
       font-weight: 700;
       font-size: 17px;
       text-transform: uppercase; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000393}}
 .searchandfilter li select.postform {
   margin: 10px 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\0000397}}
 .searchandfilter li.sf-field-category select.postform {
   margin: 20px 20px 10px 20px; }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003101}}
 .searchandfilter li input.search-filter-reset {
   margin: 20px;
   background-color: #f6812a;
@@ -1834,19 +1855,19 @@ ul.sidebar-box-list {
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003107}}
   .searchandfilter li input.search-filter-reset:hover, .searchandfilter li input.search-filter-reset:focus {
     background-color: #F5F5F5;
     color: #f6812a; }
 
 @media (min-width: 992px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003115}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003116}}
   .sb-text-input {
     min-width: 87%;
     height: 40px;
     margin-top: 1px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003123}}
 .sb-search-submit-input {
   position: absolute;
   top: 0;
@@ -1856,7 +1877,7 @@ ul.sidebar-box-list {
   opacity: 0;
   /* hide to allow icon to cover */ }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003131}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003132}}
 .sb-search-submit {
   position: relative;
   width: 13%;
@@ -1868,6 +1889,15 @@ ul.sidebar-box-list {
   color: #F5F5F5;
   z-index: 100;
   cursor: pointer; }
+
+/* gund logo on contact page */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003147}}
+.wp-image-591 {
+  max-width: 200px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_sidebar\.scss}line{font-family:\00003152}}
+#custom_post_widget-5 p {
+  font-size: 16px; }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\000032}}
 .home.banner .row {
@@ -2005,7 +2035,7 @@ ul.sidebar-box-list {
     .home-panels .panel .panel-icon {
       display: block;
       width: 85%;
-      max-width: 80px;
+      max-width: 100px;
       margin: 0 auto; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003145}}
   .home-panels .panel-top {
@@ -2028,20 +2058,20 @@ ul.sidebar-box-list {
         padding: 10% 0 0; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003168}}
     .home-panels .panel-wrap p {
-      font-size: 12px;
+      font-size: 13px;
       margin-bottom: 10px; }
       @media (min-width: 768px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003168}}
         .home-panels .panel-wrap p {
-          font-size: 15px; } }
+          font-size: 16px; } }
       @media (min-width: 992px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003168}}
         .home-panels .panel-wrap p {
-          font-size: 16px; } }
+          font-size: 18px; } }
       @media (min-width: 1170px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003168}}
         .home-panels .panel-wrap p {
-          font-size: 18px; } }
+          font-size: 20px; } }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003184}}
     .home-panels .panel-wrap a,
     .home-panels .panel-wrap a:visited {
@@ -2091,6 +2121,14 @@ ul.sidebar-box-list {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003231}}
     .news-column {
       padding-top: 0; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003238}}
+  .news-column p {
+    color: #7F7F7F;
+    font-size: 17px; }
+    @media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_homepage\.scss}line{font-family:\00003238}}
+      .news-column p {
+        font-size: 19px; } }
 
 /* =================================
  Plugins
@@ -2305,21 +2343,48 @@ h2.tool-category {
 .tool-category-outer {
   margin-bottom: 30px; }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000318}}
+.category-tool-wrap p {
+  color: #7F7F7F; }
 @media (min-width: 768px) {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000317}}
   .category-tool-wrap {
-    width: 33%;
+    width: 50%;
     padding-right: 3%;
+    padding-bottom: 20px;
     float: left; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000325}}
     .category-tool-wrap:last-child {
       padding-right: 0; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000327}}
-    .category-tool-wrap h3 {
-      font-size: 24px; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000329}}
-    .category-tool-wrap p {
-      color: #7F7F7F; } }
+    .category-tool-wrap h3 {
+      font-size: 24px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000335}}
+.funding-partners-wrap {
+  width: 95%;
+  margin-right: 4%; }
+  @media (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000335}}
+    .funding-partners-wrap {
+      width: 45%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000341}}
+      .funding-partners-wrap:nth-child(2n+1) {
+        clear: left; } }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000347}}
+  .funding-partners-wrap .thumb-wrap {
+    height: 120px;
+    display: table-cell;
+    vertical-align: bottom; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000352}}
+    .funding-partners-wrap .thumb-wrap img {
+      display: block;
+      margin: 0 auto 20px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000358}}
+  .funding-partners-wrap h4 .text {
+    font-size: 20px;
+    height: 100px;
+    display: block; }
 
 /* publications & media ===================*/
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_pub-n-media\.scss}line{font-family:\000034}}

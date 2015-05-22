@@ -3,15 +3,23 @@ type
 --------------------------------*/
 body {
 	font-family: $body-copy, verdana, sans-serif;
-	font-size: 19px;
+	font-size: 17px;
 	font-weight: $regular;
 	line-height: 1.4;
 	color: $black;
+	@include desktop {
+		font-size: 19px;
+	}
 }
 
 p {
 	margin: 0 0 14px;
 	padding: 0;
+	font-size: 17px;
+
+	@include desktop {
+		font-size: 19px;
+	}
 }
 
 .single-post p,
@@ -148,6 +156,7 @@ h1.site-title  {
 
 	@include desktop {
 		margin-top: 20px;
+		margin-bottom: 10px;
 	}
 
 }
@@ -205,4 +214,10 @@ h4.contact-headline {
 /* post page styles */
 .post-date {
 	font-size: 16px;
+}
+
+/* contact page text resize */
+.page-id-87 #primary p {
+	font-size: 17px;
+	color: $gray;
 }

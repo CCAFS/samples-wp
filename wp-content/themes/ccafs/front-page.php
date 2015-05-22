@@ -61,7 +61,7 @@ get_header(); ?>
 			<div class="col-sm-7 home-intro-block">
 				<main id="main" class="site-main" role="main">
 					<h6>Why Samples?</h6>
-					<p class="gray">SAMPLES addresses the dearth of reliable information about greenhouse gas emissions from agriculture in <a href="">tropical countries</a> this is the <a href="">mouse over</a> event. SAMPLES scientists work with developing countries to improve data on agricultural greenhouse gas emissions and mitigation potentials.</p>
+					<p class="gray">SAMPLES addresses the dearth of reliable information about greenhouse gas emissions from agriculture in tropical countries. SAMPLES scientists work with developing countries to improve data on agricultural greenhouse gas emissions and mitigation potentials.</p>
 					<div class="more-plus-arrow">
 						<a href="/about">MORE ABOUT US <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 					</div><!-- /more-plus-arrow -->

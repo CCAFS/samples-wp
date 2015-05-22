@@ -59,7 +59,7 @@ get_header(); ?>
 					    	<p>'. $tool_descriptionB .'</div>';
 						} 
 					} ?>
-					</div>
+				</div>
 				<h2 class="tool-category">Category C</h2>
 				<div class="clearfix tool-category-outer">
 					<?php 
@@ -72,10 +72,10 @@ get_header(); ?>
 						    <p>'. $tool_descriptionC .'</div>';
 						}
 					} ?>
-					</div>
-				</main><!-- #main -->
+				</div>
+				
 
-			</div><!-- #primary -->
+			</div><!-- col 12 -->
 
 		</div><!-- /row -->
 

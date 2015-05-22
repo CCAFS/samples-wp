@@ -1,7 +1,7 @@
 <?php
 /**
  * The template for displaying archive pages.
- * Template Name: Publications & Media Template 
+ * Template Name: Not used, Publications & Media Template 
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *

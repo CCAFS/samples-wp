@@ -109,7 +109,7 @@ a.footer-email:visited {
 
 
 #site-navigation #primary-menu  ul {
-	top: 50px;
+	top: 49px;
 
 	li {
 		background-color: $orange;
@@ -150,12 +150,11 @@ a.footer-email:visited {
 #nav-search {
 	position: absolute;
 	top: 48px;
-	left: 30%;
+	left: 60%;
 	display: none;
 	overflow: hidden;
-	padding: 8px 0 4px;
+	padding: 8px 20px 4px;
 	background-color: darken($black, 5%);
-	width: 40%;
 	color: $white;
 	font-size: 16px;
 	z-index: 100;
@@ -167,7 +166,7 @@ a.footer-email:visited {
 		border: none;
 		padding: 6px 12px;
 		color: $gray;
-		width: 300px;
+		width: 200px;
 		font-weight: $regular;
 	}
 	input[type="submit"] {

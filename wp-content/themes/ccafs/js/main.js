@@ -19,5 +19,16 @@ jQuery( document ).ready(function() {
         jQuery(this).next('.mm-subnav').fadeToggle(200);
         jQuery(this).toggleClass('open');
     });
+
+    /* initialize the tooltip */
+    jQuery(function () {
+      jQuery('[data-toggle="tooltip"]').tooltip()
+    });
+
+    /* active class for about us subnav menu */
+    jQuery(function() {
+      var me=location.pathname;
+      jQuery('.sidebar-box-list a[href^="' + me).addClass('active');
+    });
 });
 

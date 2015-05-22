@@ -56,8 +56,9 @@
 		@include link-trans;
 
 		&:hover,
-		&:focus {
-			opacity: .7;
+		&:focus,
+		&.active {
+			color: $orange;
 		}
 	}
 
@@ -140,5 +141,13 @@ ul.sidebar-box-list {
 	z-index: 100;
 	cursor: pointer;
 
+}
 
+/* gund logo on contact page */
+.wp-image-591 {
+	max-width: 200px;
+}
+
+#custom_post_widget-5 {
+	p {font-size: 16px;}
 }

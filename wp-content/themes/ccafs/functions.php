@@ -192,7 +192,7 @@ add_filter('template_include', 'template_chooser');
 
 // limit the excerpt 
 function custom_excerpt_length( $length ) {
-	return 40;
+	return 25;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 

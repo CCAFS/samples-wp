@@ -15,9 +15,11 @@ h2.tool-category {
 }
 
 .category-tool-wrap {
+	p {color: $gray;}
 	@include tablet {
-		width: 33%;
+		width: 50%;
 		padding-right: 3%;
+		padding-bottom: 20px;
 		float: left;
 
 		&:last-child {
@@ -26,11 +28,38 @@ h2.tool-category {
 
 		h3 {font-size: 24px;}
 
-		p {color: $gray;}
+		
+	}
+}
+
+.funding-partners-wrap {
+	width: 95%;
+	margin-right: 4%;
+
+	@include tablet {
+		width: 45%;
+		&:nth-child(2n+1) {
+			clear: left;
+			
+		}
 	}
 
+	.thumb-wrap {
+		height: 120px;
+		display:table-cell;
+		vertical-align: bottom;
 
+		img {
+			display: block;
+			margin: 0 auto 20px;
+		}
+	}
 
+	h4 .text {
+		font-size: 20px;
+		height: 100px;
+		display: block;
+	}
 
 
 }
