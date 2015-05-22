@@ -249,3 +249,29 @@ img.alignright,
 	    height: 100%;
     }
 }
+
+/* email popup styles */
+
+.popup_wrapp .the_popup .popup_top
+{background-color: $orange;}
+
+.popup_wrapp .the_popup .popup_content .the_button {
+  margin: 20px;
+  border-radius: 0;
+  height: auto;
+  color: $white;
+  background-color: $blue;
+  background-image: none;
+  border: 3px solid $blue;
+  text-transform: uppercase;
+  box-shadow: none;
+   padding: 10px 40px 7px;
+  font-size: 16px;
+  @include link-trans; 
+
+  &:hover,
+  &:focus {
+  	background-color: $white;
+  	color: $blue;
+  }
+}
