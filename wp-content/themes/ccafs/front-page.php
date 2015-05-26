@@ -42,7 +42,7 @@ get_header(); ?>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/MeasurementMethods.png" class="panel-icon" alt="Measurement Methods" />
 						</div>
 						<div class="col-xs-9">
-							<h4>Measurement methods</h4>
+							<h4>Measurement Methods</h4>
 							<p>Guidelines for conducting field measurements</p>
 							<div class="view-link">
 								<a href="/measurement-methods-overview/">VIEW <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
