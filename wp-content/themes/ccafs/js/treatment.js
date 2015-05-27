@@ -39,6 +39,34 @@ function onchangeSubmit() {
       }
     }
   });
+
+  jQuery('#fullview').dataTable({
+    destroy: true,
+    'scrollX': true,
+//      'jQueryUI': true,
+    "processing": true,
+    "serverSide": true,
+    searching: false,
+    ordering: false,
+    "ajax": {
+      url: templatePath + "/dataTableFilter.php",
+      type: 'POST',
+      data: function(d) {
+        d.region = jQuery('#region').val();
+        d.country = jQuery('#country').val();
+        d.ipcc1996 = jQuery('#ipcc1996').val();
+        d.ipcc2006 = jQuery('#ipcc2006').val();
+        d.soils = '1';
+        d.allfields = 'true';
+      },
+      dataSrc: function(json) {
+        if (json.data.length == 0) {
+//          $("#tab_soils").hide();
+        }
+        return json.data;
+      }
+    }
+  });
 }
 
 function markerClick(id) {
@@ -53,16 +81,16 @@ function markerBack(id) {
 
 function emissionMoreInfo(id) {
   infowindow.close();
-  jQuery( "#contm"+id ).dialog({
-      height: 400,
-      width: 1024,
+  jQuery("#contm" + id).dialog({
+    height: 400,
+    width: 1024,
 //      modal: true,
-      buttons: {
-        Cancel: function() {
-          jQuery( this ).dialog( "close" );
-        }
+    buttons: {
+      Cancel: function() {
+        jQuery(this).dialog("close");
       }
-    });
+    }
+  });
 }
 
 function HomeControl(controlDiv, map) {
@@ -114,9 +142,9 @@ function mapCallBack() {
                             <li>' + results.features[i].properties.ef_value + '</li>\n\
                             <li>' + results.features[i].properties.ef_units + '</li>\n\
                           </ul>\n\
-                        <a href="javascript:emissionMoreInfo('+ i +')">more info</a>\n\
+                        <a href="javascript:emissionMoreInfo(' + i + ')">more info</a>\n\
                   </div>';
-      infowindows[i]['detail'] = "<div id='contm" + i + "'>"+results.features[i].properties.detail+"</div>";
+      infowindows[i]['detail'] = "<div id='contm" + i + "'  style='font-size: 0.8em'>" + results.features[i].properties.detail + "</div>";
       jQuery('#infos-detail').append(infowindows[i]['detail']);
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.close();
@@ -162,6 +190,10 @@ function mapCallBack() {
   }
 }
 
+function fullviewopen() {
+  jQuery("#fullviewDiv").dialog("open");
+}
+
 function initialize() {
 
   var mapOptions = {
@@ -193,6 +225,53 @@ function reloadMap() {
   mapCallBack();
 }
 
+function downloadData() {
+  window.open(templatePath + "/experiments_download.php?" + jQuery('#filtersh').serialize(), "_blank");
+  window.close();
+}
+
+function downloadDataCSV() {
+  window.open(templatePath + "/experiments_downloadCSV.php?" + jQuery('#filtersh').serialize(), "_blank");
+  window.close();
+}
+
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}
+
 $(document).ready(function($) {
   //$("#tabs").tabs();
 
@@ -217,6 +296,50 @@ $(document).ready(function($) {
 //          $("#tab_soils").hide();
         }
         return json.data;
+      }
+    }
+  });
+
+  $('#fullview').dataTable({
+    
+    'scrollX': true,
+//      'jQueryUI': true,
+    "processing": true,
+    "serverSide": true,
+    searching: false,
+    ordering: false,
+    "ajax": {
+      url: templatePath + "/dataTableFilter.php",
+      type: 'POST',
+      data: function(d) {
+        d.region = $('#region').val();
+        d.country = $('#country').val();
+        d.ipcc1996 = $('#ipcc1996').val();
+        d.ipcc2006 = $('#ipcc2006').val();
+        d.soils = '1';
+        d.allfields = 'true';
+      },
+      dataSrc: function(json) {
+        if (json.data.length == 0) {
+//          $("#tab_soils").hide();
+        }
+        return json.data;
+      }
+    }
+  });
+
+  $("#fullviewDiv").dialog({
+    autoOpen: false,
+    height: $(window).height(),
+    width: $(window).width(),
+    modal: true,
+    dialogClass: "alert",
+    draggable: false,
+    open: function( event, ui ) {disable_scroll()},
+    close: function( event, ui ) {enable_scroll()},
+    buttons: {
+      Cancel: function() {
+        jQuery(this).dialog("close");
       }
     }
   });
@@ -281,7 +404,7 @@ $(document).ready(function($) {
 //    $('.js-data-ajax').val(null).trigger("change");
   });
 
-  var menu = $('#filtersh');
+  var menu = $('#form-content');
 //  var contenedor = $('#menu-contenedor');
   var menu_offset = menu.offset();
   // Cada vez que se haga scroll en la página
