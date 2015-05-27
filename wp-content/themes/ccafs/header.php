@@ -14,6 +14,8 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" rel="icon" type="image/x-icon" href="/wp-content/themes/ccafs/favicon.ico">
+
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
