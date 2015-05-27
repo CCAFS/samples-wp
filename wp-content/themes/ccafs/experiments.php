@@ -161,110 +161,270 @@ $ipcc2006 = array(
 );
 ?>
 <div class="banner general">
-    <div class="container header-wrapper">
-      <header class="entry-header">
-        <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-      </header><!-- .entry-header -->
-    </div><!-- /header-wrapper -->
+  <div class="container header-wrapper">
+    <header class="entry-header">
+      <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+    </header><!-- .entry-header -->
+  </div><!-- /header-wrapper -->
 
 </div><!-- /banner -->
 
 <div class="container">
   <section id="content" class="row">
     <div class="col-sm-8" id="primary">
-      
-        <div id="main-content">
-      <!--</div>-->
-      <!--<br>-->
-      <!--<h3 id="map_title" name="map_title">Map view</h3>-->
-          <div id="map-canvas"></div>
-      
-          <div id="results_soils" style="z-index: 1" class="samples-table">
-        <!--<h3>Soils</h3>-->
-            <table id='resulttable_soils' name='resulttable_soils' class="display compact cell-border statistic-ag">
-                  <thead>
-                <tr>
-                  <th>Country</th>
-                  <th>System</th>
-                  <th>Type of EF</th>
-                  <th>Value</th>
-                  <th>Units</th>
-                  <th>1996 IPCC source/sink code</th>
-                  <th>P2006 IPCC source/sink code</th>
-                </tr>
-              </thead>
-            </table>
-            <a href="">View all fields</a>
-          </div><!-- /#resulttable_soils -->
+
+      <div id="main-content">
+        <!--</div>-->
+        <!--<br>-->
+        <!--<h3 id="map_title" name="map_title">Map view</h3>-->
+        <div id="map-canvas"></div>
+
+        <div id="results_soils" style="z-index: 1" class="samples-table">
+          
           <div id='downloadFile'>
             <h3>Download Data</h3>
-            <a href='#' onClick='' title='Download Data for Excel'><img src='<?php echo get_template_directory_uri() ?>/img/excel.png'></a>
-            <a href='#' onClick=''title='Download Data for CSV'><img src='<?php echo get_template_directory_uri() ?>/img/csv.png'></a>
+            <a href='#' onClick='downloadData()' title='Download Data for Excel'><img src='<?php echo get_template_directory_uri() ?>/img/excel.png'></a>
+            <a href='#' onClick='downloadDataCSV()'title='Download Data for CSV'><img src='<?php echo get_template_directory_uri() ?>/img/csv.png'></a>
             <!--<button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFields()'>View all fields</button>-->
             <!--<button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFieldsh()'>View all fields</button>-->
           </div><!-- /#downloadFile -->
-      
-        </div><!-- #main-content -->
+          <a href="javascript:void(0)" onclick="fullviewopen();">View all fields</a>
+          <table id='resulttable_soils' name='resulttable_soils' class="display compact cell-border statistic-ag">
+            <thead>
+              <tr>
+                <th>Country</th>
+                <th>System</th>
+                <th>Type of EF</th>
+                <th>Value</th>
+                <th>Units</th>
+                <th>1996 IPCC source/sink code</th>
+                <th>P2006 IPCC source/sink code</th>
+              </tr>
+            </thead>
+          </table>
+        </div><!-- /#resulttable_soils -->
+      </div><!-- #main-content -->
     </div><!-- /#primary -->
     <div class="col-sm-4 sidebar">
-        <div id="form-content">
-          <form id="filtersh" class="pure-form pure-form-stacked">
-            <label for="region">Region</label>
-            <input type="hidden" id="region" name="region" onchange="onchangeSubmit()" class="js-data-ajax">
-      <!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="region" id="region" onchange="onchangeSubmit()">
-              <?php
-              if (isset($_GET['region'])) {
-                echo "<option value='" . $_GET['region'] . "' selected='selected'>" . $_GET['region'] . "</option>";
-              }
-              ?>
-            </select>-->
+      <div id="form-content">
+        <form id="filtersh" class="pure-form pure-form-stacked">
+          <label for="region">Region</label>
+          <input type="hidden" id="region" name="region" onchange="onchangeSubmit()" class="js-data-ajax">
+    <!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="region" id="region" onchange="onchangeSubmit()">
+          <?php
+          if (isset($_GET['region'])) {
+            echo "<option value='" . $_GET['region'] . "' selected='selected'>" . $_GET['region'] . "</option>";
+          }
+          ?>
+          </select>-->
 
-            <label for="country">Country</label>
-            <input type="hidden" id="country" name="country" onchange="onchangeSubmit()" class="js-data-ajax">
-      <!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="country1" id="country" onchange="onchangeSubmit()">
-              <?php
-              if (isset($_GET['country'])) {
-                echo "<option value='" . $_GET['country'] . "' selected='selected'>" . $_GET['country'] . "</option>";
-              }
-              ?>
-            </select>-->
+          <label for="country">Country</label>
+          <input type="hidden" id="country" name="country" onchange="onchangeSubmit()" class="js-data-ajax">
+    <!--      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="country1" id="country" onchange="onchangeSubmit()">
+          <?php
+          if (isset($_GET['country'])) {
+            echo "<option value='" . $_GET['country'] . "' selected='selected'>" . $_GET['country'] . "</option>";
+          }
+          ?>
+          </select>-->
 
-            <label for="ipcc1996">1996 IPCC sink/source category</label>
+          <label for="ipcc1996">1996 IPCC sink/source category</label>
 
-            <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc1996" id="ipcc1996" onchange="onchangeSubmit()">
-              <?php
-              if (isset($_GET['ipcc1996'])) {
-                echo "<option value'" . $_GET['ipcc1996'] . "' selected='selected'>" . $_GET['ipcc1996'] . "</option>";
-              }
-              foreach ($ipcc1996 as $val) {
-                echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
-              }
-              ?>
-            </select>
+          <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc1996" id="ipcc1996" onchange="onchangeSubmit()">
+            <?php
+            if (isset($_GET['ipcc1996'])) {
+              echo "<option value'" . $_GET['ipcc1996'] . "' selected='selected'>" . $_GET['ipcc1996'] . "</option>";
+            }
+            foreach ($ipcc1996 as $val) {
+              echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
+            }
+            ?>
+          </select>
 
-            <label for="ipcc2006">2006 IPCC sink/source category</label>
+          <label for="ipcc2006">2006 IPCC sink/source category</label>
 
+          <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="ipcc2006" id="ipcc2006" onchange="onchangeSubmit()">
+            <?php
+            if (isset($_GET['ipcc2006'])) {
+              echo "<option value'" . $_GET['ipcc2006'] . "' selected='selected'>" . $_GET['ipcc2006'] . "</option>";
+            }
+            foreach ($ipcc2006 as $val) {
+              echo "<option value='" . $val['name'] . "' >" . $spaces[$val['level']] . $val['name'] . "</option>";
+            }
+            ?>
+          </select>
 
+          <label for="ipcc2006">Source</label>
+          <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="source" id="source" onchange="onchangeSubmit()">
+            <?php
+            if (isset($_GET['source'])) {
+              echo "<option value='" . $_GET['source'] . "' selected='selected'>" . $_GET['source'] . "</option>";
+            }
+            foreach ($source as $val) {
+              echo "<option value='" . $val . "' >" . $val . "</option>";
+            }
+            ?>
+          </select>
+          <br><br>
+          <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
+          <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
+        </form>
+      </div>
+      <div id="infos-detail" style="display: none">
+      </div>
+      <div id="fullviewDiv" title="All fields" class="samples-table" style="display:none">
+        <table id="fullview" name="fullview" class="display compact cell-border statistic-ag">
+          <thead>
+            <tr>
+              <th>idexperiment</th>
+              <th>exp_name</th>
+              <th>exp_keywords</th>
+              <th>exp_brief_desc</th>
+              <th>exp_country</th>
+              <th>exp_province_state</th>
+              <th>exp_nearest_city</th>
+              <th>exp_latitude</th>
+              <th>exp_longitude</th>
+              <th>exp_year_began</th>
+              <th>exp_year_ended</th>
+              <th>exp_mean_annual_precipitation</th>
+              <th>exp_mean_annual_temperature</th>
+              <th>exp_soil_taxo_desc</th>
+              <th>exp_soil_taxo_sys</th>
+              <th>exp_soil_surface_tex</th>
+              <th>exp_min_water_depth</th>
+              <th>exp_soil_ph</th>
+              <th>exp_soil_org_matter</th>
+              <th>exp_soil_n</th>
+              <th>exp_init_soil_carbon</th>
+              <th>exp_key_findings</th>
+              <th>id_treatment</th>
+              <th>treat_desc</th>
+              <th>treat_system</th>
+              <th>treat_tillage_type</th>
+              <th>treat_synt_n_fert_type</th>
+              <th>treat_manure_amend_type</th>
+              <th>treat_nit_rate</th>
+              <th>treat_method_app</th>
+              <th>treat_crop_rotation</th>
+              <th>treat_cover_crop</th>
+              <th>treat_res_rem</th>
+              <th>treat_res_burn</th>
+              <th>treat_irrigation</th>
+              <th>treat_other_soil_emiss_tech</th>
+              <th>treat_grain</th>
+              <th>treat_stover</th>
+              <th>treat_roots</th>
+              <th>treat_notes</th>
+              <th>treatr_type_rice_eco</th>
+              <th>treatr_water_manage</th>
+              <th>treatr_land_prep</th>
+              <th>treatr_user_herb</th>
+              <th>treatr_crop_season</th>
+              <th>treatr_num_grow_days</th>
+              <th>treatr_org_manage</th>
 
-      <select class="js-data-ajax" style="width: 300px;box-shadow: none!important;" name="source" id="source" onchange="onchangeSubmit()">
-        <?php
-        if (isset($_GET['source'])) {
-          echo "<option value='" . $_GET['source'] . "' selected='selected'>" . $_GET['source'] . "</option>";
-        }
-        foreach ($source as $val) {
-          echo "<option value='" . $val . "' >" . $val . "</option>";
-        }
-        ?>
-      </select>
-      <br><br>
-      <!--<button class="pure-button pure-button-primary" type="button" onchange="onchangeSubmit()">Search</button>-->
-      <button class="pure-button pure-button-primary" type="button" name="reset" id="reset">Reset</button>
-    </form>
-  </div>
-  <div id="infos-detail" style="display: none">
-  </div>
-</section>
-<?php
-get_footer();
-?>
+              <th>soi_ipcc_1996</th>
+              <th>soi_ipcc_2006</th>
+              <th>soi_gas</th>
+              <th>soi_crop</th>
+              <th>soi_gas_sampling_freq</th>
+              <th>soi_type_emission</th>
+              <th>soi_depth_measu</th>
+              <th>soi_ef_value</th>
+              <th>soi_ef_units</th>
+              <th>soi_equation</th>
+              <th>soi_lower_bound</th>
+              <th>soi_upper_bound</th>
+              <th>soi_uncertainty</th>
+              <th>soi_notes</th>
+
+              <th>ent_ipcc_1996</th>
+              <th>ent_ipcc_2006</th>
+              <th>ent_gas</th>
+              <th>ent_type_emiss_fact</th>
+              <th>ent_type_livestock_manag_sys</th>
+              <th>ent_animal_bod_weight_ave</th>
+              <th>ent_weight_gain_ave</th>
+              <th>ent_subespecies_class</th>
+              <th>ent_feed_quant_access</th>
+              <th>ent_feed_quality</th>
+              <th>ent_milk_prod</th>
+              <th>ent_mitigation_tech</th>
+              <th>ent_ef_value</th>
+              <th>ent_ef_units</th>
+              <th>ent_equation</th>
+              <th>ent_lower_bound</th>
+              <th>ent_upper_bound</th>
+              <th>ent_notes</th>
+
+              <th>man_ipcc_1996</th>
+              <th>man_ipcc_2006</th>
+              <th>man_gas</th>
+              <th>man_type_emiss_fact</th>
+              <th>man_type_manure_manag_sys</th>
+              <th>man_animal_weight</th>
+              <th>man_subspacies</th>
+              <th>man_num_animals_operation</th>
+              <th>man_operat_conditions</th>
+              <th>man_diet_feed_charact_anim</th>
+              <th>man_mitigation_tech</th>
+              <th>man_ef_value</th>
+              <th>man_ef_units</th>
+              <th>man_equation</th>
+              <th>man_lower_bound</th>
+              <th>man_upper_bound</th>
+              <th>man_notes</th>
+
+              <th>gra_ipcc_1996</th>
+              <th>gra_ipcc_2006</th>
+              <th>gra_gas</th>
+              <th>gra_type_emiss_fact</th>
+              <th>gra_ecosyst_desc</th>
+              <th>gra_fuel_density</th>
+              <th>gra_whether_litter_liv_veg</th>
+              <th>gra_ef_value</th>
+              <th>gra_ef_units</th>
+              <th>gra_equation</th>
+              <th>gra_lower_bound</th>
+              <th>gra_upper_bound</th>
+              <th>gra_notes</th>
+
+              <th>res_ipcc_1996</th>
+              <th>res_ipcc_2006</th>
+              <th>res_type_emiss_fact</th>
+              <th>res_type_crop</th>
+              <th>res_crop_area</th>
+              <th>res_crop_yield</th>
+              <th>res_crop_seasson</th>
+              <th>res_residue_desc</th>
+              <th>res_ef_value</th>
+              <th>res_ef_units</th>
+              <th>res_equation</th>
+              <th>res_lower_bound</th>
+              <th>res_upper_bound</th>
+              <th>res_notes</th>
+
+              <th>bio_ipcc_1996</th>
+              <th>bio_ipcc_2006</th>
+              <th>bio_gas</th>
+              <th>bio_type_emiss_fact</th>
+              <th>bio_type_forest</th>
+              <th>bio_forest_age</th>
+              <th>bio_manag_pact_applied</th>
+              <th>bio_ef_value</th>
+              <th>bio_ef_units</th>
+              <th>bio_equation</th>
+              <th>bio_lower_bound</th>
+              <th>bio_upper_bound</th>
+              <th>bio_notes</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </section>
+  <?php
+  get_footer();
+  ?>
 
