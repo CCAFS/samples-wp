@@ -79,25 +79,25 @@ function markerBack(id) {
   jQuery('#markers_content').show();
 }
 
-function emissionMoreInfo(id) {
-  infowindow.close();
-  jQuery("#contm" + id).dialog({
-    height: 400,
-    width: 1024,
-//      modal: true,
-    buttons: {
-      Cancel: function() {
-        jQuery(this).dialog("close");
-      }
-    }
-  });
-}
+//function emissionMoreInfo(id) {
+//  infowindow.close();
+//  jQuery("#contm" + id).dialog({
+//    height: 400,
+//    width: 1024,
+////      modal: true,
+//    buttons: {
+//      Cancel: function() {
+//        jQuery(this).dialog("close");
+//      }
+//    }
+//  });
+//}
 
 function HomeControl(controlDiv, map) {
   controlDiv.style.padding = '5px';
   var controlUI = document.createElement('div');
-  controlUI.style.backgroundColor = '#0078e7';
-  controlUI.style.border = '2px solid #0078e7';
+  controlUI.style.backgroundColor = '#06A5C6';
+  controlUI.style.border = '2px solid #06A5C6';
   controlUI.style.borderRadius = '3px';
   controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
   controlUI.style.cursor = 'pointer';
@@ -107,10 +107,12 @@ function HomeControl(controlDiv, map) {
   controlDiv.appendChild(controlUI);
   var controlText = document.createElement('div');
   controlText.style.color = 'rgb(255,255,255)';
-  controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+  controlText.style.fontFamily = 'inherit';
+  controlText.style.fontWeight = 'inherit';
   controlText.style.fontSize = '16px';
-  controlText.style.lineHeight = '38px';
+//  controlText.style.lineHeight = '38px';
   controlText.style.paddingLeft = '5px';
+  controlText.style.textTransform = 'uppercase';
   controlText.style.paddingRight = '5px';
   controlText.innerHTML = '<b>Home<b>'
   controlUI.appendChild(controlText);
@@ -120,6 +122,63 @@ function HomeControl(controlDiv, map) {
     map.setCenter(myLatlng);
     map.setZoom(2);
   });
+}
+
+function emissionsBodyBox(result, i) {
+  var body;
+  if (result.type == 'soil') {
+    body = "<div id='contm" + i + "'><b>" + '</b> \n\
+              <br><b>Crop1:</b> ' + result.value2 + '\n\
+              <br><b>Treatment description:</b> ' + result.value1 + '\n\
+              <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
+              <br><b>Value:</b> ' + result.ef_value + '\n\
+              <br><b>Units:</b> ' + result.ef_units + '\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+            </div>';
+  } else if (results.type == 'enteric') {
+    body = "<div id='contm" + i + "'><b>" + '</b> \n\
+              <br><b>Subspecies classification:</b> ' + result.value1 + '\n\
+              <br><b>Type of livestock management system:</b> ' + result.value2 + '\n\
+              <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
+              <br><b>Value:</b> ' + result.ef_value + '\n\
+              <br><b>Units:</b> ' + result.ef_units + '\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+            </div>';
+  } else if (results.type == 'manure') {
+    body = "<div id='contm" + i + "'><b>" + '</b> \n\
+              <br><b>Subspecies:</b> ' + result.value1 + '\n\
+              <br><b>Type of manure management system:</b> ' + result.value2 + '\n\
+              <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
+              <br><b>Value:</b> ' + result.ef_value + '\n\
+              <br><b>Units:</b> ' + result.ef_units + '\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+            </div>';
+  } else if (results.type == 'grassland') {
+    body = "<div id='contm" + i + "'><b>" + '</b> \n\
+              <br><b>Description of ecosystem:</b> ' + result.value2 + '\n\
+              <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
+              <br><b>Value:</b> ' + result.ef_value + '\n\
+              <br><b>Units:</b> ' + result.ef_units + '\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+            </div>';
+  } else if (results.type == 'residue') {
+    body = "<div id='contm" + i + "'><b>" + '</b> \n\
+              <br><b>Type of crop:</b> ' + result.value2 + '\n\
+              <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
+              <br><b>Value:</b> ' + result.ef_value + '\n\
+              <br><b>Units:</b> ' + result.ef_units + '\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+            </div>';
+  } else if (results.type == 'biomass') {
+    body = "<div id='contm" + i + "'><b>" + '</b> \n\
+              <br><b>Type of forest:</b> ' + result.value2 + '\n\
+              <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
+              <br><b>Value:</b> ' + result.ef_value + '\n\
+              <br><b>Units:</b> ' + result.ef_units + '\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+            </div>';
+  }
+  return body;
 }
 
 function mapCallBack() {
@@ -135,16 +194,8 @@ function mapCallBack() {
         title: results.features[i].properties.type + '-' + i
       });
       infowindows[i] = {};
-      infowindows[i]['info'] = "<div id='contm" + i + "'><b>" + results.features[i].properties.type + "</b><br>Gas:" + results.features[i].properties.gas + '<br> \n\
-                        ' + results.features[i].properties.type + ' emissions:\n\
-                          <ul class="info-samples">\n\
-                            <li>' + results.features[i].properties.value1 + '</li>\n\
-                            <li>' + results.features[i].properties.ef_value + '</li>\n\
-                            <li>' + results.features[i].properties.ef_units + '</li>\n\
-                          </ul>\n\
-                        <a href="javascript:emissionMoreInfo(' + i + ')">more info</a>\n\
-                  </div>';
-      infowindows[i]['detail'] = "<div id='contm" + i + "'  style='font-size: 0.8em'>" + results.features[i].properties.detail + "</div>";
+      infowindows[i]['info'] = emissionsBodyBox(results.features[i].properties, i);
+      infowindows[i]['detail'] = '<div class="modal fade" id="contmm' + i + '" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="myModalLabel">All fields</h4></div><div class="modal-body" style="overflow:auto;">' + results.features[i].properties.detail + '</div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Close</button></div></div></div></div>';
       jQuery('#infos-detail').append(infowindows[i]['detail']);
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.close();
@@ -190,9 +241,9 @@ function mapCallBack() {
   }
 }
 
-function fullviewopen() {
-  jQuery("#fullviewDiv").dialog("open");
-}
+//function fullviewopen() {
+//  jQuery("#fullviewDiv").dialog("open");
+//}
 
 function initialize() {
 
@@ -240,17 +291,17 @@ var keys = [37, 38, 39, 40];
 function preventDefault(e) {
   e = e || window.event;
   if (e.preventDefault)
-      e.preventDefault();
-  e.returnValue = false;  
+    e.preventDefault();
+  e.returnValue = false;
 }
 
 function keydown(e) {
-    for (var i = keys.length; i--;) {
-        if (e.keyCode === keys[i]) {
-            preventDefault(e);
-            return;
-        }
+  for (var i = keys.length; i--; ) {
+    if (e.keyCode === keys[i]) {
+      preventDefault(e);
+      return;
     }
+  }
 }
 
 function wheel(e) {
@@ -259,17 +310,17 @@ function wheel(e) {
 
 function disable_scroll() {
   if (window.addEventListener) {
-      window.addEventListener('DOMMouseScroll', wheel, false);
+    window.addEventListener('DOMMouseScroll', wheel, false);
   }
   window.onmousewheel = document.onmousewheel = wheel;
   document.onkeydown = keydown;
 }
 
 function enable_scroll() {
-    if (window.removeEventListener) {
-        window.removeEventListener('DOMMouseScroll', wheel, false);
-    }
-    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+  if (window.removeEventListener) {
+    window.removeEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = document.onkeydown = null;
 }
 
 $(document).ready(function($) {
@@ -301,7 +352,6 @@ $(document).ready(function($) {
   });
 
   $('#fullview').dataTable({
-    
     'scrollX': true,
 //      'jQueryUI': true,
     "processing": true,
@@ -328,24 +378,28 @@ $(document).ready(function($) {
     }
   });
 
-  $("#fullviewDiv").dialog({
-    autoOpen: false,
-    height: $(window).height(),
-    width: $(window).width(),
-    modal: true,
-    dialogClass: "alert",
-    draggable: false,
-    open: function( event, ui ) {disable_scroll()},
-    close: function( event, ui ) {enable_scroll()},
-    buttons: {
-      Cancel: function() {
-        jQuery(this).dialog("close");
-      }
-    }
-  });
+//  $("#fullviewDiv").dialog({
+//    autoOpen: false,
+//    height: $(window).height(),
+//    width: $(window).width(),
+//    modal: true,
+//    dialogClass: "alert",
+//    draggable: false,
+//    open: function(event, ui) {
+//      disable_scroll()
+//    },
+//    close: function(event, ui) {
+//      enable_scroll()
+//    },
+//    buttons: {
+//      Cancel: function() {
+//        jQuery(this).dialog("close");
+//      }
+//    }
+//  });
 
   $('#region').select2({
-    placeholder: "Search for a region",
+    placeholder: "Select a region",
     allowClear: true,
     width: 'off',
     ajax: {
@@ -364,7 +418,7 @@ $(document).ready(function($) {
   });
 
   $('#country').select2({
-    placeholder: "Search for a country",
+    placeholder: "Select a country",
     allowClear: true,
     ajax: {
       url: templatePath + "/dataSelectFilter.php",
