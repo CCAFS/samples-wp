@@ -1384,6 +1384,10 @@ button.pure-button-primary {
 
 /* ## Search Form
 --------------------------------------------- */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_forms-n-tables\.scss}line{font-family:\0000348}}
+.search-form input.search-field {
+  padding: 6px; }
+
 /* ## Tables
 --------------------------------------------- */
 /* ===========================
@@ -1564,6 +1568,39 @@ a.footer-email:visited {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003180}}
     #nav-search input[type="submit"]:hover, #nav-search input[type="submit"]:focus {
       color: #e3660a; }
+
+/* pagination */
+@media (min-width: 992px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003194}}
+  .navigation {
+    margin-left: 33%;
+    padding-left: 15px; } }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003200}}
+.navigation li.disabled {
+  color: #fff;
+  text-decoration: none; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003205}}
+.navigation li {
+  display: inline;
+  margin-right: 1px;
+  border-radius: 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003211}}
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+  background-color: #fff;
+  cursor: pointer;
+  padding: 6px 12px; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_links-n-nav\.scss}line{font-family:\00003222}}
+.navigation li a:hover,
+.navigation li.active a {
+  background-color: #06A5C6;
+  color: #F5F5F5; }
 
 /* ------------------------------
 layout.scss

@@ -60,8 +60,9 @@ get_header(); ?>
 					<div class="sb-main full">
 						<ul class="sidebar-box-list">
 							<li><a href="/publications-media/peer-reviewed-publications/">Peer-Reviewed Publications</a></li>
-							<li><a href="/publications-media/reports-news/">Reports & News</a></li>
+							<li><a href="/publications-media/news-blogs/">News & Blogs</a></li>
 							<li><a href="/publications-media/presentation-graphics/">Presentation Graphics</a></li>
+							<li><a href="/publications-media/reports/">Reports</a></li>
 						</ul>
 					</div><!-- /sb-main -->
 				</div><!-- /sidebar-box -->

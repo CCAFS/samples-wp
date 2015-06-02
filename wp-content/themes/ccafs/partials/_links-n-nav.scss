@@ -188,3 +188,39 @@ a.footer-email:visited {
 	// }
 
 }
+
+/* pagination */
+
+.navigation {
+	@include desktop {
+		margin-left: 33%;
+		padding-left: 15px;
+	}
+}
+.navigation li.disabled {
+	color: #fff;
+	text-decoration:none;
+}
+
+.navigation li {
+	display: inline;
+	margin-right: 1px;
+	border-radius: 0;
+}
+
+.navigation li a,
+.navigation li a:hover,
+.navigation li.active a,
+.navigation li.disabled {
+	background-color: #fff;
+	
+	cursor: pointer;
+	padding: 6px 12px;
+	
+}
+
+.navigation li a:hover,
+.navigation li.active a {
+	background-color: $blue;
+	color: $white;
+}

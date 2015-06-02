@@ -28,6 +28,8 @@ get_header(); ?>
 		<div class="row">
 			<div class="col-sm-8" id="primary">
 				<main id="main" class="site-main pub-media-list" role="main">
+					
+
 					<?php if ( have_posts() ) : ?>
 					<?php /* Start the Loop */ ?>
 						<?php while ( have_posts() ) : the_post(); ?>
@@ -41,8 +43,9 @@ get_header(); ?>
 							?>
 
 						<?php endwhile; ?>
+						<?php wpbeginner_numeric_posts_nav(); ?>
 
-						
+
 
 					<?php else : ?>
 
