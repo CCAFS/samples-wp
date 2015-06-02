@@ -412,7 +412,7 @@ table.dataTable thead th, table.dataTable tfoot th {
 
 
 .samples-table {
-  font-size: 0.9em;
+  font-size: 0.75em!important;
 }
 
 .info-samples li {

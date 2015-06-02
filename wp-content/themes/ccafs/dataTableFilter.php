@@ -177,9 +177,9 @@ $sql1 = "SELECT count(*) as total"
 $result = $wpdb->get_row($sql1);
 
 $total_rows = $result->total;
-
+$wpdb->query('SET @i := -1;');
 $sql1 = "SELECT " 
-        . $select
+        . $select." , CONCAT('<button type=\"button\" class=\"pure-button pure-button-primary\" data-toggle=\"modal\" data-target=\"#contmm',(@i := @i + 1),'\">+</button>') as bot"
         . " FROM wp_experiment exp "
         . " LEFT JOIN wp_treatment tre ON tre.wp_experiment_idexperiment=exp.idexperiment "
         . " LEFT JOIN wp_ef_soils soi ON soi.wp_treatment_id_treatment=tre.id_treatment "
