@@ -2427,30 +2427,33 @@ h2.tool-category {
     .category-tool-wrap:last-child {
       padding-right: 0; }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000329}}
+    .category-tool-wrap:nth-child(2n+1) {
+      clear: left; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000333}}
     .category-tool-wrap h3 {
       font-size: 24px; } }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000339}}
 .funding-partners-wrap {
   width: 95%;
   margin-right: 4%; }
   @media (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000335}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000339}}
     .funding-partners-wrap {
       width: 45%; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000341}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000345}}
       .funding-partners-wrap:nth-child(2n+1) {
         clear: left; } }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000347}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000351}}
   .funding-partners-wrap .thumb-wrap {
     height: 120px;
     display: table-cell;
     vertical-align: bottom; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000352}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000356}}
     .funding-partners-wrap .thumb-wrap img {
       display: block;
       margin: 0 auto 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000358}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000362}}
   .funding-partners-wrap h4 .text {
     font-size: 20px;
     height: 100px;
