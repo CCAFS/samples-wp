@@ -47,7 +47,7 @@ get_header(); ?>
 					} ?>
 				</div>
 
-				<h2 class="tool-category">Accounting Tools and Methodologies for Climate Finance Projects</h2>
+				<h2 class="tool-category">Accounting Tools and Methodologies</h2>
 				<div class="clearfix tool-category-outer">
 					<?php 
 					 	$fieldsB = CFS()->get('category_b_tool_loop');
