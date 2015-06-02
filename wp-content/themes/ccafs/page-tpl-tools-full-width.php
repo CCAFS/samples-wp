@@ -20,7 +20,11 @@ get_header(); ?>
 
 		<div class="row tools-intro">
 			<div class="col-sm-7" id="primary">
-			<p>Intro to the tools section. Mauris sollicitudin fermentum libero. Suspendisse potenti. Fusce vulputate eleifend sapien. Curabitur vestibulum aliquam leo. Vestibulum suscipit nulla quis orci. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Fusce fermentum. Pellentesque commodo eros a enim. Nullam vel sem. Donec id justo.</p>		 
+				<?php while ( have_posts() ) : the_post(); ?>
+
+					<?php get_template_part( 'template-parts/content', 'page' ); ?>
+
+				<?php endwhile; // end of the loop. ?> 		 
 
 			</div><!-- /col-sm-7 -->
 
