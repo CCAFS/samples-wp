@@ -28,7 +28,7 @@ get_header(); ?>
 						</div>
 						<div class="col-xs-9">
 							<h4>Emissions Data</h4>
-							<p>Emissions factors for specific agricultural practices</p>
+							<p>Emission factors for specific agricultural practices</p>
 							<div class="view-link">
 								<a href="/emissions-data/">VIEW <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 							</div><!-- /view-link -->
@@ -68,7 +68,7 @@ get_header(); ?>
 
 					<div class="map-block clearfix">
 						<h2 class="white">Our network of research sites stretch across the globe.</h2>
-						<h5 class="white">Aliquet elit ac nisl. Phasellus consectetuer vestibulum elit. Praesent adipiscing. Phasellus tempus.</h5>
+						<h5 class="white">See the people and places behind SAMPLES.</h5>
 						<div class="more-plus-arrow map pull-right">
 							<a href="/about-samples/research-sites/">VIEW MAP <img src="<?php echo get_template_directory_uri(); ?>/images/arrow-right.png" class="arrow-right"></a>
 						</div>

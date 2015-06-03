@@ -37,7 +37,7 @@ get_header(); ?>
 			<div class="col-sm-12" >
 				
 				<!-- Field Groups display output --> 
-				<h2 class="tool-category">Tools for Prioritizing Action</h2>
+				<h2 class="tool-category">Tools for prioritizing action</h2>
 				<div class="clearfix tool-category-outer">
 					<?php 
 						$fields = CFS()->get('category_a1_tools');
@@ -51,7 +51,7 @@ get_header(); ?>
 					} ?>
 				</div>
 
-				<h2 class="tool-category">Accounting Tools and Methodologies</h2>
+				<h2 class="tool-category">Accounting tools and methodologies</h2>
 				<div class="clearfix tool-category-outer">
 					<?php 
 					 	$fieldsB = CFS()->get('category_b_tool_loop');
@@ -64,7 +64,7 @@ get_header(); ?>
 						} 
 					} ?>
 				</div>
-				<h2 class="tool-category">Tools for Reducing the Cost of Data Collection</h2>
+				<h2 class="tool-category">Tools for reducing the cost of data collection</h2>
 				<div class="clearfix tool-category-outer">
 					<?php 
 					$fieldsC = CFS()->get('category_c1_loop');
