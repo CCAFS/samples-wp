@@ -129,7 +129,27 @@ a.footer-email:visited {
 }
 
 .main-navigation ul ul a {
-  width: 230px;
+  
+  @include desktop {
+  	width: 230px;
+  }
+}
+
+/* blow out the width of measurement methods submenu for long chapter titles */
+#site-navigation #primary-menu #menu-item-556 ul.sub-menu a {
+	@include desktop {
+		width: 400px;
+		text-transform: none;
+		font-size: 18px;
+		font-weight: $regular;
+		letter-spacing: 0;
+		
+	}
+}
+
+#responsive-menu .responsive-menu li a {
+	white-space: normal;
+	height: auto;
 }
 
 /* search ================== */

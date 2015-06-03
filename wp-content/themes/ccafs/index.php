@@ -18,7 +18,7 @@ get_header(); ?>
 				<header class="page-header">
 					
 					<h1 class="entry-title">Publications & Media</h1>
-					<h4 class="subheader">Aenean massa. Maecenas egestas arcu quis ligula.</h4>
+				
 					
 				</header><!-- .page-header -->
 			</div><!-- /header-wrapper -->

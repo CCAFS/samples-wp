@@ -9,8 +9,11 @@
 ?>
 
 		 	</div><!-- #content -->
+		 	 <div class="back-to-top"><a href="#top">back to top</a></div>
 		 </div><!-- #page -->
+
 	</div><!-- /.main-wrap --> 
+
 	<div class="footer-wrap">
 		<div class="pre-footer partner-logos ">
 			<div class="container">
