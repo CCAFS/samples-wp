@@ -164,6 +164,7 @@ $ipcc2006 = array(
   <div class="container header-wrapper">
     <header class="entry-header">
       <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+      <h4 class="subheader"><?php echo CFS()->get('subheader'); ?></h4>
     </header><!-- .entry-header -->
   </div><!-- /header-wrapper -->
 
@@ -176,7 +177,7 @@ $ipcc2006 = array(
       <div id="main-content">
         <!--</div>-->
         <!--<br>-->
-        <!--<h3 id="map_title" name="map_title">Map view</h3>-->
+        <label id="map_title" name="map_title">Beta version, June 2015</label>
         <div id="map-canvas"></div>
 
         <div id="results_soils" style="z-index: 1" class="samples-table">
@@ -211,7 +212,7 @@ $ipcc2006 = array(
                 <th>Value</th>
                 <th>Units</th>
                 <th>1996 IPCC source/sink code</th>
-                <th>P2006 IPCC source/sink code</th>
+                <th>2006 IPCC source/sink code</th>
                 <th></th>
               </tr>
             </thead>

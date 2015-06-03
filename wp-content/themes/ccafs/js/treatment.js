@@ -21,7 +21,7 @@ function onchangeSubmit() {
     "processing": true,
     "serverSide": true,
     searching: false,
-    ordering: false,
+    ordering: true,
     "ajax": {
       url: templatePath + "/dataTableFilter.php",
       data: function(d) {
@@ -332,7 +332,7 @@ $(document).ready(function($) {
     "processing": true,
     "serverSide": true,
     searching: false,
-    ordering: false,
+    ordering: true,
     "ajax": {
       url: templatePath + "/dataTableFilter.php",
       data: function(d) {
