@@ -267,6 +267,11 @@ function wpbeginner_numeric_posts_nav() {
 
 } 
 
+function child_excerpt_more( $more ) {
+	return ' ...<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">read more</a>';
+}
+add_filter( 'excerpt_more', 'child_excerpt_more' );
+
 
 
 
