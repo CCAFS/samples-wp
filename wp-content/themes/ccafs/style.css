@@ -2499,8 +2499,9 @@ h2.tool-category {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000356}}
     .funding-partners-wrap .thumb-wrap img {
       display: block;
-      margin: 0 auto 20px; }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000362}}
+      margin: 0 auto 20px;
+      max-height: 140px; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/macpro\/Sites\/samples-wp\/wp-content\/themes\/ccafs\/partials\/_tools\.scss}line{font-family:\0000363}}
   .funding-partners-wrap h4 .text {
     font-size: 20px;
     height: 100px;
