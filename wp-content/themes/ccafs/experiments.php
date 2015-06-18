@@ -184,8 +184,8 @@ $ipcc2006 = array(
 
           <!--          <div id='downloadFile'>
                       <h3>Download Data</h3>
-                      <a href='#' onClick='downloadData()' title='Download Data for Excel'><img src='<?php // echo get_template_directory_uri()      ?>/img/excel.png'></a>
-                      <a href='#' onClick='downloadDataCSV()'title='Download Data for CSV'><img src='<?php // echo get_template_directory_uri()      ?>/img/csv.png'></a>
+                      <a href='#' onClick='downloadData()' title='Download Data for Excel'><img src='<?php // echo get_template_directory_uri()       ?>/img/excel.png'></a>
+                      <a href='#' onClick='downloadDataCSV()'title='Download Data for CSV'><img src='<?php // echo get_template_directory_uri()       ?>/img/csv.png'></a>
                       <button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFields()'>View all fields</button>
                       <button class='pure-button pure-button-primary' type='button' name='viewall' id='viewall' onClick='viewAllFieldsh()'>View all fields</button>
                     </div>-->
@@ -287,174 +287,177 @@ $ipcc2006 = array(
       </div>
     </div>
     <div id="infos-detail" style="display: block">
-      </div>
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel">All fields</h4>
-            </div>
-            <div class="modal-body">
-              <table id="fullview" name="fullview" class="display compact cell-border statistic-ag dataTable no-footer samples-table">
-                <thead>
-                  <tr>
-                    <th>idexperiment</th>
-                    <th>exp_name</th>
-                    <th>exp_keywords</th>
-                    <th>exp_brief_desc</th>
-                    <th>exp_country</th>
-                    <th>exp_province_state</th>
-                    <th>exp_nearest_city</th>
-                    <th>exp_latitude</th>
-                    <th>exp_longitude</th>
-                    <th>exp_year_began</th>
-                    <th>exp_year_ended</th>
-                    <th>exp_mean_annual_precipitation</th>
-                    <th>exp_mean_annual_temperature</th>
-                    <th>exp_soil_taxo_desc</th>
-                    <th>exp_soil_taxo_sys</th>
-                    <th>exp_soil_surface_tex</th>
-                    <th>exp_min_water_depth</th>
-                    <th>exp_soil_ph</th>
-                    <th>exp_soil_org_matter</th>
-                    <th>exp_soil_n</th>
-                    <th>exp_init_soil_carbon</th>
-                    <th>exp_key_findings</th>
-                    <th>id_treatment</th>
-                    <th>treat_desc</th>
-                    <th>treat_system</th>
-                    <th>treat_tillage_type</th>
-                    <th>treat_synt_n_fert_type</th>
-                    <th>treat_manure_amend_type</th>
-                    <th>treat_nit_rate</th>
-                    <th>treat_method_app</th>
-                    <th>treat_crop_rotation</th>
-                    <th>treat_cover_crop</th>
-                    <th>treat_res_rem</th>
-                    <th>treat_res_burn</th>
-                    <th>treat_irrigation</th>
-                    <th>treat_other_soil_emiss_tech</th>
-                    <th>treat_grain</th>
-                    <th>treat_stover</th>
-                    <th>treat_roots</th>
-                    <th>treat_notes</th>
-                    <th>treatr_type_rice_eco</th>
-                    <th>treatr_water_manage</th>
-                    <th>treatr_land_prep</th>
-                    <th>treatr_user_herb</th>
-                    <th>treatr_crop_season</th>
-                    <th>treatr_num_grow_days</th>
-                    <th>treatr_org_manage</th>
+    </div>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">All fields</h4>
+          </div>
+          <div class="modal-body">
+            <table id="fullview" name="fullview" class="display compact cell-border statistic-ag dataTable no-footer samples-table">
+              <thead>
+                <tr>
+                  <th>idexperiment</th>
+                  <th>exp_name</th>
+                  <th>exp_keywords</th>
+                  <th>exp_brief_desc</th>
+                  <th>exp_country</th>
+                  <th>exp_province_state</th>
+                  <th>exp_nearest_city</th>
+                  <th>exp_latitude</th>
+                  <th>exp_longitude</th>
+                  <th>exp_year_began</th>
+                  <th>exp_year_ended</th>
+                  <th>exp_mean_annual_precipitation</th>
+                  <th>exp_mean_annual_temperature</th>
+                  <th>exp_soil_taxo_desc</th>
+                  <th>exp_soil_taxo_sys</th>
+                  <th>exp_soil_surface_tex</th>
+                  <th>exp_min_water_depth</th>
+                  <th>exp_soil_ph</th>
+                  <th>exp_soil_org_matter</th>
+                  <th>exp_soil_n</th>
+                  <th>exp_init_soil_carbon</th>
+                  <th>exp_key_findings</th>
+                  <th>id_treatment</th>
+                  <th>treat_desc</th>
+                  <th>treat_system</th>
+                  <th>treat_tillage_type</th>
+                  <th>treat_synt_n_fert_type</th>
+                  <th>treat_manure_amend_type</th>
+                  <th>treat_nit_rate</th>
+                  <th>treat_method_app</th>
+                  <th>treat_crop_rotation</th>
+                  <th>treat_cover_crop</th>
+                  <th>treat_res_rem</th>
+                  <th>treat_res_burn</th>
+                  <th>treat_irrigation</th>
+                  <th>treat_other_soil_emiss_tech</th>
+                  <th>treat_grain</th>
+                  <th>treat_stover</th>
+                  <th>treat_roots</th>
+                  <th>treat_notes</th>
+                  <th>treatr_type_rice_eco</th>
+                  <th>treatr_water_manage</th>
+                  <th>treatr_land_prep</th>
+                  <th>treatr_user_herb</th>
+                  <th>treatr_crop_season</th>
+                  <th>treatr_num_grow_days</th>
+                  <th>treatr_org_manage</th>
 
-                    <th>soi_ipcc_1996</th>
-                    <th>soi_ipcc_2006</th>
-                    <th>soi_gas</th>
-                    <th>soi_crop</th>
-                    <th>soi_gas_sampling_freq</th>
-                    <th>soi_type_emission</th>
-                    <th>soi_depth_measu</th>
-                    <th>soi_ef_value</th>
-                    <th>soi_ef_units</th>
-                    <th>soi_equation</th>
-                    <th>soi_lower_bound</th>
-                    <th>soi_upper_bound</th>
-                    <th>soi_uncertainty</th>
-                    <th>soi_notes</th>
+                  <th>soi_ipcc_1996</th>
+                  <th>soi_ipcc_2006</th>
+                  <th>soi_gas</th>
+                  <th>soi_crop</th>
+                  <th>soi_gas_sampling_freq</th>
+                  <th>soi_type_emission</th>
+                  <th>soi_depth_measu</th>
+                  <th>soi_ef_value</th>
+                  <th>soi_ef_units</th>
+                  <th>soi_equation</th>
+                  <th>soi_lower_bound</th>
+                  <th>soi_upper_bound</th>
+                  <th>soi_uncertainty</th>
+                  <th>soi_notes</th>
 
-                    <th>ent_ipcc_1996</th>
-                    <th>ent_ipcc_2006</th>
-                    <th>ent_gas</th>
-                    <th>ent_type_emiss_fact</th>
-                    <th>ent_type_livestock_manag_sys</th>
-                    <th>ent_animal_bod_weight_ave</th>
-                    <th>ent_weight_gain_ave</th>
-                    <th>ent_subespecies_class</th>
-                    <th>ent_feed_quant_access</th>
-                    <th>ent_feed_quality</th>
-                    <th>ent_milk_prod</th>
-                    <th>ent_mitigation_tech</th>
-                    <th>ent_ef_value</th>
-                    <th>ent_ef_units</th>
-                    <th>ent_equation</th>
-                    <th>ent_lower_bound</th>
-                    <th>ent_upper_bound</th>
-                    <th>ent_notes</th>
+                  <th>ent_ipcc_1996</th>
+                  <th>ent_ipcc_2006</th>
+                  <th>ent_gas</th>
+                  <th>ent_type_emiss_fact</th>
+                  <th>ent_type_livestock_manag_sys</th>
+                  <th>ent_animal_bod_weight_ave</th>
+                  <th>ent_weight_gain_ave</th>
+                  <th>ent_subespecies_class</th>
+                  <th>ent_feed_quant_access</th>
+                  <th>ent_feed_quality</th>
+                  <th>ent_milk_prod</th>
+                  <th>ent_mitigation_tech</th>
+                  <th>ent_ef_value</th>
+                  <th>ent_ef_units</th>
+                  <th>ent_equation</th>
+                  <th>ent_lower_bound</th>
+                  <th>ent_upper_bound</th>
+                  <th>ent_notes</th>
 
-                    <th>man_ipcc_1996</th>
-                    <th>man_ipcc_2006</th>
-                    <th>man_gas</th>
-                    <th>man_type_emiss_fact</th>
-                    <th>man_type_manure_manag_sys</th>
-                    <th>man_animal_weight</th>
-                    <th>man_subspacies</th>
-                    <th>man_num_animals_operation</th>
-                    <th>man_operat_conditions</th>
-                    <th>man_diet_feed_charact_anim</th>
-                    <th>man_mitigation_tech</th>
-                    <th>man_ef_value</th>
-                    <th>man_ef_units</th>
-                    <th>man_equation</th>
-                    <th>man_lower_bound</th>
-                    <th>man_upper_bound</th>
-                    <th>man_notes</th>
+                  <th>man_ipcc_1996</th>
+                  <th>man_ipcc_2006</th>
+                  <th>man_gas</th>
+                  <th>man_type_emiss_fact</th>
+                  <th>man_type_manure_manag_sys</th>
+                  <th>man_animal_weight</th>
+                  <th>man_subspacies</th>
+                  <th>man_num_animals_operation</th>
+                  <th>man_operat_conditions</th>
+                  <th>man_diet_feed_charact_anim</th>
+                  <th>man_mitigation_tech</th>
+                  <th>man_ef_value</th>
+                  <th>man_ef_units</th>
+                  <th>man_equation</th>
+                  <th>man_lower_bound</th>
+                  <th>man_upper_bound</th>
+                  <th>man_notes</th>
 
-                    <th>gra_ipcc_1996</th>
-                    <th>gra_ipcc_2006</th>
-                    <th>gra_gas</th>
-                    <th>gra_type_emiss_fact</th>
-                    <th>gra_ecosyst_desc</th>
-                    <th>gra_fuel_density</th>
-                    <th>gra_whether_litter_liv_veg</th>
-                    <th>gra_ef_value</th>
-                    <th>gra_ef_units</th>
-                    <th>gra_equation</th>
-                    <th>gra_lower_bound</th>
-                    <th>gra_upper_bound</th>
-                    <th>gra_notes</th>
+                  <th>gra_ipcc_1996</th>
+                  <th>gra_ipcc_2006</th>
+                  <th>gra_gas</th>
+                  <th>gra_type_emiss_fact</th>
+                  <th>gra_ecosyst_desc</th>
+                  <th>gra_fuel_density</th>
+                  <th>gra_whether_litter_liv_veg</th>
+                  <th>gra_ef_value</th>
+                  <th>gra_ef_units</th>
+                  <th>gra_equation</th>
+                  <th>gra_lower_bound</th>
+                  <th>gra_upper_bound</th>
+                  <th>gra_notes</th>
 
-                    <th>res_ipcc_1996</th>
-                    <th>res_ipcc_2006</th>
-                    <th>res_type_emiss_fact</th>
-                    <th>res_type_crop</th>
-                    <th>res_crop_area</th>
-                    <th>res_crop_yield</th>
-                    <th>res_crop_seasson</th>
-                    <th>res_residue_desc</th>
-                    <th>res_ef_value</th>
-                    <th>res_ef_units</th>
-                    <th>res_equation</th>
-                    <th>res_lower_bound</th>
-                    <th>res_upper_bound</th>
-                    <th>res_notes</th>
+                  <th>res_ipcc_1996</th>
+                  <th>res_ipcc_2006</th>
+                  <th>res_type_emiss_fact</th>
+                  <th>res_type_crop</th>
+                  <th>res_crop_area</th>
+                  <th>res_crop_yield</th>
+                  <th>res_crop_seasson</th>
+                  <th>res_residue_desc</th>
+                  <th>res_ef_value</th>
+                  <th>res_ef_units</th>
+                  <th>res_equation</th>
+                  <th>res_lower_bound</th>
+                  <th>res_upper_bound</th>
+                  <th>res_notes</th>
 
-                    <th>bio_ipcc_1996</th>
-                    <th>bio_ipcc_2006</th>
-                    <th>bio_gas</th>
-                    <th>bio_type_emiss_fact</th>
-                    <th>bio_type_forest</th>
-                    <th>bio_forest_age</th>
-                    <th>bio_manag_pact_applied</th>
-                    <th>bio_ef_value</th>
-                    <th>bio_ef_units</th>
-                    <th>bio_equation</th>
-                    <th>bio_lower_bound</th>
-                    <th>bio_upper_bound</th>
-                    <th>bio_notes</th>
-                  </tr>
-                </thead>
-              </table>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-            </div>
+                  <th>bio_ipcc_1996</th>
+                  <th>bio_ipcc_2006</th>
+                  <th>bio_gas</th>
+                  <th>bio_type_emiss_fact</th>
+                  <th>bio_type_forest</th>
+                  <th>bio_forest_age</th>
+                  <th>bio_manag_pact_applied</th>
+                  <th>bio_ef_value</th>
+                  <th>bio_ef_units</th>
+                  <th>bio_equation</th>
+                  <th>bio_lower_bound</th>
+                  <th>bio_upper_bound</th>
+                  <th>bio_notes</th>
+                  
+                  <th>Contact information</th>
+                  <th>Journal citation</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
           </div>
         </div>
       </div>
-      <div id="fullviewDiv" title="All fields" class="samples-table" style="display:none">
+    </div>
+    <div id="fullviewDiv" title="All fields" class="samples-table" style="display:none">
 
-      </div>
+    </div>
   </section>
   <?php
   get_footer();

@@ -48,6 +48,7 @@ $where .= " AND exp.exp_latitude NOT IN ('','N/A') AND exp.exp_longitude NOT IN 
 $where .= " AND (soi.idef_soils is not null OR ent.idef_enteric is not null OR man.idef_manure is not null OR gra.idef_grassland_burning is not null OR res.idef_residue_burning is not null OR bio.idef_biomass is not null)";
 $sql1 = "SELECT * "
         . " FROM wp_experiment exp "
+        . " LEFT JOIN wp_contact_info cnt ON (cnt.wp_experiment_idexperiment=exp.idexperiment)"
         . " LEFT JOIN wp_treatment tre ON tre.wp_experiment_idexperiment=exp.idexperiment "
         . " LEFT JOIN wp_ef_soils soi ON (soi.wp_treatment_id_treatment=tre.id_treatment $where1)"
         . " LEFT JOIN wp_ef_enteric ent ON (ent.wp_experiment_idexperiment=exp.idexperiment $where2)"
@@ -94,6 +95,7 @@ for ($i = 0; $i < count($result); $i++) {
       . '"ef_value":"' . $result[$i]['soi_ef_value'] . '", '
       . '"ef_units":"' . $result[$i]['soi_ef_units'] . '", '
       . '"detail":"' . getGasEmissionDetail($result[$i]) . '", '
+      . '"sid":"soil' . $result[$i]['idef_soils'] . '", '        
       . '"type":"soil"';
     } elseif ($result[$i]['idef_enteric']) {
       echo '"value1":"' . $result[$i]['ent_subespecies_class'] . '", '
@@ -212,6 +214,8 @@ function getGasEmissionDetail($emission) {
           . "<th>Upper bound of 95% CI</th>"
           . "<th>Uncertainty (expressed as 95% CI)</th>"
           . "<th>Notes</th>"
+          . "<th>Contact information</th>"
+          . "<th>Journal citation</th>"
           . "</tr>"
           . "<tr>";
   if ($emission['idef_soils']) {
@@ -276,6 +280,8 @@ function getGasEmissionDetail($emission) {
             . "<td>" . $emission['soi_upper_bound'] . "</td>"
             . "<td>" . $emission['soi_uncertainty'] . "</td>"
             . "<td>" . $emission['soi_notes'] . "</td>"
+            . "<td>" . $emission['cont_email_primary'] . "</td>"
+            . "<td>" . $emission['cont_journal_citation'] . "</td>"
             . "</tr>";
   } elseif ($emission['idef_enteric']) {
     

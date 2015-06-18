@@ -420,3 +420,8 @@ table.dataTable thead th, table.dataTable tfoot th {
   margin-bottom: 0px; 
 }
 
+.mapbox{
+  border: 1px solid #CCC;
+  padding: 10px;
+}
+
