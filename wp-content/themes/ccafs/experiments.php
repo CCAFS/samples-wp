@@ -318,8 +318,6 @@ $ipcc2006 = array(
                   <th>exp_min_water_depth</th>
                   <th>exp_soil_ph</th>
                   <th>exp_soil_org_matter</th>
-                  <th>exp_soil_n</th>
-                  <th>exp_init_soil_carbon</th>
                   <th>exp_key_findings</th>
                   <th>id_treatment</th>
                   <th>treat_desc</th>
@@ -329,17 +327,14 @@ $ipcc2006 = array(
                   <th>treat_manure_amend_type</th>
                   <th>treat_nit_rate</th>
                   <th>treat_method_app</th>
-                  <th>treat_crop_rotation</th>
                   <th>treat_cover_crop</th>
-                  <th>treat_res_rem</th>
-                  <th>treat_res_burn</th>
+                  <th>treat_res_manag</th>
                   <th>treat_irrigation</th>
-                  <th>treat_other_soil_emiss_tech</th>
+                  <th>treat_other_mitig_pract</th>
                   <th>treat_grain</th>
                   <th>treat_stover</th>
                   <th>treat_roots</th>
                   <th>treat_notes</th>
-                  <th>treatr_type_rice_eco</th>
                   <th>treatr_water_manage</th>
                   <th>treatr_land_prep</th>
                   <th>treatr_user_herb</th>

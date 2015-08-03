@@ -13,6 +13,7 @@ $ipcc1996 = $_REQUEST['ipcc1996'];
 $ipcc2006 = $_REQUEST['ipcc2006'];
 $source = $_REQUEST['source'];
 $where = "";
+$wherea = "";
 $where1 = "";
 $where2 = "";
 $where3 = "";
@@ -21,10 +22,25 @@ $where5 = "";
 $where6 = "";
 
 if ($region != "" && $region != 'null' && $region != 'all') {
-  $where .= " AND exp.exp_country IN (SELECT a.cny_name FROM wp_country a INNER JOIN wp_continent b ON (a.wp_continent_id_continent = b.id_continent AND b.cnt_name like '" . $region . "')) ";
+  $where .= " AND exp.exp_country IN (SELECT a.cny_name FROM wp_country a INNER JOIN wp_continent b ON (a.wp_continent_id_continent = b.id_continent AND b.cnt_name like '" . trim($region) . "')) ";
 }
 if ($country != 'null' && $country != '' && $country != 'all') {
-  $where .= " AND exp.exp_country like '%" . $country . "%' ";
+  $where .= " AND exp.exp_country like '%" . trim($country) . "%' ";
+}
+if ($source != 'null' && $source != '' && $source != 'all') {
+  if ($source == 'Soils') {
+    $wherea .= " AND type = 'soil' ";
+  } else if ($source == 'Livestock') {
+    $wherea .= " AND type = 'enteric' ";
+  } else if ($source == 'Manure') {
+    $wherea .= " AND type = 'manure' ";
+  } else if ($source == 'Grassland burning') {
+    $wherea .= " AND type = 'grassland' ";
+  } else if ($source == 'Residue burning') {
+    $wherea .= " AND type = 'residue' ";
+  } else if ($source == 'Biomass carbon') {
+    $wherea .= " AND type = 'biomass' ";
+  }
 }
 if ($ipcc1996 != 'null' && $ipcc1996 != '' && $ipcc1996 != 'all') {
   $ipcc1996 = explode(' ', $ipcc1996);
@@ -45,8 +61,8 @@ if ($ipcc2006 != 'null' && $ipcc2006 != '' && $ipcc2006 != 'all') {
   $where6 .= " AND bio.bio_ipcc_2006 like '" . $ipcc2006[0] . "%' ";
 }
 $where .= " AND exp.exp_latitude NOT IN ('','N/A') AND exp.exp_longitude NOT IN ('','N/A') ";
-$where .= " AND (soi.idef_soils is not null OR ent.idef_enteric is not null OR man.idef_manure is not null OR gra.idef_grassland_burning is not null OR res.idef_residue_burning is not null OR bio.idef_biomass is not null)";
-$sql1 = "SELECT * "
+//$where .= " AND (soi.idef_soils is not null OR ent.idef_enteric is not null OR man.idef_manure is not null OR gra.idef_grassland_burning is not null OR res.idef_residue_burning is not null OR bio.idef_biomass is not null)";
+/*$sql1 = "SELECT * "
         . " FROM wp_experiment exp "
         . " LEFT JOIN wp_contact_info cnt ON (cnt.wp_experiment_idexperiment=exp.idexperiment)"
         . " LEFT JOIN wp_treatment tre ON tre.wp_experiment_idexperiment=exp.idexperiment "
@@ -58,9 +74,46 @@ $sql1 = "SELECT * "
         . " LEFT JOIN wp_ef_biomass bio ON (bio.wp_experiment_idexperiment=exp.idexperiment $where6)"
         . " WHERE 1 "
         . $where
-        . " ORDER BY exp.idexperiment_tec $limit";
-//  echo $sql1;
-$result = $wpdb->get_results($sql1, ARRAY_A);
+        . " ORDER BY exp.idexperiment_tec $limit";*/
+
+$sql = "SELECT * FROM ((SELECT " 
+        . " soi.soi_type_emission as value1, tre.treat_desc as value2, soi.soi_crop as value3, ROUND(soi.soi_ef_value, 2) as ef_value, soi.soi_ef_units as ef_units, 'soil' as type, idef_soils as id, exp_latitude, exp_longitude"
+        . " FROM wp_experiment exp "
+        . " INNER JOIN wp_treatment tre ON tre.wp_experiment_idexperiment=exp.idexperiment "
+        . " INNER JOIN wp_ef_soils soi ON soi.wp_treatment_id_treatment=tre.id_treatment "
+        . " WHERE 1 $where $where1)"
+        . " UNION "
+        . " (SELECT "
+        . " ent.ent_type_emiss_fact as value1, ent.ent_type_livestock_manag_sys as value2, ent.ent_subespecies_class as value3, ROUND(ent.ent_ef_value, 2) as ef_value, ent.ent_ef_units as ef_units, 'enteric' as type, idef_enteric as id, exp_latitude, exp_longitude"
+        . " FROM wp_experiment exp "
+        . " INNER JOIN wp_ef_enteric ent ON ent.wp_experiment_idexperiment=exp.idexperiment "
+        . " WHERE 1 $where $where2)"
+        . " UNION "
+        . " (SELECT "
+        . " man.man_type_emiss_fact as value1, man.man_type_manure_manag_sys as value2, man.man_subspacies as value3, ROUND(man.man_ef_value, 2) as ef_value, man.man_ef_units as ef_units, 'manure' as type, idef_manure as id, exp_latitude, exp_longitude"
+        . " FROM wp_experiment exp "
+        . " INNER JOIN wp_ef_manure man ON man.wp_experiment_idexperiment=exp.idexperiment "
+        . " WHERE 1 $where $where3)"
+        . " UNION "
+        . " (SELECT "
+        . " gra.gra_type_emiss_fact as value1, gra.gra_ecosyst_desc as value2, '' as value3,ROUND(gra.gra_ef_value, 2) as ef_value, gra.gra_ef_units as ef_units, 'grassland' as type, idef_grassland_burning as id, exp_latitude, exp_longitude"
+        . " FROM wp_experiment exp "
+        . " INNER JOIN wp_ef_grassland_burning gra ON gra.wp_experiment_idexperiment=exp.idexperiment "
+        . " WHERE 1 $where $where4)"
+        . " UNION "
+        . " (SELECT "
+        . " res.res_type_emiss_fact as value1, res.res_type_crop as value2, '' as value3, ROUND(res.res_ef_value, 2) as ef_value, res.res_ef_units as ef_units, 'residue' as type, idef_residue_burning as id, exp_latitude, exp_longitude"
+        . " FROM wp_experiment exp "
+        . " INNER JOIN wp_ef_residue_burning res ON res.wp_experiment_idexperiment=exp.idexperiment "
+        . " WHERE 1 $where $where5)"
+        . " UNION "
+        . " (SELECT "
+        . " bio.bio_type_emiss_fact as value1, bio.bio_type_forest as value2, '' as value3, ROUND(bio.bio_ef_value, 2) as ef_value, bio.bio_ef_units as ef_units, 'biomass' as type, bio_type_emiss_fact as id, exp_latitude, exp_longitude"
+        . " FROM wp_experiment exp "
+        . " INNER JOIN wp_ef_biomass bio ON bio.wp_experiment_idexperiment=exp.idexperiment "
+        . " WHERE 1 $where $where6)) as a WHERE 1 $wherea";
+//  echo $sql."\n";
+$result = $wpdb->get_results($sql, ARRAY_A);
 //$emissions = array();
 //foreach ($result as $key => $emission) {
 //  if ($emission['idef_soils']) {
@@ -77,7 +130,7 @@ $result = $wpdb->get_results($sql1, ARRAY_A);
 //    
 //  }
 //}
-//echo "<pre>". print_r($result,true)."</pre>";
+//echo "<pre>". print_r($result,true)."</pre>\n";
 echo 'eqfeed_callback({ "type": "FeatureCollection",
           "features": [';
 for ($i = 0; $i < count($result); $i++) {
@@ -88,46 +141,51 @@ for ($i = 0; $i < count($result); $i++) {
               "geometry": {"type": "Point", "coordinates": [' . $result[$i]['exp_latitude'] . ', ' . $result[$i]['exp_longitude'] . ']},
               "properties": {
                  ';
-    if ($result[$i]['idef_soils']) {
-      echo '"value1":"' . $result[$i]['treat_desc'] . '", '
-      . '"value2":"' . $result[$i]['soi_crop'] . '", '
-      . '"value3":"' . $result[$i]['soi_type_emission'] . '", '
-      . '"ef_value":"' . $result[$i]['soi_ef_value'] . '", '
-      . '"ef_units":"' . $result[$i]['soi_ef_units'] . '", '
-      . '"detail":"' . getGasEmissionDetail($result[$i]) . '", '
-      . '"sid":"soil' . $result[$i]['idef_soils'] . '", '        
+    if ($result[$i]['type'] == 'soil') {
+      echo '"value1":"' . $result[$i]['value2'] . '", '
+      . '"value2":"' . $result[$i]['value3'] . '", '
+      . '"value3":"' . $result[$i]['value1'] . '", '
+      . '"ef_value":"' . $result[$i]['ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ef_units'] . '", '
+      . '"detail":"' . getGasEmissionDetail($result[$i]['id']) . '", '
+      . '"sid":"soil' . $result[$i]['id'] . '", '
       . '"type":"soil"';
-    } elseif ($result[$i]['idef_enteric']) {
-      echo '"value1":"' . $result[$i]['ent_subespecies_class'] . '", '
-      . '"value2":"' . $result[$i]['ent_type_livestock_manag_sys'] . '", '
-      . '"value3":"' . $result[$i]['ent_type_emiss_fact'] . '", '
-      . '"ef_value":"' . $result[$i]['ent_ef_value'] . '", '
-      . '"ef_units":"' . $result[$i]['ent_ef_units'] . '", '
+    } elseif ($result[$i]['type'] == 'enteric') {
+      echo '"value1":"' . $result[$i]['value3'] . '", '
+      . '"value2":"' . $result[$i]['value2'] . '", '
+      . '"value3":"' . $result[$i]['value1'] . '", '
+      . '"ef_value":"' . $result[$i]['ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ef_units'] . '", '
+      . '"sid":"enteric' . $result[$i]['id'] . '", '
       . '"type":"enteric"';
-    } elseif ($result[$i]['idef_manure']) {
-      echo '"value1":"' . $result[$i]['man_subspacies'] . '", '
-      . '"value2":"' . $result[$i]['man_type_manure_manag_sys'] . '", '
-      . '"value3":"' . $result[$i]['man_type_emiss_fact'] . '", '
-      . '"ef_value":"' . $result[$i]['man_ef_value'] . '", '
-      . '"ef_units":"' . $result[$i]['man_ef_units'] . '", '
+    } elseif ($result[$i]['type'] == 'manure') {
+      echo '"value1":"' . $result[$i]['value3'] . '", '
+      . '"value2":"' . $result[$i]['value2'] . '", '
+      . '"value3":"' . $result[$i]['value1'] . '", '
+      . '"ef_value":"' . $result[$i]['ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ef_units'] . '", '
+      . '"sid":"manure' . $result[$i]['id'] . '", '
       . '"type":"manure"';
-    } elseif ($result[$i]['idef_grassland_burning']) {
-      echo '"value1":"' . $result[$i]['gra_type_emiss_fact'] . '", '
-      . '"value2":"' . $result[$i]['gra_ecosyst_desc'] . '", '
-      . '"ef_value":"' . $result[$i]['gra_ef_value'] . '", '
-      . '"ef_units":"' . $result[$i]['gra_ef_units'] . '", '
+    } elseif ($result[$i]['type'] == 'grassland') {
+      echo '"value1":"' . $result[$i]['value1'] . '", '
+      . '"value2":"' . $result[$i]['value2'] . '", '
+      . '"ef_value":"' . $result[$i]['ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ef_units'] . '", '
+      . '"sid":"grassland' . $result[$i]['id'] . '", '
       . '"type":"grassland"';
-    } elseif ($result[$i]['idef_residue_burning']) {
-      echo '"value1":"' . $result[$i]['res_type_emiss_fact'] . '", '
-      . '"value2":"' . $result[$i]['res_type_crop'] . '", '
-      . '"ef_value":"' . $result[$i]['res_ef_value'] . '", '
-      . '"ef_units":"' . $result[$i]['res_ef_units'] . '", '
+    } elseif ($result[$i]['type'] == 'residue') {
+      echo '"value1":"' . $result[$i]['value1'] . '", '
+      . '"value2":"' . $result[$i]['value2'] . '", '
+      . '"ef_value":"' . $result[$i]['ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ef_units'] . '", '
+      . '"sid":"residue' . $result[$i]['id'] . '", '
       . '"type":"residue"';
-    } elseif ($result[$i]['idef_biomass']) {
-      echo '"value1":"' . $result[$i]['bio_type_emiss_fact'] . '", '
-      . '"value2":"' . $result[$i]['bio_type_forest'] . '", '
-      . '"ef_value":"' . $result[$i]['bio_ef_value'] . '", '
-      . '"ef_units":"' . $result[$i]['bio_ef_units'] . '", '
+    } elseif ($result[$i]['type'] == 'biomass') {
+      echo '"value1":"' . $result[$i]['value1'] . '", '
+      . '"value2":"' . $result[$i]['value2'] . '", '
+      . '"ef_value":"' . $result[$i]['ef_value'] . '", '
+      . '"ef_units":"' . $result[$i]['ef_units'] . '", '
+      . '"sid":"biomass' . $result[$i]['id'] . '", '
       . '"type":"biomass"';
     }
 
@@ -140,6 +198,15 @@ echo ']
      });';
 
 function getGasEmissionDetail($emission) {
+  global $wpdb;
+  $sql = "SELECT * , ROUND(soi.soi_ef_value, 2) as ef_value "
+        . " FROM wp_experiment exp "
+        . " LEFT JOIN wp_contact_info cnt ON (cnt.wp_experiment_idexperiment=exp.idexperiment)"
+        . " INNER JOIN wp_treatment tre ON tre.wp_experiment_idexperiment=exp.idexperiment "
+        . " INNER JOIN wp_ef_soils soi ON (soi.wp_treatment_id_treatment=tre.id_treatment AND soi.idef_soils = $emission) ";
+  
+  $results = $wpdb->get_results($sql, ARRAY_A);
+//  echo "<pre>". print_r($results,true)."</pre>\n";
   $result = "<table class='display compact cell-border statistic-ag dataTable no-footer samples-table'>"
           . "<tr>"
           /* . "<th>Experiment ID</th>"
@@ -218,72 +285,72 @@ function getGasEmissionDetail($emission) {
           . "<th>Journal citation</th>"
           . "</tr>"
           . "<tr>";
-  if ($emission['idef_soils']) {
-    $result .= "<td>" . $emission['idexperiment'] . "</td>"
-            . "<td>" . $emission['exp_name'] . "</td>"
-            . "<td>" . $emission['exp_keywords'] . "</td>"
-            . "<td>" . $emission['exp_brief_desc'] . "</td>"
-            . "<td>" . $emission['exp_country'] . "</td>"
-            . "<td>" . $emission['exp_province_state'] . "</td>"
-            . "<td>" . $emission['exp_nearest_city'] . "</td>"
-            . "<td>" . $emission['exp_latitude'] . "</td>"
-            . "<td>" . $emission['exp_longitude'] . "</td>"
-            . "<td>" . $emission['exp_year_began'] . "</td>"
-            . "<td>" . $emission['exp_year_ended'] . "</td>"
-            . "<td>" . $emission['exp_mean_annual_precipitation'] . "</td>"
-            . "<td>" . $emission['exp_mean_annual_temperature'] . "</td>"
-            . "<td>" . $emission['exp_soil_taxo_desc'] . "</td>"
-            . "<td>" . $emission['exp_soil_taxo_sys'] . "</td>"
-            . "<td>" . $emission['exp_soil_surface_tex'] . "</td>"
-            . "<td>" . $emission['exp_min_water_depth'] . "</td>"
-            . "<td>" . $emission['exp_soil_ph'] . "</td>"
-            . "<td>" . $emission['exp_soil_org_matter'] . "</td>"
-            . "<td>" . $emission['exp_soil_n'] . "</td>"
-            . "<td>" . $emission['exp_init_soil_carbon'] . "</td>"
-            . "<td>" . $emission['exp_key_findings'] . "</td>"
-            . "<td>" . $emission['id_treatment'] . "</td>"
-            . "<td>" . $emission['treat_desc'] . "</td>"
-            . "<td>" . $emission['treat_system'] . "</td>"
-            . "<td>" . $emission['treat_tillage_type'] . "</td>"
-            . "<td>" . $emission['treat_synt_n_fert_type'] . "</td>"
-            . "<td>" . $emission['treat_manure_amend_type'] . "</td>"
-            . "<td>" . $emission['treat_nit_rate'] . "</td>"
-            . "<td>" . $emission['treat_method_app'] . "</td>"
-            . "<td>" . $emission['treat_crop_rotation'] . "</td>"
-            . "<td>" . $emission['treat_cover_crop'] . "</td>"
-            . "<td>" . $emission['treat_res_rem'] . "</td>"
-            . "<td>" . $emission['treat_res_burn'] . "</td>"
-            . "<td>" . $emission['treat_irrigation'] . "</td>"
-            . "<td>" . $emission['treat_other_soil_emiss_tech'] . "</td>"
-            . "<td>" . $emission['treat_grain'] . "</td>"
-            . "<td>" . $emission['treat_stover'] . "</td>"
-            . "<td>" . $emission['treat_roots'] . "</td>"
-            . "<td>" . $emission['treat_notes'] . "</td>"
-            . "<td>" . $emission['treatr_type_rice_eco'] . "</td>"
-            . "<td>" . $emission['treatr_water_manage'] . "</td>"
-            . "<td>" . $emission['treatr_land_prep'] . "</td>"
-            . "<td>" . $emission['treatr_user_herb'] . "</td>"
-            . "<td>" . $emission['treatr_crop_season'] . "</td>"
-            . "<td>" . $emission['treatr_num_grow_days'] . "</td>"
-            . "<td>" . $emission['treatr_org_manage'] . "</td>"
-            . "<td>" . $emission['soi_ipcc_1996'] . "</td>"
-            . "<td>" . $emission['soi_ipcc_2006'] . "</td>"
-            . "<td>" . $emission['soi_gas'] . "</td>"
-            . "<td>" . $emission['soi_crop'] . "</td>"
-            . "<td>" . $emission['soi_gas_sampling_freq'] . "</td>"
-            . "<td>" . $emission['soi_type_emission'] . "</td>"
-            . "<td>" . $emission['soi_depth_measu'] . "</td>"
-            . "<td>" . $emission['soi_ef_value'] . "</td>"
-            . "<td>" . $emission['soi_ef_units'] . "</td>"
-            . "<td>" . $emission['soi_equation'] . "</td>"
-            . "<td>" . $emission['soi_lower_bound'] . "</td>"
-            . "<td>" . $emission['soi_upper_bound'] . "</td>"
-            . "<td>" . $emission['soi_uncertainty'] . "</td>"
-            . "<td>" . $emission['soi_notes'] . "</td>"
-            . "<td>" . $emission['cont_email_primary'] . "</td>"
-            . "<td>" . $emission['cont_journal_citation'] . "</td>"
+  if ($results[0]['idef_soils']) {
+    $result .= "<td>" . $results[0]['idexperiment'] . "</td>"
+            . "<td>" . $results[0]['exp_name'] . "</td>"
+            . "<td>" . $results[0]['exp_keywords'] . "</td>"
+            . "<td>" . $results[0]['exp_brief_desc'] . "</td>"
+            . "<td>" . $results[0]['exp_country'] . "</td>"
+            . "<td>" . $results[0]['exp_province_state'] . "</td>"
+            . "<td>" . $results[0]['exp_nearest_city'] . "</td>"
+            . "<td>" . $results[0]['exp_latitude'] . "</td>"
+            . "<td>" . $results[0]['exp_longitude'] . "</td>"
+            . "<td>" . $results[0]['exp_year_began'] . "</td>"
+            . "<td>" . $results[0]['exp_year_ended'] . "</td>"
+            . "<td>" . $results[0]['exp_mean_annual_precipitation'] . "</td>"
+            . "<td>" . $results[0]['exp_mean_annual_temperature'] . "</td>"
+            . "<td>" . $results[0]['exp_soil_taxo_desc'] . "</td>"
+            . "<td>" . $results[0]['exp_soil_taxo_sys'] . "</td>"
+            . "<td>" . $results[0]['exp_soil_surface_tex'] . "</td>"
+            . "<td>" . $results[0]['exp_min_water_depth'] . "</td>"
+            . "<td>" . $results[0]['exp_soil_ph'] . "</td>"
+            . "<td>" . $results[0]['exp_soil_org_matter'] . "</td>"
+            . "<td>" . $results[0]['exp_soil_n'] . "</td>"
+            . "<td>" . $results[0]['exp_init_soil_carbon'] . "</td>"
+            . "<td>" . $results[0]['exp_key_findings'] . "</td>"
+            . "<td>" . $results[0]['id_treatment'] . "</td>"
+            . "<td>" . $results[0]['treat_desc'] . "</td>"
+            . "<td>" . $results[0]['treat_system'] . "</td>"
+            . "<td>" . $results[0]['treat_tillage_type'] . "</td>"
+            . "<td>" . $results[0]['treat_synt_n_fert_type'] . "</td>"
+            . "<td>" . $results[0]['treat_manure_amend_type'] . "</td>"
+            . "<td>" . $results[0]['treat_nit_rate'] . "</td>"
+            . "<td>" . $results[0]['treat_method_app'] . "</td>"
+            . "<td>" . $results[0]['treat_crop_rotation'] . "</td>"
+            . "<td>" . $results[0]['treat_cover_crop'] . "</td>"
+            . "<td>" . $results[0]['treat_res_rem'] . "</td>"
+            . "<td>" . $results[0]['treat_res_burn'] . "</td>"
+            . "<td>" . $results[0]['treat_irrigation'] . "</td>"
+            . "<td>" . $results[0]['treat_other_soil_emiss_tech'] . "</td>"
+            . "<td>" . $results[0]['treat_grain'] . "</td>"
+            . "<td>" . $results[0]['treat_stover'] . "</td>"
+            . "<td>" . $results[0]['treat_roots'] . "</td>"
+            . "<td>" . $results[0]['treat_notes'] . "</td>"
+            . "<td>" . $results[0]['treatr_type_rice_eco'] . "</td>"
+            . "<td>" . $results[0]['treatr_water_manage'] . "</td>"
+            . "<td>" . $results[0]['treatr_land_prep'] . "</td>"
+            . "<td>" . $results[0]['treatr_user_herb'] . "</td>"
+            . "<td>" . $results[0]['treatr_crop_season'] . "</td>"
+            . "<td>" . $results[0]['treatr_num_grow_days'] . "</td>"
+            . "<td>" . $results[0]['treatr_org_manage'] . "</td>"
+            . "<td>" . $results[0]['soi_ipcc_1996'] . "</td>"
+            . "<td>" . $results[0]['soi_ipcc_2006'] . "</td>"
+            . "<td>" . $results[0]['soi_gas'] . "</td>"
+            . "<td>" . $results[0]['soi_crop'] . "</td>"
+            . "<td>" . $results[0]['soi_gas_sampling_freq'] . "</td>"
+            . "<td>" . $results[0]['soi_type_emission'] . "</td>"
+            . "<td>" . $results[0]['soi_depth_measu'] . "</td>"
+            . "<td>" . $results[0]['ef_value'] . "</td>"
+            . "<td>" . $results[0]['soi_ef_units'] . "</td>"
+            . "<td>" . $results[0]['soi_equation'] . "</td>"
+            . "<td>" . $results[0]['soi_lower_bound'] . "</td>"
+            . "<td>" . $results[0]['soi_upper_bound'] . "</td>"
+            . "<td>" . $results[0]['soi_uncertainty'] . "</td>"
+            . "<td>" . $results[0]['soi_notes'] . "</td>"
+            . "<td>" . $results[0]['cont_email_primary'] . "</td>"
+            . "<td>" . $results[0]['cont_journal_citation'] . "</td>"
             . "</tr>";
-  } elseif ($emission['idef_enteric']) {
+  } /*elseif ($emission['idef_enteric']) {
     
   } elseif ($emission['idef_manure']) {
     
@@ -293,7 +360,7 @@ function getGasEmissionDetail($emission) {
     
   } elseif ($emission['idef_biomass']) {
     
-  }
+  }*/
   $result .= "</table>";
   return $result;
 }

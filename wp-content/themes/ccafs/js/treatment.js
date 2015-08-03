@@ -29,7 +29,8 @@ function onchangeSubmit() {
         d.country = jQuery('#country').val();
         d.ipcc1996 = jQuery('#ipcc1996').val();
         d.ipcc2006 = jQuery('#ipcc2006').val();
-        d.soils = '1';
+        d.source = jQuery('#source').val();
+//        d.soils = '1';
       },
       dataSrc: function(json) {
         if (json.data.length == 0) {
@@ -56,7 +57,8 @@ function onchangeSubmit() {
         d.country = jQuery('#country').val();
         d.ipcc1996 = jQuery('#ipcc1996').val();
         d.ipcc2006 = jQuery('#ipcc2006').val();
-        d.soils = '1';
+        d.source = jQuery('#source').val();
+//        d.soils = '1';
         d.allfields = 'true';
       },
       dataSrc: function(json) {
@@ -135,47 +137,47 @@ function emissionsBodyBox(result, i) {
               <br><b>Units:</b> ' + result.ef_units + '\n\
               <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
             </div>';
-  } else if (results.type == 'enteric') {
+  } else if (result.type == 'enteric') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
               <br><b>Subspecies classification:</b> ' + result.value1 + '\n\
               <br><b>Type of livestock management system:</b> ' + result.value2 + '\n\
               <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
             </div>';
-  } else if (results.type == 'manure') {
+  } else if (result.type == 'manure') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
               <br><b>Subspecies:</b> ' + result.value1 + '\n\
               <br><b>Type of manure management system:</b> ' + result.value2 + '\n\
               <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
             </div>';
-  } else if (results.type == 'grassland') {
+  } else if (result.type == 'grassland') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
               <br><b>Description of ecosystem:</b> ' + result.value2 + '\n\
               <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
             </div>';
-  } else if (results.type == 'residue') {
+  } else if (result.type == 'residue') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
               <br><b>Type of crop:</b> ' + result.value2 + '\n\
               <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
             </div>';
-  } else if (results.type == 'biomass') {
+  } else if (result.type == 'biomass') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
               <br><b>Type of forest:</b> ' + result.value2 + '\n\
               <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
             </div>';
   }
   return body;
@@ -341,7 +343,8 @@ $(document).ready(function($) {
         d.country = $('#country').val();
         d.ipcc1996 = $('#ipcc1996').val();
         d.ipcc2006 = $('#ipcc2006').val();
-        d.soils = '1';
+        d.source = jQuery('#source').val();
+//        d.soils = '1';
       },
       dataSrc: function(json) {
         if (json.data.length == 0) {
@@ -367,7 +370,8 @@ $(document).ready(function($) {
         d.country = $('#country').val();
         d.ipcc1996 = $('#ipcc1996').val();
         d.ipcc2006 = $('#ipcc2006').val();
-        d.soils = '1';
+        d.source = jQuery('#source').val();
+//        d.soils = '1';
         d.allfields = 'true';
       },
       dataSrc: function(json) {
