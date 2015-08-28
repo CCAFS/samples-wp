@@ -54,7 +54,7 @@
 						<div class="footer-col-wrap last">
 						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Envelope.png" class="pull-left footer-icon" alt="email"/><a href="mailto:julianna.m.white@uvm.edu" class="footer-email pull-left">julianna.m.white@uvm.edu</a></div>
 
-						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Phone.png" class="pull-left footer-icon phone" alt="phone"/><span class="footer-phone pull-left">+1-802-656-0836</span></div>
+						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Phone.png" class="pull-left footer-icon phone" alt="phone"/><span class="footer-phone pull-left">+1-802-656-0890</span></div>
 					    </div>
 					</div>
 
