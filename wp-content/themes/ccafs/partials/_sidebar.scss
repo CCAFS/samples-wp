@@ -144,8 +144,9 @@ ul.sidebar-box-list {
 }
 
 .print-this {
-	padding-left: 10px;
+	padding: 20px 10px;
 	font-size: 15px;
+	font-weight: $bold;
 	a {
 		color: $gray;
 		@include link-trans;
