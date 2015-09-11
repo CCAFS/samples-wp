@@ -37,6 +37,7 @@ get_header(); ?>
 			<div class="col-sm-4 col-sm-offset-1 sidebar">
 				
 				<?php get_sidebar(); ?>
+				<div class="print-this"><?php if(function_exists('wp_print')) { print_link(); } ?></div>
 
 				<div class="sidebar-box">
 					<div class="sb-header">Search Measurement Methods</div>

@@ -143,6 +143,21 @@ ul.sidebar-box-list {
 
 }
 
+.print-this {
+	padding-left: 10px;
+	font-size: 15px;
+	a {
+		color: $gray;
+		@include link-trans;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $blue;
+		}
+	}
+}
+
 /* gund logo on contact page */
 .wp-image-591 {
 	max-width: 200px;

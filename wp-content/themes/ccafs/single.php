@@ -62,6 +62,7 @@ get_header(); ?>
 						</ul>
 					</div><!-- /sb-main -->
 				</div><!-- /sidebar-box -->
+				<div class="print-this"><?php if(function_exists('wp_print')) { print_link(); } ?></div>
 				
 			</div><!-- /sidebar -->
 
