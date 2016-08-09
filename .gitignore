@@ -1,5 +1,6 @@
 /mysql
 *.log
+*.codekit
 .htaccess
 sitemap.xml
 sitemap.xml.gz
