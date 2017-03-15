@@ -19,8 +19,8 @@ $version = '1.0';
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/experiment.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/pure-min-custom.css">
 <!--<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/treatment.css?<?php echo $version; ?>">-->
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
-<script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclustererplus/src/markerclusterer.js"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/googlemaps/v3-utility-library/master/infobox/src/infobox_packed.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-marker-clusterer/1.0.0/markerclusterer_compiled.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/treatment.js?<?php echo $version; ?>"></script>
 <div id="loading" style="z-index:9999;display: none"><img style="" src="<?php echo get_template_directory_uri(); ?>/img/loading.gif" alt="Loader" /></div>
 <script type="text/javascript">
