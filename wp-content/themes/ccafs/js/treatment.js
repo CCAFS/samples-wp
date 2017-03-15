@@ -29,8 +29,7 @@ function onchangeSubmit() {
         d.country = jQuery('#country').val();
         d.ipcc1996 = jQuery('#ipcc1996').val();
         d.ipcc2006 = jQuery('#ipcc2006').val();
-        d.source = jQuery('#source').val();
-//        d.soils = '1';
+        d.soils = '1';
       },
       dataSrc: function(json) {
         if (json.data.length == 0) {
@@ -57,8 +56,7 @@ function onchangeSubmit() {
         d.country = jQuery('#country').val();
         d.ipcc1996 = jQuery('#ipcc1996').val();
         d.ipcc2006 = jQuery('#ipcc2006').val();
-        d.source = jQuery('#source').val();
-//        d.soils = '1';
+        d.soils = '1';
         d.allfields = 'true';
       },
       dataSrc: function(json) {
@@ -144,7 +142,7 @@ function emissionsBodyBox(result, i) {
               <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
             </div>';
   } else if (result.type == 'manure') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
@@ -153,7 +151,7 @@ function emissionsBodyBox(result, i) {
               <br><b>Type of emission factor:</b> ' + result.value3 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
             </div>';
   } else if (result.type == 'grassland') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
@@ -161,7 +159,7 @@ function emissionsBodyBox(result, i) {
               <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
             </div>';
   } else if (result.type == 'residue') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
@@ -169,7 +167,7 @@ function emissionsBodyBox(result, i) {
               <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
             </div>';
   } else if (result.type == 'biomass') {
     body = "<div id='contm" + i + "'><b>" + '</b> \n\
@@ -177,7 +175,7 @@ function emissionsBodyBox(result, i) {
               <br><b>Type of emission factor:</b> ' + result.value1 + '\n\
               <br><b>Value:</b> ' + result.ef_value + '\n\
               <br><b>Units:</b> ' + result.ef_units + '\n\
-              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + result.sid + '">more info</button>\n\
+              <br><button type="button" class="pure-button pure-button-primary" data-toggle="modal" data-target="#contmm' + i + '">more info</button>\n\
             </div>';
   }
   return body;
@@ -206,7 +204,8 @@ function mapCallBack() {
       });
       markerArray.push(marker);
     }
-    markerCluster = new MarkerClusterer(map, markerArray);
+    //markerCluster = new MarkerClusterer(map, markerArray);
+    markerCluster = new MarkerClusterer(map, markerArray, {imagePath: '/wp-content/themes/ccafs/js/js-marker-clusterer/images/m'});
     google.maps.event.addListener(markerCluster, "mouseover", function(c) {
 //        log("mouseover: ");
 //        log("&mdash;Center of cluster: " + c.getCenter());
@@ -343,8 +342,7 @@ $(document).ready(function($) {
         d.country = $('#country').val();
         d.ipcc1996 = $('#ipcc1996').val();
         d.ipcc2006 = $('#ipcc2006').val();
-        d.source = jQuery('#source').val();
-//        d.soils = '1';
+        d.soils = '1';
       },
       dataSrc: function(json) {
         if (json.data.length == 0) {
@@ -370,8 +368,7 @@ $(document).ready(function($) {
         d.country = $('#country').val();
         d.ipcc1996 = $('#ipcc1996').val();
         d.ipcc2006 = $('#ipcc2006').val();
-        d.source = jQuery('#source').val();
-//        d.soils = '1';
+        d.soils = '1';
         d.allfields = 'true';
       },
       dataSrc: function(json) {
@@ -466,8 +463,8 @@ $(document).ready(function($) {
   var menu = $('#form-content');
 //  var contenedor = $('#menu-contenedor');
   var menu_offset = menu.offset();
-  // Cada vez que se haga scroll en la página
-  // haremos un chequeo del estado del menú
+  // Cada vez que se haga scroll en la pÃ¡gina
+  // haremos un chequeo del estado del menÃº
   // y lo vamos a alternar entre 'fixed' y 'static'.
   $(window).on('scroll', function() {
     if ($(window).scrollTop() > menu_offset.top) {
