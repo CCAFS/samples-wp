@@ -45,7 +45,7 @@
 							CCAFS Low Emissions Agriculture<br />
 							Gund Institute for Ecological Economics<br />
 							University of Vermont<br />
-							617 Main Street<br />
+							210 Colchester Ave<br />
 							Burlington, Vermont 05405 USA</p>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 						<div class="footer-col-wrap last">
 						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Envelope.png" class="pull-left footer-icon" alt="email"/><a href="mailto:c.costajr@cgiar.org" class="footer-email pull-left">Costa Junior, Ciniro (CIAT-CCAFS)</a></div>
 
-						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Phone.png" class="pull-left footer-icon phone" alt="phone"/><span class="footer-phone pull-left">+1-802-656-0890</span></div>
+						    <div class="clearfix"><img src="<?php echo get_template_directory_uri(); ?>/images/Phone.png" class="pull-left footer-icon phone" alt="phone"/><span class="footer-phone pull-left">+55 19 98179 0722</span></div>
 					    </div>
 					</div>
 
